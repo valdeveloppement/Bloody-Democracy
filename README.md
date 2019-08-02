@@ -68,3 +68,46 @@ Template Events
   - Choix 1 ou 2
   - Conséquences (cacheés ou non)
 
+Bonus ++ : KARMA et FLUX RSS et RANKING
+
+////////////////////////////////////REGLES DE CODE////////////////////////////////////////
+Ecrire en camelcase, ex :
+function maJolieFonction
+
+Mettre un "$" devant les noms de variables
+
+Bien indenter et commenter son code
+
+A chaque fois qu'on a un bloc de code perso, l'encadrer ex :
+
+///////////////// JULIEN /////////////
+MON BLOC DE CODE
+
+/////////////// FIN JULIEN ///////////////
+
+
+
+//////////////////////////////////// VARIABLES //////////////////////////////////////////
+$nbClicks = compteur de click
+$nbClicksTotal = compteur de click totaux (pour reset + achievement)
+$compteurVote = compteur de vote
+$compteurVotesTotal(pour reset + achievement)
+$compteurArgent = compteur d'argent
+$compteurArgentTotal (pour reset + achievement)
+$tempsDeJeu = compteur temps de jeu réellement passé
+$tempsDeJeuTotal (pour reset + achievement)
+$tempsDeJeuVirtuel (sert pour le timing des cartes)
+$nomJoueur
+$classement[] (tableau)
+$rangClassement
+
+Pour les cartes :
+Pour le nom de la fonction onClick (ex pour la carte Belle Gueule) : belleGueule()
+Variables associées :
+$coutArgentBelleGueule
+$coutVoteBelleGueule
+$multiBelleGueule
+$gainBelleGueule
+$perteBelleGueule
+$dureeBelleGueule
+$caisseNoireBelleGueule
