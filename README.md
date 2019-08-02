@@ -88,26 +88,26 @@ MON BLOC DE CODE
 
 
 //////////////////////////////////// VARIABLES //////////////////////////////////////////
-$nbClicks = compteur de click
-$nbClicksTotal = compteur de click totaux (pour reset + achievement)
-$compteurVote = compteur de vote
-$compteurVotesTotal(pour reset + achievement)
-$compteurArgent = compteur d'argent
-$compteurArgentTotal (pour reset + achievement)
-$tempsDeJeu = compteur temps de jeu réellement passé
-$tempsDeJeuTotal (pour reset + achievement)
-$tempsDeJeuVirtuel (sert pour le timing des cartes)
-$nomJoueur
-$classement[] (tableau)
-$rangClassement
+- $nbClicks = compteur de click
+- $nbClicksTotal = compteur de click totaux (pour reset + achievement)
+- $compteurVote = compteur de vote
+- $compteurVotesTotal(pour reset + achievement)
+- $compteurArgent = compteur d'argent
+- $compteurArgentTotal (pour reset + achievement)
+- $tempsDeJeu = compteur temps de jeu réellement passé
+- $tempsDeJeuTotal (pour reset + achievement)
+- $tempsDeJeuVirtuel (sert pour le timing des cartes)
+- $nomJoueur
+- $classement (tableau)
+- $rangClassement
 
 Pour les cartes :
 Pour le nom de la fonction onClick (ex pour la carte Belle Gueule) : belleGueule()
 Variables associées :
-$coutArgentBelleGueule
-$coutVoteBelleGueule
-$multiBelleGueule
-$gainBelleGueule
-$perteBelleGueule
-$dureeBelleGueule
-$caisseNoireBelleGueule
+- $coutArgentBelleGueule
+- $coutVoteBelleGueule
+- $multiBelleGueule
+- $gainBelleGueule
+- $perteBelleGueule
+- $dureeBelleGueule
+- $caisseNoireBelleGueule
