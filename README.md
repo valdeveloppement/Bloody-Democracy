@@ -17,6 +17,7 @@ Bonus Temporaire :
     - Nom du joueur
   - Ranking
   - Achievements
+  - Partie Gestion
 
 Stores :
   - Slider Vote (fait gagner des votes)
@@ -43,8 +44,7 @@ Events :
   - Débats Télévisés (choix multiples, conséquences inconnues)
   - 
 - Events obligatoires
-  - 
-- Bonus gratos au click (temps limité)    
+  - Bonus gratos au click (temps limité)    
 
 Templates Carte Vote / Argent:
  - Miniature
