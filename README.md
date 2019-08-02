@@ -1,7 +1,5 @@
 ﻿# bloodyDemocracy
 
-pqskfpezpgj
-
 Clicker :
 - Mouvement de main (fréquence basse)
 - vibration de l'urne (fréquence rapide)
