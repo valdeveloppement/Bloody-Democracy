@@ -6,5 +6,26 @@ img{
 	padding: 0;
 }
 body{
-    
+
 }
+#carteNom1, #carteNom2, #carteNom3, #carteNom4, #carteNom5, #carteNom6, #carteNom7, #carteNom8, #carteNom9, #carteNom10, #carteNom11, #carteNom12, #carteNom13, #carteNom14, #carteNom15, #carteNom16, #carteNom17, #carteNom18, #carteNom19, #carteNom20, #carteNom21, #carteNom22, #carteNom23, #carteNom24, #carteNom25, #carteNom26, #carteNom27, #carteNom28, #carteNom29, #carteNom30 {
+  display: inline-flex;
+}
+.cardLeft {
+  width: 600px;
+}
+.thumbnails { 
+  margin: 20px 0;
+  text-align: center;
+}
+.thumbnails li {
+  display: inline-flex;
+  cursor: pointer;
+  border: 5px solid #fff;
+}
+.thumbnails .tns-nav-active {
+  background: none;
+  border-color: #000;
+}
+.thumbnails li { width: 50px; }
+.thumbnails img { vertical-align: bottom; height: auto; max-height: 50px; }
