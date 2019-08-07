@@ -19,7 +19,9 @@
                     
         <!------------------------------- Feuilles de styles linkées en fonction des écrans ----------------------------------------->
         <link rel="stylesheet" type="text/css" href="css/main-styles.css">
-
+        <!------------------------------- Feuilles de styles Odometer pour les compteurs ----------------------------------------->
+        <link rel="stylesheet" href="css/odometer-theme-dollar.css" />
+        <link rel="stylesheet" href="css/odometer-theme-train-station.css" />
 
         <!-- ---------------------------------------Font Awesome 5.6.3 CDN--------------------------------------------- -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -33,26 +35,78 @@
 
 
      <body> 
+
         <div id="gauche">
+
             <div id="compteurs">
 
-                <div id="vote">
+                <div id="vote" class="odometer">
                 </div>
 
-                <div id="argent">
+                <div id="argent" class="odometer">
                 </div>
 
             </div>
 
-            <div id="boite">
+
+
+            <div id="clicker">
+
+                <div id="boiteDessus" class="boite" >
+                    <img src="images/boiteDessus.png">
+                </div>
+
+            
+
+
+                <div id="brasPaper" class="bras">
+                    <img src="images/brasPaper.png">
+                </div>
+
+                <div id="brasDessus" class="bras">
+                    <img src="images/brasDessus.png">
+                </div>
+
+
+
+
+                <div id="brasDessous" class="bras">
+                    <img src="images/brasDessous.png">
+                </div>
+
+
+                <div id="boiteDessous" class="boite">
+                <img src="images/boiteDessous.png" alt="boite de vote Bloody Democracy">
+                </div>
+
+
             </div>
+
+
+
+            <div id="table">
+                <img src="images/table.png" alt="table vote">
+            </div>
+
+            <div id="rideau">
+                <img id="imgRideau" src="images/rideau.png" alt="rideau de vote">
+            </div>
+
+            <div id="fondRideau">
+            </div>
+
+
+
+
 
         </div>
+        
         <div id="droite">
 
-            <h1 id="titre"><img src="images/titre.png" alt="Bloody Democracy"></h1>
+            <h1 id="titre"><img src="images/logoTitre.png" alt="Bloody Democracy"></h1>
 
             <div id="sliderGeneral">
+        
             </div>
 
             <div id="sliderStore">
@@ -66,8 +120,9 @@
 
 
         <!---------------------------------------scripts JavaScript--------------------------------------------------->
-
-         <script src="js/bloodydemocracy.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/odometer.min.js"></script>
+        <script src="js/bloodydemocracy.js"></script>
 
 
     </body>
@@ -77,29 +132,27 @@
 
 
 
-<!-- Template Carte -->
-<div id="carteNom" class="carte">
-    <img src="">
-    <h3>Nom Carte</h3>
-    <div>
-        <p>Description</p>
-        <p>Effet</p>
+<!-- <div id="carteNom" class="carte">
+        <img src="">
+        <h3>Nom Carte</h3>
+        <div>
+            <p>Description</p>
+            <p>Effet</p>
+        </div>
+        <div> 
+            <button>Cout/Achat</button>
+            <p>Nbr acheté</p>
+        </div>
     </div>
-    <div> 
-        <button>Cout/Achat</button>
-        <p>Nbr acheté</p>
-    </div>
-</div>
-
-<!-- Template Event -->
-<div id="eventName">
-
-    <img src="">
-    <h3>Nom Event</h3>
-    <div>
-        <p>Description</p>
-        <button>Choix1</button>
-        <button>Choix2</button>
-    </div>
-
-</div>
+    
+    <div id="eventName">
+    
+        <img src="">
+        <h3>Nom Event</h3>
+        <div>
+            <p>Description</p>
+            <button>Choix1</button>
+            <button>Choix2</button>
+        </div>
+    
+    </div> -->
