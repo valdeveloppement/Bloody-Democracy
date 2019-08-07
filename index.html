@@ -9,7 +9,7 @@
         <meta name="description" content="Bloody Democracy: political idle game ">
         <meta name="keywords" content="clicker, game, political, idle">
         <meta name="author" content="Valentin, Julien, Sylvain, Dylan Java juillet 2019">
-		<meta charset="UTF-8">
+		    <meta charset="UTF-8">
 
         <!-------------------Favicon---------------------->
 
@@ -17,9 +17,15 @@
 		
 
         <!------------------------------- Feuilles de styles linkées en fonction des écrans ----------------------------------------->
+
       
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
-		<link rel="stylesheet" type="text/css" href="css/main-styles.css">
+		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
+		    <link rel="stylesheet" type="text/css" href="css/main-styles.css">
+
+        <link rel="stylesheet" type="text/css" href="css/main-styles.css">
+        <!------------------------------- Feuilles de styles Odometer pour les compteurs ----------------------------------------->
+        <link rel="stylesheet" href="css/odometer-theme-dollar.css" />
+        <link rel="stylesheet" href="css/odometer-theme-train-station.css" />
 
         <!-- ---------------------------------------Font Awesome 5.6.3 CDN--------------------------------------------- -->
         
@@ -29,83 +35,135 @@
     
 
 
-
     <body> 
+
         <div id="gauche">
+
             <div id="compteurs">
 
-                <div id="vote">
+                <div id="vote" class="odometer">
                 </div>
 
-                <div id="argent">
+                <div id="argent" class="odometer">
                 </div>
 
             </div>
 
-            <div id="boite">
+
+
+            <div id="clicker">
+
+                <div id="boiteDessus" class="boite" >
+                    <img src="images/boiteDessus.png">
+                </div>
+
+            
+
+
+                <div id="brasPaper" class="bras">
+                    <img src="images/brasPaper.png">
+                </div>
+
+                <div id="brasDessus" class="bras">
+                    <img src="images/brasDessus.png">
+                </div>
+
+
+
+
+                <div id="brasDessous" class="bras">
+                    <img src="images/brasDessous.png">
+                </div>
+
+
+                <div id="boiteDessous" class="boite">
+                <img src="images/boiteDessous.png" alt="boite de vote Bloody Democracy">
+                </div>
+
+
             </div>
+
+
+
+            <div id="table">
+                <img src="images/table.png" alt="table vote">
+            </div>
+
+            
+
+            <div id="rideau">
+                <img id="imgRideau" src="images/rideau.png" alt="rideau de vote">
+            </div>
+
+            <div id="fondRideau">
+            </div>
+
+
+
+
 
         </div>
+        
         <div id="droite">
 
-            <h1 id="titre"><img src="images/titre.png" alt="Bloody Democracy"></h1>
-			
-				<!--------------------------------Sylvain--------------------------------->
+
+            <h1 id="titre"><img src="images/logoTitre.png" alt="Bloody Democracy"></h1>
+
+    <!--------------------------------Sylvain--------------------------------->
 				
             <div id="sliderGeneral">
 			
-				<div id="menuGeneral">
-					<button id="iconeBonusTemp" onclick="showBonusTemp()"></button>
-					<button id="iconeSettings" onclick="showSettings()"></button>
-					<button id="iconeRanking" onclick="showRanking()"></button>
-					<button id="iconeAchievement" onclick="showAchievement()"></button>
-					<button id="iconePossession" onclick="showPossession()"></button>
-				</div>
-				
-				<div id="bonusTemporaire">
-					<div id="one" class="bonusTemp"></div>
-					<div id="two" class="bonusTemp"></div>
-					<div id="three" class="bonusTemp"></div>
-					<div id="four" class="bonusTemp"></div>
-					<div id="five" class="bonusTemp"></div>
-					<div id="six" class="bonusTemp"></div>
-					<div id="seven" class="bonusTemp"></div>
-					<div id="eight" class="bonusTemp"></div>
-					<div id="nine" class="bonusTemp"></div>
-					<div id="ten" class="bonusTemp"></div>
-				</div>
-				
-				<div id="settings">
-					<button id="save">Sauvegarder</button>
-					<button id="load">Charger</button>
-					<button id="sound">Mute/Unmute</button>
-				</div>
-				
-				<div id="ranking">
-					<p>1er Ruskov: 10000000000000000</p>
-					<p>2eme Mao: 10000000000</p>
-					<p>3eme Kim: 500000000</p>
-					<p>4eme Toto: 2</p>
-					<p>5eme Tutu: 1</p>
-				</div>
-				
-				<div id="achievement">
-					<p>Super connard</p>
-				</div>
-				
-				<div id="possession">
-					<p>belles gueules: 10</p>
-				</div>
-				
-			</div>
+              <div id="menuGeneral">
+                <button id="iconeBonusTemp" onclick="showBonusTemp()"></button>
+                <button id="iconeSettings" onclick="showSettings()"></button>
+                <button id="iconeRanking" onclick="showRanking()"></button>
+                <button id="iconeAchievement" onclick="showAchievement()"></button>
+                <button id="iconePossession" onclick="showPossession()"></button>
+              </div>
 
+              <div id="bonusTemporaire">
+                <div id="one" class="bonusTemp"></div>
+                <div id="two" class="bonusTemp"></div>
+                <div id="three" class="bonusTemp"></div>
+                <div id="four" class="bonusTemp"></div>
+                <div id="five" class="bonusTemp"></div>
+                <div id="six" class="bonusTemp"></div>
+                <div id="seven" class="bonusTemp"></div>
+                <div id="eight" class="bonusTemp"></div>
+                <div id="nine" class="bonusTemp"></div>
+                <div id="ten" class="bonusTemp"></div>
+              </div>
+
+              <div id="settings">
+                <button id="save">Sauvegarder</button>
+                <button id="load">Charger</button>
+                <button id="sound">Mute/Unmute</button>
+              </div>
+
+              <div id="ranking">
+                <p>1er Ruskov: 10000000000000000</p>
+                <p>2eme Mao: 10000000000</p>
+                <p>3eme Kim: 500000000</p>
+                <p>4eme Toto: 2</p>
+                <p>5eme Tutu: 1</p>
+              </div>
+
+              <div id="achievement">
+                <p>Super connard</p>
+              </div>
+
+              <div id="possession">
+                <p>belles gueules: 10</p>
+              </div>
+
+          </div>
 
             <div id="sliderStore">
-				<div id="menuStore">
-					<button id="iconeArgent" onclick="showArgent()"></button>
-					<button id="iconeVote" onclick="showVote()"></button>
-					<button id="iconeGestion" onclick="showGestion()"></button>
-				</div>
+              <div id="menuStore">
+                <button id="iconeArgent" onclick="showArgent()"></button>
+                <button id="iconeVote" onclick="showVote()"></button>
+                <button id="iconeGestion" onclick="showGestion()"></button>
+              </div>
 				<div id="sliderArgent">
 					<div class="argent">
 
@@ -709,7 +767,11 @@
 
         <!---------------------------------------scripts JavaScript--------------------------------------------------->
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
+
+		    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="js/odometer.min.js"></script>
+
         <script src="js/bloodydemocracy.js"></script>
 
 
@@ -720,29 +782,27 @@
 
 
 
-<!-- Template Carte -->
-<div id="carteNom" class="carte">
-    <img src="">
-    <h3>Nom Carte</h3>
-    <div>
-        <p>Description</p>
-        <p>Effet</p>
+<!-- <div id="carteNom" class="carte">
+        <img src="">
+        <h3>Nom Carte</h3>
+        <div>
+            <p>Description</p>
+            <p>Effet</p>
+        </div>
+        <div> 
+            <button>Cout/Achat</button>
+            <p>Nbr acheté</p>
+        </div>
     </div>
-    <div> 
-        <button>Cout/Achat</button>
-        <p>Nbr acheté</p>
-    </div>
-</div>
-
-<!-- Template Event -->
-<div id="eventName">
-
-    <img src="">
-    <h3>Nom Event</h3>
-    <div>
-        <p>Description</p>
-        <button>Choix1</button>
-        <button>Choix2</button>
-    </div>
-
-</div>
+    
+    <div id="eventName">
+    
+        <img src="">
+        <h3>Nom Event</h3>
+        <div>
+            <p>Description</p>
+            <button>Choix1</button>
+            <button>Choix2</button>
+        </div>
+    
+    </div> -->

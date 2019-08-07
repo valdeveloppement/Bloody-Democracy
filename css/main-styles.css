@@ -1,13 +1,187 @@
+/* ..................................... ENTETE ................................ */
 img{
-	max-width:100%;
+	width:100%;
+
 }
+
+
 * {
 	margin: 0;
 	padding: 0;
 }
+
+/* ...............................FIN ENTETE................................... */
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////////// VALENTIN //////////////////////////////////// */
+
 body{
+ 	display: flex;
+	flex-direction: row;
+	margin: 0;
+    height: 100vh;
+	background-color: #f9b111;
+	overflow: hidden;
+}
+
+
+#gauche{
+
+	position:relative;
+	left:0;
+	Top:0;
+	display: flex;
+	flex-direction: column;
+	min-width: 250px;
+	height:100vh;
+	width:30vw;
+
+
 
 }
+
+#droite{
+
+	display: flex;
+	justify-content: center;
+	height:100vh;
+	width:70vw;
+
+
+}
+
+
+
+
+
+/* .................Partie droite............................ */
+
+#titre{
+
+	position:relative;
+	width:40%;
+	margin:0;
+	padding:0;
+
+
+}
+
+
+
+
+/* .................Partie gauche............................ */
+
+#fondRideau{
+
+	background-color: #e19a0b;
+	position: absolute;
+	z-index: 0;
+	top:0%;
+	left:0%;
+	width: 73%;
+	height:100vh;
+}
+
+
+
+
+#rideau{
+
+	position: absolute;
+	top:0%;
+	right:0%;
+	height:107%;
+	min-width:82px;
+	width:10vw;
+	z-index: 1;
+}
+
+#imgRideau{
+
+	width:100%;
+	height:100%;
+
+}
+
+#table{
+
+	position: absolute;
+	z-index: 2;
+	flex-shrink: 0;
+	width:80%;
+	bottom:0vh;
+	left:0vw;
+}
+
+#clicker{
+
+	width:100%;
+	height:60%;
+
+
+
+}
+
+
+.boite{
+	position:absolute;
+	bottom:0%;
+	left:11%;
+	width:40%;
+
+}
+
+#boiteDessus{
+
+	z-index:7;
+}
+
+
+#boiteDessous{
+
+
+
+	z-index:3;
+}
+
+.bras{
+	position:absolute;	
+	width:50%;
+
+	left:-13%;
+	transform-origin: 0px 50%;
+	transform: rotate(-11deg);
+
+}
+
+
+#brasDessous{
+	z-index: 4;
+}
+
+
+#brasPaper{
+	z-index: 5;
+}
+
+#brasDessus{
+	z-index: 6;
+}
+
+
+
+
+/* ////////////////////////////////////////// FIN VALENTIN /////////////////////////////////////////////// */
+
+  ///////////////////////////////////////////////Sylvain///////////////////////////////////////////////////
 #carteNom1, #carteNom2, #carteNom3, #carteNom4, #carteNom5, #carteNom6, #carteNom7, #carteNom8, #carteNom9, #carteNom10, #carteNom11, #carteNom12, #carteNom13, #carteNom14, #carteNom15, #carteNom16, #carteNom17, #carteNom18, #carteNom19, #carteNom20, #carteNom21, #carteNom22, #carteNom23, #carteNom24, #carteNom25, #carteNom26, #carteNom27, #carteNom28, #carteNom29, #carteNom30 {
   display: inline-flex;
 }
@@ -83,3 +257,4 @@ body{
 #tns1 {
   height: 420px;
 }
+//////////////////////////////////////////////////Fin Sylvain/////////////////////////////////////////
