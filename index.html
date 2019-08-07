@@ -53,14 +53,60 @@
 				<!--------------------------------Sylvain--------------------------------->
 				
             <div id="sliderGeneral">
+			
+				<div id="menuGeneral">
+					<button id="iconeBonusTemp" onclick="showBonusTemp()"></button>
+					<button id="iconeSettings" onclick="showSettings()"></button>
+					<button id="iconeRanking" onclick="showRanking()"></button>
+					<button id="iconeAchievement" onclick="showAchievement()"></button>
+					<button id="iconePossession" onclick="showPossession()"></button>
+				</div>
 				
+				<div id="bonusTemporaire">
+					<div id="one" class="bonusTemp"></div>
+					<div id="two" class="bonusTemp"></div>
+					<div id="three" class="bonusTemp"></div>
+					<div id="four" class="bonusTemp"></div>
+					<div id="five" class="bonusTemp"></div>
+					<div id="six" class="bonusTemp"></div>
+					<div id="seven" class="bonusTemp"></div>
+					<div id="eight" class="bonusTemp"></div>
+					<div id="nine" class="bonusTemp"></div>
+					<div id="ten" class="bonusTemp"></div>
+				</div>
 				
+				<div id="settings">
+					<button id="save">Sauvegarder</button>
+					<button id="load">Charger</button>
+					<button id="sound">Mute/Unmute</button>
+				</div>
+				
+				<div id="ranking">
+					<p>1er Ruskov: 10000000000000000</p>
+					<p>2eme Mao: 10000000000</p>
+					<p>3eme Kim: 500000000</p>
+					<p>4eme Toto: 2</p>
+					<p>5eme Tutu: 1</p>
+				</div>
+				
+				<div id="achievement">
+					<p>Super connard</p>
+				</div>
+				
+				<div id="possession">
+					<p>belles gueules: 10</p>
+				</div>
 				
 			</div>
 
 
             <div id="sliderStore">
-				<div id="argent">
+				<div id="menuStore">
+					<button id="iconeArgent" onclick="showArgent()"></button>
+					<button id="iconeVote" onclick="showVote()"></button>
+					<button id="iconeGestion" onclick="showGestion()"></button>
+				</div>
+				<div id="sliderArgent">
 					<div class="argent">
 
 						<div id="carteNom1" class="carte">
@@ -260,7 +306,7 @@
 				
 				<!---------------------Slider separate---------------->
 				
-				<div id="vote">
+				<div id="sliderVote">
 					<div class="vote">
 
 						<div id="carteNom11" class="carte">
@@ -460,7 +506,7 @@
 				
 				<!---------------------Slider separate---------------->
 				
-				<div id="gestion">
+				<div id="sliderGestion">
 					<div class="gestion">
 
 						<div id="carteNom21" class="carte">
