@@ -6,6 +6,8 @@
   vertical-align: middle;
   *vertical-align: auto;
   position: relative;
+  z-index:10;
+  font-size:30px;
 }
 .odometer.odometer-auto-theme, .odometer.odometer-theme-dollar {
   *display: inline;
