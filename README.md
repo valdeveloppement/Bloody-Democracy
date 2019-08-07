@@ -1,4 +1,4 @@
-# bloodyDemocracy
+﻿# bloodyDemocracy
 
 Clicker :
 - Mouvement de main (fréquence basse)
@@ -96,7 +96,7 @@ MON BLOC DE CODE
 - $compteurArgentTotal (pour reset + achievement)
 - $tempsDeJeu = compteur temps de jeu réellement passé
 - $tempsDeJeuTotal (pour reset + achievement)
-- $tempsDeJeuVirtuel (sert pour le timing des cartes)
+- $tempsDeJeuVirtuel (sert pour le timing des cartes) : 1j virtuel = 4 min réelles
 - $nomJoueur
 - $classement (tableau)
 - $rangClassement

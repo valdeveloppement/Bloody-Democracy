@@ -1,7 +1,3 @@
-
-
-
-
 /////////////////////////////////////// VALENTIN  /////////////////////////////////////////////
 
 $clicker = document.getElementById('clicker');
@@ -9,6 +5,7 @@ $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
 $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
+
 /////////////////////// JULIEN ////////////////////////////////////
 $containerCompteurVote = document.getElementById('vote');
 $containerCompteurArgent = document.getElementById('argent');
@@ -157,6 +154,7 @@ function click() {
 
   $nbClicks=$nbClicks+1;
   console.log($nbClicks)
+
   ///////////////////////////////////// PARTIE JULIEN ////////////////////
   $compteurVote++;
   $compteurArgent+=5;
@@ -171,6 +169,7 @@ function click() {
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   ////////////////////////////////////// FIN JULIEN /////////////////////
+
 
 }
 
@@ -243,15 +242,8 @@ function playBloup(){
 
 /////////////////////////////////////// FIN VALENTIN  /////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
+//////////////////////////////// JULIEN ////////////////////////
+//Création du compteur vote
 od = new Odometer({
   el: $containerCompteurVote,
   value: $compteurVote,
@@ -264,7 +256,7 @@ od = new Odometer({
 });
 
 
-
+////Création du compteur argent
 od1 = new Odometer({
   el: $containerCompteurArgent,
   value: $compteurArgent,
@@ -278,3 +270,4 @@ od1 = new Odometer({
 
 
 //////////////////////////////// FIN JULIEN ///////////////////////
+
