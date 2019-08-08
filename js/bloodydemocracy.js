@@ -5,7 +5,9 @@ $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
 $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
-
+$volumeMaster=1;
+$MultiClickGlobal=1;
+$attenuationPertes=1;
 /////////////////////// JULIEN ////////////////////////////////////
 $containerCompteurVote = document.getElementById('vote');
 $containerCompteurArgent = document.getElementById('argent');
@@ -156,13 +158,16 @@ function click() {
   console.log($nbClicks)
 
   ///////////////////////////////////// PARTIE JULIEN ////////////////////
-  $compteurVote++;
-  $compteurArgent+=5;
-  $compteurVotesTotal++;
-  $compteurArgentTotal+= 5;
+  $compteurVote=$compteurVote+(1*$MultiClickGlobal);
+  $compteurArgent=$compteurArgent+(5*$MultiClickGlobal);
+  $compteurVotesTotal=$compteurVotesTotal+(1*$MultiClickGlobal);
+  $compteurArgentTotal=$compteurArgentTotal+(5*$MultiClickGlobal);
   $containerCompteurVote.innerHTML = $compteurVote;
   $containerCompteurArgent.innerHTML = $compteurArgent;
   $audio = new Audio('sons/vote.mp3');
+  //////VAL//////
+  $audio.volume = 0.2*$volumeMaster;
+  /////VAL//////
   $audio.play();
   localStorage.setItem('compteurVote', $compteurVote);
   localStorage.setItem('compteurArgent', $compteurArgent);
@@ -242,6 +247,7 @@ function playBloup(){
 
 /////////////////////////////////////// FIN VALENTIN  /////////////////////////////////////////////
 
+
 //////////////////////////////// JULIEN ////////////////////////
 //Création du compteur vote
 od = new Odometer({
@@ -271,3 +277,29 @@ od1 = new Odometer({
 
 //////////////////////////////// FIN JULIEN ///////////////////////
 
+
+
+
+/////////////////////////////// VALENTIN //////////////////////////////////
+
+// .......................... CARTES BONUS .......................................
+
+$boutonAchatBelleGueule= document.getElementById('boutonAchatBelleGueule');
+$boutonAchatBelleGueule.onclick=achatBelleGueule;
+function achatBelleGueule(){
+
+
+
+
+
+
+
+
+  
+}
+
+
+
+
+
+/////////////////////////////// FIN VALENTIN ///////////////////////////////////
