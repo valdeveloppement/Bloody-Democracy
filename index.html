@@ -2,40 +2,41 @@
 
 <html>
      <head>
-	 
-		<title>Bloody Democracy</title>
-		
+
+        <title>Bloody Democracy</title>
+            
         <!-- ---------------------------------------------------------Balises meta-------------------------------------------------------- -->
         <meta name="description" content="Bloody Democracy: political idle game ">
         <meta name="keywords" content="clicker, game, political, idle">
         <meta name="author" content="Valentin, Julien, Sylvain, Dylan Java juillet 2019">
-		    <meta charset="UTF-8">
 
+
+            
         <!-------------------Favicon---------------------->
 
         <link rel="icon" href="images/favicon.ico" />
-		
 
+                    
         <!------------------------------- Feuilles de styles linkées en fonction des écrans ----------------------------------------->
-
-      
-		    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/tiny-slider.css">
-		    <link rel="stylesheet" type="text/css" href="css/main-styles.css">
-
         <link rel="stylesheet" type="text/css" href="css/main-styles.css">
         <!------------------------------- Feuilles de styles Odometer pour les compteurs ----------------------------------------->
         <link rel="stylesheet" href="css/odometer-theme-dollar.css" />
         <link rel="stylesheet" href="css/odometer-theme-train-station.css" />
 
         <!-- ---------------------------------------Font Awesome 5.6.3 CDN--------------------------------------------- -->
-        
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-		
-    </head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+
+        <!-- .........................................Fonts.................................... -->
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i&display=swap" rel="stylesheet"> 
+
+                    
+     </head>
     
 
 
-    <body> 
+
+     <body> 
 
         <div id="gauche">
 
@@ -106,672 +107,64 @@
         
         <div id="droite">
 
-
             <h1 id="titre"><img src="images/logoTitre.png" alt="Bloody Democracy"></h1>
 
-    <!--------------------------------Sylvain--------------------------------->
-				
             <div id="sliderGeneral">
-			
-              <div id="menuGeneral">
-                <button id="iconeBonusTemp" onclick="showBonusTemp()"></button>
-                <button id="iconeSettings" onclick="showSettings()"></button>
-                <button id="iconeRanking" onclick="showRanking()"></button>
-                <button id="iconeAchievement" onclick="showAchievement()"></button>
-                <button id="iconePossession" onclick="showPossession()"></button>
-              </div>
-
-              <div id="bonusTemporaire">
-                <div id="one" class="bonusTemp"></div>
-                <div id="two" class="bonusTemp"></div>
-                <div id="three" class="bonusTemp"></div>
-                <div id="four" class="bonusTemp"></div>
-                <div id="five" class="bonusTemp"></div>
-                <div id="six" class="bonusTemp"></div>
-                <div id="seven" class="bonusTemp"></div>
-                <div id="eight" class="bonusTemp"></div>
-                <div id="nine" class="bonusTemp"></div>
-                <div id="ten" class="bonusTemp"></div>
-              </div>
-
-              <div id="settings">
-                <button id="save">Sauvegarder</button>
-                <button id="load">Charger</button>
-                <button id="sound">Mute/Unmute</button>
-              </div>
-
-              <div id="ranking">
-                <p>1er Ruskov: 10000000000000000</p>
-                <p>2eme Mao: 10000000000</p>
-                <p>3eme Kim: 500000000</p>
-                <p>4eme Toto: 2</p>
-                <p>5eme Tutu: 1</p>
-              </div>
-
-              <div id="achievement">
-                <p>Super connard</p>
-              </div>
-
-              <div id="possession">
-                <p>belles gueules: 10</p>
-              </div>
-
-          </div>
+        
+            </div>
 
             <div id="sliderStore">
-              <div id="menuStore">
-                <button id="iconeArgent" onclick="showArgent()"></button>
-                <button id="iconeVote" onclick="showVote()"></button>
-                <button id="iconeGestion" onclick="showGestion()"></button>
-              </div>
-				<div id="sliderArgent">
-					<div class="argent">
+            </div>
 
-						<div id="carteNom1" class="carte">
-							<div class="cardLeft">
-								<img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
+            <!-- Carte Template Debut-->
+            <div id="carteNom" class="carte">
 
-						<div id="carteNom2" class="carte">
-							<div class="cardLeft">
-								<img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom3" class="carte">
-							<div class="cardLeft">
-								<img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom4" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom5" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom6" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						<div id="carteNom7" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom8" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom9" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom10" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-					</div>	
-					<div class="customize-tools">
-						<ul class="thumbnails" id="customize-thumbnails1">
-							<li><img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400"></li>
-							<li><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!---------------------Slider separate---------------->
-				
-				<div id="sliderVote">
-					<div class="vote">
+                <div class="illustration">
+                    <img src="images/miniatures/belleGeule3.jpg">
+                </div>
 
-						<div id="carteNom11" class="carte">
-							<div class="cardLeft">
-																<img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
+                <div class="contenu">
+                    <div class="description">
+                        <h3>Belle Gueule</h3>
+                        <p>Offrez -vous une Belle gueule.
+                            Basta les discours à rallonge !
+                            Oubliez les programmes qui finiront par caler le fauteuil de mamie, ou en liste de course pour Lidle le samedi.
+                            Le blabla c'est pour les ringards, pas pour les smicards. Pour leur faire tourner la tête, offrez-vous une belle tête !
+                        </p>
 
-						<div id="carteNom12" class="carte">
-							<div class="cardLeft">
-								<img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom13" class="carte">
-							<div class="cardLeft">
-								<img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom14" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom15" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom16" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						<div id="carteNom17" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom18" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom19" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom20" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-					</div>	
-					<div class="customize-tools">
-						<ul class="thumbnails" id="customize-thumbnails2">
-							<li><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li><img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400"></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
-				</div>
-				
-				<!---------------------Slider separate---------------->
-				
-				<div id="sliderGestion">
-					<div class="gestion">
+                        <p class="effets">Chirurgie esthétique: 100€. <br>A chaque clique, multiplie par deux les votes en votre faveur.
+                        </p>
 
-						<div id="carteNom21" class="carte">
-							<div class="cardLeft">
-								<img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
+                    </div>
 
-						<div id="carteNom22" class="carte">
-							<div class="cardLeft">
-								<img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom23" class="carte">
-							<div class="cardLeft">
-								<img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom24" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom25" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom26" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						<div id="carteNom27" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom28" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom29" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-						
-						<div id="carteNom30" class="carte">
-							<div class="cardLeft">
-								<img src="">
-							</div>
-							
-							<div class="cardRight">
-								<h3>Nom Carte</h3>
-								<div>
-									<p>Description</p>
-									<p>Effet</p>
-								</div>
-								<div> 
-									<button>Cout/Achat</button>
-									<p>Nbr acheté</p>
-								</div>
-							</div>
-						</div>
-					</div>	
-					<div class="customize-tools">
-						<ul class="thumbnails" id="customize-thumbnails3">
-							<li><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li><img src="https://www.cnetfrance.fr/i/edit/2019/04/blackhole.jpg" alt="" width="600" height="400"></li>
-							<li><img src="https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="" width="600" height="400"></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-				<!------------------------------FinSylvain------------------------------------>
-				
+                    <div class ="achat"> 
+                        <div id="boutonAchatBelleGueule" class="boutonAchat">
+                            <p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+                        </div>
+<!-- 
+                        <p class= "prix">50 euros</p>
+                        <p>3 achetés</p> -->
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+             <!-- Carte Template fin-->
+
+
         </div>
 
+                   
+
+
+
+
         <!---------------------------------------scripts JavaScript--------------------------------------------------->
-
-
-		    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.1/min/tiny-slider.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="js/odometer.min.js"></script>
-
         <script src="js/bloodydemocracy.js"></script>
 
 
