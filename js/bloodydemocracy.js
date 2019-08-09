@@ -7,7 +7,76 @@ $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
 $volumeMaster=1;
 $MultiClickGlobal=1;
-$attenuationPertes=1;
+$attenuationPertesGlobal=1;
+
+var $compteurArgent;
+var $compteurVote;
+var $compteurVotesTotal;
+var $compteurArgentTotal;
+var $compteurArgentCaisseNoire;
+
+
+
+//....................................CALENDRIER INTERSIDERAL....................................................
+
+// localStorage.clear();
+
+// 1jour dure 4 min
+$ratioSecondesParJour=3;
+
+var $tempsDeJeuSeconde;
+var $tempsDeJeuJoursVirtuels;
+var $jourDuMois;
+var $tempsDeJeuMoisVirtuels;
+
+if (localStorage.getItem("$tempsDeJeuSeconde") === null) {
+  $tempsDeJeuSeconde =  0;
+}else{
+  $tempsDeJeuSeconde = parseInt(localStorage.getItem("$tempsDeJeuSeconde"));
+}
+
+
+
+
+function tempsQuiPasse(){
+  $tempsDeJeuSeconde=$tempsDeJeuSeconde+1
+
+}
+
+setInterval( tempsQuiPasse, 1000)
+
+
+
+function storageTempsDeJeuSeconde(){
+
+  localStorage.setItem('$tempsDeJeuSeconde', $tempsDeJeuSeconde);
+
+}
+setInterval( storageTempsDeJeuSeconde, 5000)
+
+
+
+
+function refreshCalendar(){
+  $tempsDeJeuJoursVirtuels= Math.ceil($tempsDeJeuSeconde/$ratioSecondesParJour);
+
+  $jourDuMois=($tempsDeJeuJoursVirtuels % 29);
+  
+  $tempsDeJeuMoisVirtuels=1+($tempsDeJeuJoursVirtuels-$jourDuMois)/29;
+
+  console.log("Jour "+$jourDuMois+"  Mois "+$tempsDeJeuMoisVirtuels);
+}
+setInterval(refreshCalendar,1000);
+
+// ....................................................................................................................
+
+
+
+
+
+
+
+
 /////////////////////// JULIEN ////////////////////////////////////
 $containerCompteurVote = document.getElementById('vote');
 $containerCompteurArgent = document.getElementById('argent');
@@ -280,26 +349,216 @@ od1 = new Odometer({
 
 
 
+
+
+
+
 /////////////////////////////// VALENTIN //////////////////////////////////
 
-// .......................... CARTES BONUS .......................................
 
-$boutonAchatBelleGueule= document.getElementById('boutonAchatBelleGueule');
-$boutonAchatBelleGueule.onclick=achatBelleGueule;
-function achatBelleGueule(){
+// ..................................................... CARTES BONUS ..................................................................
+
+// //Variables relatives au dernier bouton d'achat survolé
+
+var $iDBouton;                                           //
+var $persistance;                                        //
+var $disponible;                                         //
+var $coutArgent;                                        //
+var $coutVote;                                          //  NE PAS TOUCHER
+var $mouvementArgentOneShot;                            //
+var $mouvementVoteOneShot;                              //
+var $mouvementArgentCaisseNoire;                        //
+var $attenuationPertes;                                 //
+
+// Ajouter ici les variables signifiant si une carte bonus est activee
+
+// var $belleGueuleActif;
 
 
 
-
-
-
-
-
+// fonction de mise à jour des variables et du check de disponibilité
+function checkAchat($iD){
+  $iDBouton=$iD.id;
   
+
+  if(0+0=="la tete à toto"){alert("LOL")}   // franchement, cherchez pas à comprendre, mais ne touchez pas XD
+
+ 
+  //.........................  BELLE GUEULE  ................................
+  else if($iDBouton== "boutonAchatBelleGueule"){                                                                                        // changeHere
+    $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
+    $coutArgent=200;                                                                                                                    // changeHere
+    $coutVote=0;                                                                                                                        // changeHere
+    $mouvementArgentOneShot=0;                                                                                                          // changeHere
+    $mouvementVoteOneShot=0;                                                                                                            // changeHere
+    $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
+    $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;               // changeHere
+
+   
+  }
+  //.........................  FIN BELLE GUEULE  ................................
+
+
+
+
+  //.........................  NOUVELLE CARTE  ................................
+    // else if($iDBouton== "boutonAchatNouvelleCarte"){
+    // $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession
+    // $coutArgent=200;
+    // $coutVote=0;
+    // $mouvementArgentOneShot=0;
+    // $mouvementVoteOneShot=0;
+    // $mouvementArgentCaisseNoire=0;
+    // $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;
+
+  //......................... FIN NOUVELLE CARTE  ................................
+
+
+
+
+
+
+  // localStorage.setItem($iDBouton,"00");
+  // console.log(localStorage.getItem($iDBouton).substr(0, 1))
+  // console.log(localStorage.getItem($iDBouton).substr(1,2))
+   
+  console.log(localStorage.getItem($iDBouton));
+  console.log($coutArgent)
+  console.log($compteurArgent)
+
+  if (localStorage.getItem($iDBouton)=== null){localStorage.setItem($iDBouton,"00")}
+    
+  if($compteurArgent>=$coutArgent & $compteurVote>=$coutVote & ( localStorage.getItem($iDBouton).substr(0, 1) ==0)  ){
+    $disponible=1;
+
+    $boutonSurvol=document.getElementById($iDBouton);
+    $boutonSurvol.onmouseenter= putInBlue
+    $boutonSurvol.onmouseleave= stopInBlue
+    function putInBlue(){$boutonSurvol.style.backgroundColor = "#19749f"}
+    function stopInBlue(){$boutonSurvol.style.backgroundColor = "#0c5d83" }
+
+  }
+
+  else{
+    $disponible=0;
+
+    $boutonSurvol=document.getElementById($iDBouton);
+    $boutonSurvol.onmouseenter= putInRed
+    $boutonSurvol.onmouseleave= stopInRed
+    function putInRed(){$boutonSurvol.style.backgroundColor = "red"}
+    function stopInRed(){$boutonSurvol.style.backgroundColor = "#19749f" }
+
+  }
+
+
+  $attenuationPertes=(100-$attenuationPertes)/100;  // Ne pas toucher: Transforme la réduction% en coefficient
+
 }
 
 
 
+function achat(){
+
+  if ($disponible==1 ){
+    localStorage.setItem($iDBouton,10);
+
+    console.log(localStorage.getItem($iDBouton));
+
+    $compteurArgent=$compteurArgent-$coutArgent;
+    $compteurVote=$compteurVote-$coutVote;
+    $compteurArgent=$compteurArgent+$mouvementArgentOneShot;
+    $compteurVote=$compteurVote+$mouvementVoteOneShot;
+    $compteurArgentTotal=$compteurArgentTotal-$coutArgent;
+    $compteurVotesTotal=$compteurVotesTotal-$coutVote;
+    $compteurArgentTotal=$compteurArgentTotal+$mouvementArgentOneShot;
+    $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteOneShot;
+    $compteurArgentCaisseNoire=$compteurArgentCaisseNoire+$mouvementArgentCaisseNoire;
+    $attenuationPertesGlobal=$attenuationPertesGlobal*$attenuationPertes; 
 
 
-/////////////////////////////// FIN VALENTIN ///////////////////////////////////
+
+    if ($persistance==1){
+      
+      localStorage.setItem($iDBouton,"1"+$tempsDeJeuJoursVirtuels);
+      console.log(localStorage.getItem($iDBouton));
+      
+    }
+
+
+
+  }
+}
+
+
+
+// ............................................ FONCTION PERSISTANTE..................................
+
+function belleGueule(){                                                                                      // changeHere
+
+  $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  $mouvementArgentrecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  $mouvementVoterecurrent=0;                                                                                // changeHere
+  $multi=0;                                                                                                 // changeHere
+  $duree=30;                     //$duree s'exprime en JOURS                                                // changeHere
+
+  // ADAPTATION MATHEMATIQUE DES VARIABLES
+  $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
+
+
+
+
+
+  $onOff=0;
+  function checkSiValable(){
+
+    // check si la date limite n'est pas atteinte et si activée
+    if (((parseInt(localStorage.getItem('boutonAchatBelleGueule').substr(1))+$duree) >= $tempsDeJeuJoursVirtuels) & (parseInt(localStorage.getItem('boutonAchatBelleGueule').substr(0, 1))==1)){
+      $onOff=1;
+    }
+
+    else{
+      $onOff=0;
+    }
+
+  }
+  setInterval( checkSiValable, 2000);
+
+  // function testesttest (){
+  //   console.log("actif=  "+$onOff)
+  // }
+  // setInterval( testesttest, 500);
+
+
+
+//Ici on mets les algos qu'execute la carte bonus
+  if ($onOff==1){
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+}
+belleGueule ();
+
+
+// .................................................... FIN FONCTION PERSISTANTE......................................................
+
+
+// ..................................................... FIN CARTES BONUS ..................................................................
+
+
+
+
+
+
+
+
+
