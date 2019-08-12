@@ -12,8 +12,7 @@ $brasDessus = document.getElementById('brasDessus');
 $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
 $volumeMaster=1;
-$MultiClickGlobal=1*multiBelleGueule;    ;
-$attenuationPertesGlobal=1;
+$MultiClickGlobal=1*multiBelleGueule;    
 
 var $compteurArgent;
 var $compteurVote;
