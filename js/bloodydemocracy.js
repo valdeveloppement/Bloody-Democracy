@@ -316,12 +316,99 @@ function playBloup(){
 
 
   $bloup= setInterval( bloup, 10);
+}
+
+///////////////////////////Sylvain//////////////////////////////////////////
+
+//SliderGeneral
 
 
+//Bouton selection slider General
+function showBonusTemp(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("buffTemporaire").classList.replace("notSelect", "select");
+}
+
+function showParametres(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("parametres").classList.replace("notSelect", "select");
+}
+
+function showStatistique(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("statistique").classList.replace("notSelect", "select");
+}
+
+function showRanking(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("ranking").classList.replace("notSelect", "select");
+}
+
+function showAchievement(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("achievement").classList.replace("notSelect", "select");
+}
+function showPossession(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("possession").classList.replace("notSelect", "select");
+}
+//SliderStore
+
+//Bouton selection slider Store
+
+
+
+function showArgent(){
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideVote").classList.replace("notSelect", "select");
+}
+function showVote(){
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideArgent").classList.replace("notSelect", "select");
+}
+function showGestion(){
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideGestion").classList.replace("notSelect", "select");
 }
 
 
-
+///////////////////////////FinSylvain///////////////////////////////////////
 
 // Sinus qui s'attenue :  ((6+cos(x-3)-0.5(x-3))/6)^2
 
