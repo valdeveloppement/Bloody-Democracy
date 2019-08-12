@@ -1,12 +1,18 @@
 /////////////////////////////////////// VALENTIN  /////////////////////////////////////////////
 
+//declaration de tous les multiplicateurs des cartes
+multiBelleGueule=1;                                                                                                          //changeHere
+
+
+
+
 $clicker = document.getElementById('clicker');
 $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
 $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
 $volumeMaster=1;
-$MultiClickGlobal=1;
+$MultiClickGlobal=1*multiBelleGueule;    ;
 $attenuationPertesGlobal=1;
 
 var $compteurArgent;
@@ -22,7 +28,7 @@ var $compteurArgentCaisseNoire;
 // localStorage.clear();
 
 // 1jour dure 4 min
-$ratioSecondesParJour=3;
+$ratioSecondesParJour=2*60;
 
 var $tempsDeJeuSeconde;
 var $tempsDeJeuJoursVirtuels;
@@ -68,7 +74,7 @@ function refreshCalendar(){
 }
 setInterval(refreshCalendar,1000);
 
-// ....................................................................................................................
+// ................................................FIN CALENDRIER....................................................................
 
 
 
@@ -205,6 +211,30 @@ function upBras(){
 
 }
 
+function clickAlgoBack(){
+  ///////////////////////////////////// PARTIE JULIEN ////////////////////
+
+  //// VAL //////
+  $nbClicks=$nbClicks+1;
+  console.log($nbClicks)
+  //// FIN VAL ///
+
+  $compteurVote=$compteurVote+(1*$MultiClickGlobal);
+  $compteurArgent=$compteurArgent+(5*$MultiClickGlobal);
+  $compteurVotesTotal=$compteurVotesTotal+(1*$MultiClickGlobal);
+  $compteurArgentTotal=$compteurArgentTotal+(5*$MultiClickGlobal);
+  $containerCompteurVote.innerHTML = $compteurVote;
+  $containerCompteurArgent.innerHTML = $compteurArgent;
+ 
+  localStorage.setItem('compteurVote', $compteurVote);
+  localStorage.setItem('compteurArgent', $compteurArgent);
+  localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
+  localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
+  ////////////////////////////////////// FIN JULIEN /////////////////////
+
+}
+
+
 
 // Fonction du click sur la boite
 
@@ -223,27 +253,12 @@ function click() {
 
   $vitesseDown = setInterval( downBras, 6);
 
-  $nbClicks=$nbClicks+1;
-  console.log($nbClicks)
-
-  ///////////////////////////////////// PARTIE JULIEN ////////////////////
-  $compteurVote=$compteurVote+(1*$MultiClickGlobal);
-  $compteurArgent=$compteurArgent+(5*$MultiClickGlobal);
-  $compteurVotesTotal=$compteurVotesTotal+(1*$MultiClickGlobal);
-  $compteurArgentTotal=$compteurArgentTotal+(5*$MultiClickGlobal);
-  $containerCompteurVote.innerHTML = $compteurVote;
-  $containerCompteurArgent.innerHTML = $compteurArgent;
-  $audio = new Audio('sons/vote.mp3');
-  //////VAL//////
-  $audio.volume = 0.2*$volumeMaster;
-  /////VAL//////
-  $audio.play();
-  localStorage.setItem('compteurVote', $compteurVote);
-  localStorage.setItem('compteurArgent', $compteurArgent);
-  localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
-  localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
-  ////////////////////////////////////// FIN JULIEN /////////////////////
-
+ clickAlgoBack();
+ /////JULIEN VAL//////
+ $audio = new Audio('sons/vote.mp3');
+ $audio.volume = 0.2*$volumeMaster;
+ $audio.play();
+ /////JULIEN VAL//////
 
 }
 
@@ -459,7 +474,6 @@ var $attenuationPertes;                                 //
 
 // Ajouter ici les variables signifiant si une carte bonus est activee
 
-// var $belleGueuleActif;
 
 
 
@@ -534,6 +548,7 @@ function checkAchat($iD){
     $boutonSurvol.onmouseleave= stopInRed
     function putInRed(){$boutonSurvol.style.backgroundColor = "red"}
     function stopInRed(){$boutonSurvol.style.backgroundColor = "#19749f" }
+    // $boutonSurvol.style.cursor= "not-allowed";
 
   }
 
@@ -580,11 +595,15 @@ function achat(){
 
 // ............................................ FONCTION PERSISTANTE..................................
 
+                                                                                                               // changeHere
+
 function belleGueule(){                                                                                      // changeHere
 
   $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  $mouvementArgentrecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
-  $mouvementVoterecurrent=0;                                                                                // changeHere
+  $intervalMouvementArgent=0;
+  $intervalMouvementVote=0;
+  $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  $mouvementVoteRecurrent=0;                                                                                // changeHere
   $multi=0;                                                                                                 // changeHere
   $duree=30;                     //$duree s'exprime en JOURS                                                // changeHere
 
@@ -617,20 +636,107 @@ function belleGueule(){                                                         
 
 
 
-//Ici on mets les algos qu'execute la carte bonus
-  if ($onOff==1){
+  //Ici on mets les algos qu'execute la carte bonus
+  
 
 
 
+  //..................................AUTOCLICK.....................................
 
+  if($intervalAutoClick!=0){
 
+    function autoClick(){
 
+      if($onOff==1){
+        clickAlgoBack()
+      }
 
-
-
+    }
+    setInterval( autoClick, $intervalAutoClick);
 
 
   }
+  
+
+    
+  //..................................FIN AUTOCLICK...................................
+
+
+
+
+  //..................................MULTICLICK.....................................
+    if($multi!= 0){
+      function multiActif (){
+      $multiBelleGueule=Math.pow($multi, $onOff)                                                                                //changeHere
+    }
+    setInterval( multiActif, 10000);
+
+    }
+  //..................................FIN MULTICLICK..................................
+
+
+
+
+
+  //..................................MOUVEMENT ARGENT PERSISTANT................................
+
+  if($intervalMouvementArgent!=0){
+
+    function mouvementArgent(){
+
+      if($onOff==1){
+        
+
+        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgentTotal=$compteurArgentTotal-$mouvementArgentRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementArgent, $intervalMouvementArgent);
+  }
+
+    
+  //..................................FIN MOUVEMENT ARGENT PERSISTANT...................................
+
+
+
+
+
+
+
+  //..................................MOUVEMENT VOTE PERSISTANT................................
+
+  if($intervalMouvementVote!=0){
+
+    function mouvementVote(){
+
+      if($onOff==1){
+        
+
+        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementVote, $intervalMouvementVote);
+  }
+
+    
+  //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
+
+
+
+
+
+
+    
+  
 
 }
 belleGueule ();
@@ -640,7 +746,6 @@ belleGueule ();
 
 
 // ..................................................... FIN CARTES BONUS ..................................................................
-
 
 
 
