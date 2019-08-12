@@ -55,6 +55,8 @@ setInterval( tempsQuiPasse, 1000)
 function storageTempsDeJeuSeconde(){
 
   localStorage.setItem('$tempsDeJeuSeconde', $tempsDeJeuSeconde);
+  localStorage.setItem('$volumeMaster', $volumeMaster);
+
 
 }
 setInterval( storageTempsDeJeuSeconde, 5000)
@@ -104,6 +106,31 @@ $containerCompteurArgent.innerHTML = $compteurArgent;
 $compteurVotesTotal = 0;
 $compteurArgentTotal = 0;
 ///////////////////////// FIN JULIEN //////////////////////////////////////////////////
+
+
+
+
+
+/////////////////////////////////// VAL ///////////////////////////////////////
+function majCompteurs (){
+  $containerCompteurVote.innerHTML = $compteurVote;
+  $containerCompteurArgent.innerHTML = $compteurArgent;
+}
+setInterval (majCompteurs, 2000)
+
+
+function storageRegulier(){
+  localStorage.setItem('compteurVote', $compteurVote);
+  localStorage.setItem('compteurArgent', $compteurArgent);
+  localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
+  localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
+  localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
+  
+}
+setInterval (storageRegulier, 4000)
+
+/////////////////////////////////// VAL ///////////////////////////////////////
+
 
 
 // Cette fonction met à jour les positions quand on change la taille d'ecran.
