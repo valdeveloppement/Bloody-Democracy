@@ -101,7 +101,7 @@
 
 
 
-
+		<!-----------------------------------------Sylvain--------------------------->
 
         </div>
         
@@ -109,75 +109,61 @@
 
             <h1 id="titre"><img src="images/logoTitre.png" alt="Bloody Democracy"></h1>
 			
-			<div id="menuGeneral">
-				
-				<input type="radio" name="menuSwitchGen" id="selectBuffTemporaire" checked/>
-				<label for="selectBuffTemporaire" onclick="showBonusTemp()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
+			
+			<div id="globalGeneral">
+			
+				<div id="menuGeneral">
 					
-				<input type="radio" name="menuSwitchGen" id="selectParametres"/>
-				<label for="selectParametres" onclick="showParametres()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
+					<input type="radio" name="menuSwitchGen" id="selectBuffTemporaire" checked/>
+					<label for="selectBuffTemporaire" onclick="showBonusTemp()" class="iconMenu">
+						<img src="images/miniatures/belleGeule3.jpg"/>
+					</label>
+
+					<input type="radio" name="menuSwitchGen" id="selectStatistique"/>
+					<label for="selectStatistique" onclick="showStatistique()" class="iconMenu">
+						<img src="images/miniatures/belleGeule3.jpg"/>
+					</label>
+						
+					<input type="radio" name="menuSwitchGen" id="selectRanking"/>
+					<label for="selectRanking" onclick="showRanking()" class="iconMenu">
+						<img src="images/miniatures/belleGeule3.jpg"/>
+					</label>
+						
+					<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
+					<label for="selectAchievement" onclick="showAchievement()" class="iconMenu">
+						<img src="images/miniatures/belleGeule3.jpg"/>
+					</label>
+						
+				</div>
 					
-				<input type="radio" name="menuSwitchGen" id="selectStatistique"/>
-				<label for="selectStatistique" onclick="showStatistique()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
+				<div id="sliderGeneral">
 					
-				<input type="radio" name="menuSwitchGen" id="selectRanking"/>
-				<label for="selectRanking" onclick="showRanking()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
+
+					<div id="buffTemporaire" class="menuGen select">
+						<img src="images/miniatures/belleGeule3.jpg"/>
+						<img src="images/miniatures/belleGeule3.jpg"/>
+						<img src="images/miniatures/belleGeule3.jpg"/>
+						<img src="images/miniatures/belleGeule3.jpg"/>
+					</div>
 					
-				<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
-				<label for="selectAchievement" onclick="showAchievement()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
 					
-				<input type="radio" name="menuSwitchGen" id="selectPossession"/>
-				<label for="selectPossession" onclick="showPossession()" class="iconMenu">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</label>
+					<div id="statistique" class="menuGen notSelect">
+						
+					</div>
 					
+					<div id="ranking" class="menuGen notSelect">
+						<p>Petine: 100000000000000</p>
+						<p>Kimi: 200000000000</p>
+						<p>Mao: 8888888888</p>
+						<p>Tutu: 2</p>
+						<p>Toto: 0+0</p>
+					</div>
+					
+					<div id="achievement" class="menuGen notSelect">
+					</div>
+					
+				</div>
 			</div>
-				
-            <div id="sliderGeneral">
-				
-
-				<div id="buffTemporaire" class="menuGen select">
-					<img src="images/miniatures/belleGeule3.jpg"/>
-					<img src="images/miniatures/belleGeule3.jpg"/>
-					<img src="images/miniatures/belleGeule3.jpg"/>
-					<img src="images/miniatures/belleGeule3.jpg"/>
-				</div>
-				
-				<div id="parametres" class="menuGen notSelect">
-					<button>Save</button>
-					<button>Load</button>
-				</div>
-				
-				<div id="statistique" class="menuGen notSelect">
-					
-				</div>
-				
-				<div id="ranking" class="menuGen notSelect">
-					<p>Petine: 100000000000000</p>
-					<p>Kimi: 200000000000</p>
-					<p>Mao: 8888888888</p>
-					<p>Tutu: 2</p>
-					<p>Toto: 0+0</p>
-				</div>
-				
-				<div id="achievement" class="menuGen notSelect">
-				</div>
-				
-				<div id="possession" class="menuGen notSelect">
-				</div>
-				
-            </div>
-
 			<div id="menuStore">
 				
 				<input type="radio" name="menuSwitchStore" id="selectVote" checked/>
@@ -330,7 +316,7 @@
 				</label>
 				
 			</div>
-			
+			<!-------------------------------Fin Sylvain------------------------------------->
             <!-- Carte Template Debut->
             <div id="carteNom" class="carte">
 

@@ -78,14 +78,13 @@ body{
 	align-self: center;
 
 }
-
 #sliderGeneral {
 	position: relative;
 	display: flex;
 	min-height: 210px;
 	max-height: 210px;
 	width: 100%;
-	flex-direction: column;
+	
 }
 #sliderGeneral .menuGen {
 	position: absolute;
@@ -180,6 +179,10 @@ body{
 #thumbnails input[name='cardSwitch']:checked+label {
 	border-color: #666;
 	opacity: 1;
+}
+#globalGeneral{
+	display: flex;
+	flex-direction: row;
 }
 /* ...............................Cartes............................. */
 .carte{
