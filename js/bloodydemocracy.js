@@ -302,159 +302,95 @@ function playBloup(){
 
 
   $bloup= setInterval( bloup, 10);
-
+}
 
 ///////////////////////////Sylvain//////////////////////////////////////////
 
 //SliderGeneral
-var generalSlider = tns({
-	container: "#bonusTemporaire",
-	item: 5,
-	fixedWidth: 50,
-	touch: true,
-	mouseDrag: true,
-});
 
 
 //Bouton selection slider General
-document.getElementById("bonusTemporaire").style.display = "block";
-document.getElementById("settings").style.display = "none";
-document.getElementById("ranking").style.display = "none";
-document.getElementById("achievement").style.display = "none";
-document.getElementById("possession").style.display = "none";
-document.getElementById("iconeBonusTemp").style.border = "3px solid black";
-
 function showBonusTemp(){
-	document.getElementById("bonusTemporaire").style.display = "block";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("ranking").style.display = "none";
-	document.getElementById("achievement").style.display = "none";
-	document.getElementById("possession").style.display = "none";
-	
-	document.getElementById("iconeBonusTemp").style.border = "3px solid black";
-	document.getElementById("iconeSettings").style.border = "none";
-	document.getElementById("iconeRanking").style.border = "none";
-	document.getElementById("iconeAchievement").style.border = "none";
-	document.getElementById("iconePossession").style.border = "none";
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("buffTemporaire").classList.replace("notSelect", "select");
 }
 
-function showSettings(){
-	document.getElementById("bonusTemporaire").style.display = "none";
-	document.getElementById("settings").style.display = "block";
-	document.getElementById("ranking").style.display = "none";
-	document.getElementById("achievement").style.display = "none";
-	document.getElementById("possession").style.display = "none";
-	
-	document.getElementById("iconeBonusTemp").style.border = "none";
-	document.getElementById("iconeSettings").style.border = "3px solid black";
-	document.getElementById("iconeRanking").style.border = "none";
-	document.getElementById("iconeAchievement").style.border = "none";
-	document.getElementById("iconePossession").style.border = "none";
+function showParametres(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("parametres").classList.replace("notSelect", "select");
+}
+
+function showStatistique(){
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("statistique").classList.replace("notSelect", "select");
 }
 
 function showRanking(){
-	document.getElementById("bonusTemporaire").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("ranking").style.display = "block";
-	document.getElementById("achievement").style.display = "none";
-	document.getElementById("possession").style.display = "none";
-	
-	document.getElementById("iconeBonusTemp").style.border = "none";
-	document.getElementById("iconeSettings").style.border = "none";
-	document.getElementById("iconeRanking").style.border = "3px solid black";
-	document.getElementById("iconeAchievement").style.border = "none";
-	document.getElementById("iconePossession").style.border = "none";
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("ranking").classList.replace("notSelect", "select");
 }
 
 function showAchievement(){
-	document.getElementById("bonusTemporaire").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("ranking").style.display = "none";
-	document.getElementById("achievement").style.display = "block";
-	document.getElementById("possession").style.display = "none";
-	
-	document.getElementById("iconeBonusTemp").style.border = "none";
-	document.getElementById("iconeSettings").style.border = "none";
-	document.getElementById("iconeRanking").style.border = "none";
-	document.getElementById("iconeAchievement").style.border = "3px solid black";
-	document.getElementById("iconePossession").style.border = "none";
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("achievement").classList.replace("notSelect", "select");
 }
-
 function showPossession(){
-	document.getElementById("bonusTemporaire").style.display = "none";
-	document.getElementById("settings").style.display = "none";
-	document.getElementById("ranking").style.display = "none";
-	document.getElementById("achievement").style.display = "none";
-	document.getElementById("possession").style.display = "block";
-	
-	document.getElementById("iconeBonusTemp").style.border = "none";
-	document.getElementById("iconeSettings").style.border = "none";
-	document.getElementById("iconeRanking").style.border = "none";
-	document.getElementById("iconeAchievement").style.border = "none";
-	document.getElementById("iconePossession").style.border = "3px solid black";
+	var slideGenListe = document.getElementsByClassName("menuGen");
+	for (let entry of slideGenListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("possession").classList.replace("notSelect", "select");
 }
-
 //SliderStore
-var storeSlider1 = tns({
-	container: ".argent",
-	item: 1,
-	controls: false,
-	navContainer: "#customize-thumbnails1",
-	touch: true,
-	mouseDrag: true,
-});
-
-var storeSlider2 = tns({
-	container: ".vote",
-	item: 1,
-	controls: false,
-	navContainer: "#customize-thumbnails2",
-	touch: true,
-	mouseDrag: true,
-});
-
-var storeSlider3 = tns({
-	container: ".gestion",
-	item: 1,
-	controls: false,
-	navContainer: "#customize-thumbnails3",
-	touch: true,
-	mouseDrag: true,
-});
-
 
 //Bouton selection slider Store
-document.getElementById("sliderArgent").style.display = "block";
-document.getElementById("sliderVote").style.display = "none";
-document.getElementById("sliderGestion").style.display = "none";
-document.getElementById("iconeArgent").style.border = "3px solid black";
+
+
 
 function showArgent(){
-	document.getElementById("sliderArgent").style.display = "block";
-	document.getElementById("sliderVote").style.display = "none";
-	document.getElementById("sliderGestion").style.display = "none";
-	
-	document.getElementById("iconeArgent").style.border = "3px solid black";
-	document.getElementById("iconeVote").style.border = "none";
-	document.getElementById("iconeGestion").style.border = "none";
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideVote").classList.replace("notSelect", "select");
 }
 function showVote(){
-	document.getElementById("sliderArgent").style.display = "none";
-	document.getElementById("sliderVote").style.display = "block";
-	document.getElementById("sliderGestion").style.display = "none";
-	
-	document.getElementById("iconeArgent").style.border = "none";
-	document.getElementById("iconeVote").style.border = "3px solid black";
-	document.getElementById("iconeGestion").style.border = "none";
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideArgent").classList.replace("notSelect", "select");
 }
 function showGestion(){
-	document.getElementById("sliderArgent").style.display = "none";
-	document.getElementById("sliderVote").style.display = "none";
-	document.getElementById("sliderGestion").style.display = "block";
-	
-	document.getElementById("iconeArgent").style.border = "none";
-	document.getElementById("iconeVote").style.border = "none";
-	document.getElementById("iconeGestion").style.border = "3px solid black";
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideGestion").classList.replace("notSelect", "select");
 }
 
 

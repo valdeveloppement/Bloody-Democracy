@@ -32,7 +32,7 @@ body{
  	display: flex;
 	flex-direction: row;
 	margin: 0;
-    height: 100vh;
+  height: 100vh;
 	background-color: #f9b111;
 	overflow: hidden;
 }
@@ -56,7 +56,6 @@ body{
 #droite{
 
 	display: flex;
-	align-items: center;
 	flex-direction: column;
 	height:100vh;
 	width:70vw;
@@ -75,15 +74,114 @@ body{
 	position:relative;
 	width:40%;
 	padding:0;
-	margin-top:3%;
-
+	margin-top:1%;
+	align-self: center;
 
 }
 
+#sliderGeneral {
+	position: relative;
+	display: flex;
+	min-height: 210px;
+	max-height: 210px;
+	width: 100%;
+	flex-direction: column;
+}
+#sliderGeneral .menuGen {
+	position: absolute;
+}
+#menuGeneral {
+	display: flex;
+	justify-self: flex-start;
+}
+#menuGeneral input, #menuStore input {
+	display: none;
+}
+#menuGeneral label, #menuStore label {
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#menuGeneral input[name='menuSwitchGen']:checked+label, #menuStore input[name='menuSwitchStore']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+.menuGen {
+	background-color:rgba(255, 255, 255, 0.3);
+	height: 200px;
+	min-height: 200px;
+	width:100%;
+	min-width:200px;
+	margin-bottom: 10px;
+}
+.iconMenu {
+	margin: 0 10px;
+	margin-left:0;
+	height: 37px;
+	width: 37px;
+	background-color:blue;
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#buffTemporaire {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.notSelect {
+	visibility: hidden;
+}
+.select {
+	visibility: visible;
+}
 
-
+#buffTemporaire img {
+	width: 80px;
+	height: 80px;
+	margin: 20px;
+}
+#sliderStore {
+	position: relative;
+	display: flex;
+	min-height: 210px;
+	max-height: 210px;
+	width: 100%;
+	flex-direction: column;
+}
+.storeChoice {
+	position: absolute;
+}
+#thumbnails {
+	position: absolute;
+	bottom: 0%;
+	align-self: center;
+	margin: 20px;
+	display: flex;
+	width: 400px;
+	justify-content: space-evenly;
+}
+#thumbnails img {
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+#thumbnails input {
+  display: none;
+}
+#thumbnails label {
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#thumbnails input[name='cardSwitch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
 /* ...............................Cartes............................. */
-
 .carte{
 	display:flex;
 	flex-direction: row;
@@ -91,7 +189,6 @@ body{
 	font-size: 1vw;
 	min-width: 330px;
 	width:100%;
-	
 }
 
 .contenu{
@@ -99,14 +196,11 @@ body{
 	flex-direction: column;
 	width:80%;
 	min-width:200px;
-
-
 }
-
 
 .illustration{
 	width:20%;
-	min-width: 130px;
+	min-width: 200px;
 	/* width:30%; */
 
 }
@@ -160,8 +254,6 @@ h3{
 	margin-top:3%;
 	color:#0c5d83;
 }
-
-
 /* .................Partie gauche............................ */
 
 #fondRideau{
