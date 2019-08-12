@@ -435,6 +435,48 @@ function showGestion(){
 }
 
 
+//Carte affiche
+
+function showBelleFace(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("belleFace").classList.replace("notSelect", "select");
+}
+function showBelleMeuf(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("belleMeuf").classList.replace("notSelect", "select");
+}
+function showBelleGueule(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("belleGueule").classList.replace("notSelect", "select");
+}
+function showPhotoDeFamille(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("photoDeFamille").classList.replace("notSelect", "select");
+}
+function showArticleJournal(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("articleJournal").classList.replace("notSelect", "select");
+}
 ///////////////////////////FinSylvain///////////////////////////////////////
 
 // Sinus qui s'attenue :  ((6+cos(x-3)-0.5(x-3))/6)^2
