@@ -32,7 +32,7 @@ body{
  	display: flex;
 	flex-direction: row;
 	margin: 0;
-    height: 100vh;
+  height: 100vh;
 	background-color: #f9b111;
 	overflow: hidden;
 }
@@ -56,7 +56,6 @@ body{
 #droite{
 
 	display: flex;
-	align-items: center;
 	flex-direction: column;
 	height:100vh;
 	width:75vw;
@@ -75,17 +74,119 @@ body{
 	position:relative;
 	width:30%;
 	padding:0;
-	margin-top:2%;
+	margin-top:1%;
+	align-self: center;
 
 
 }
+#sliderGeneral {
+	position: relative;
+	display: flex;
+	min-height: 210px;
+	max-height: 210px;
+	width: 100%;
+	
+}
+#sliderGeneral .menuGen {
+	position: absolute;
+}
+#menuGeneral {
+	display: flex;
+	justify-self: flex-start;
+}
+#menuGeneral input, #menuStore input {
+	display: none;
+}
+#menuGeneral label, #menuStore label {
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#menuGeneral input[name='menuSwitchGen']:checked+label, #menuStore input[name='menuSwitchStore']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+.menuGen {
+	background-color:rgba(255, 255, 255, 0.3);
+	height: 200px;
+	min-height: 200px;
+	width:100%;
+	min-width:200px;
+	margin-bottom: 10px;
+}
+.iconMenu {
+	margin: 0 10px;
+	margin-left:0;
+	height: 37px;
+	width: 37px;
+	background-color:blue;
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#buffTemporaire {
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+.notSelect {
+	visibility: hidden;
+}
+.select {
+	visibility: visible;
+}
 
-#sliderStore{
-	width:95%;
+#buffTemporaire img {
+	width: 80px;
+	height: 80px;
+	margin: 20px;
+}
+#sliderStore {
+	position: relative;
+	display: flex;
+	min-height: 210px;
+	max-height: 210px;
+	width: 100%;
+	flex-direction: column;
+}
+.storeChoice {
+	position: absolute;
+}
+#thumbnails {
+	position: absolute;
+	bottom: 0%;
+	align-self: center;
+	margin: 20px;
+	display: flex;
+	width: 400px;
+	justify-content: space-evenly;
+}
+#thumbnails img {
+	width: 50px;
+	height: 50px;
+	display: block;
+}
+#thumbnails input {
+  display: none;
+}
+#thumbnails label {
+	border: 3px solid #999;
+	cursor: pointer;
+	transition: all 0.5s;
+	opacity: 0.6;
+}
+#thumbnails input[name='cardSwitch']:checked+label {
+	border-color: #666;
+	opacity: 1;
+}
+#globalGeneral{
+	display: flex;
+	flex-direction: row;
 }
 
 /* ...............................Cartes............................. */
-
 .carte{
 	display:flex;
 	flex-direction: row;
@@ -93,7 +194,6 @@ body{
 	font-size: 1vw;
 	min-width: 330px;
 	width:100%;
-	
 }
 
 .contenu{
@@ -103,13 +203,11 @@ body{
 	min-width:200px;
 	margin:1.5% 3% 1.5% 3%;
 
-
 }
-
 
 .illustration{
 	width:20%;
-	min-width: 130px;
+	min-width: 200px;
 	/* width:30%; */
 
 }
@@ -177,8 +275,6 @@ h3{
 
 	width:20%
 }
-
-
 /* .................Partie gauche............................ */
 
 #fondRideau{
@@ -281,82 +377,4 @@ h3{
 
 
 
-/* ////////////////////////////////////////// FIN VALENTIN /////////////////////////////////////////////// */
-
-  ///////////////////////////////////////////////Sylvain///////////////////////////////////////////////////
-#carteNom1, #carteNom2, #carteNom3, #carteNom4, #carteNom5, #carteNom6, #carteNom7, #carteNom8, #carteNom9, #carteNom10, #carteNom11, #carteNom12, #carteNom13, #carteNom14, #carteNom15, #carteNom16, #carteNom17, #carteNom18, #carteNom19, #carteNom20, #carteNom21, #carteNom22, #carteNom23, #carteNom24, #carteNom25, #carteNom26, #carteNom27, #carteNom28, #carteNom29, #carteNom30 {
-  display: inline-flex;
-}
-#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten {
-  width: 50px;
-  height: 50px;
-  background-color: blue;
-  border: 1px solid black;
-  margin: 1px;
-}
-.cardLeft {
-  width: 600px;
-  height: 400px;
-}
-.thumbnails { 
-  margin: 0;
-  text-align: center;
-}
-.thumbnails li {
-  display: inline-flex;
-  cursor: pointer;
-  border: 5px solid #fff;
-}
-.thumbnails .tns-nav-active {
-  background: none;
-  border-color: #000;
-}
-.thumbnails li { width: 50px; }
-.thumbnails img { vertical-align: bottom; height: auto; max-height: 50px; }
-
-#menuStore {
-  display: flex;
-}
-
-#iconeArgent {
-  width: 50px;
-  height: 50px;
-  background-color: gold;
-}
-#iconeVote {
-  width: 50px;
-  height: 50px;
-  background-color: green;
-}
-#iconeGestion {
-  width: 50px;
-  height: 50px;
-  background-color: grey;
-}
-#iconeBonusTemp {
-  width: 50px;
-  height: 50px;
-}
-#iconeRanking {
-  width: 50px;
-  height: 50px;
-}
-#iconeSettings {
-  width: 50px;
-  height: 50px;
-}
-#iconeAchievement {
-  width: 50px;
-  height: 50px;
-}
-#iconePossession {
-  width: 50px;
-  height: 50px;
-}
-#sliderStore {
-  
-}
-#tns1 {
-  height: 420px;
-}
-//////////////////////////////////////////////////Fin Sylvain/////////////////////////////////////////
+/* ////////////////////////////////////////// FIN VALENTIN /////////////////////////////////////////////// *
