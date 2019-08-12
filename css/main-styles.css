@@ -47,7 +47,7 @@ body{
 	flex-direction: column;
 	min-width: 250px;
 	height:100vh;
-	width:30vw;
+	width:25vw;
 
 
 
@@ -59,7 +59,7 @@ body{
 	align-items: center;
 	flex-direction: column;
 	height:100vh;
-	width:70vw;
+	width:75vw;
 
 
 }
@@ -73,14 +73,16 @@ body{
 #titre{
 
 	position:relative;
-	width:40%;
+	width:30%;
 	padding:0;
-	margin-top:3%;
+	margin-top:2%;
 
 
 }
 
-
+#sliderStore{
+	width:95%;
+}
 
 /* ...............................Cartes............................. */
 
@@ -99,6 +101,7 @@ body{
 	flex-direction: column;
 	width:80%;
 	min-width:200px;
+	margin:1.5% 3% 1.5% 3%;
 
 
 }
@@ -112,16 +115,17 @@ body{
 }
 	
 .description{
-	margin:3% 3% 0% 3%;
-	height:85%;
+	height:65%;
+	margin-bottom: 1.5%;
 }
 
 .achat{
-	display:flex;
-	justify-content: center;
-	height:15%;
 
+	display:flex;
+	flex-direction: row;	
+	height:35%;
 }
+
 
 .boutonAchat{
 	display: flex;
@@ -130,10 +134,10 @@ body{
 	background-color: #0c5d83;
 	color:#ffffff;
 	min-width: 80px;
-
-	width:20%;
+	width:100%;
 	position:relative;
-	bottom:25%;
+	bottom:0%;
+	height:50%;
 
 }
 .boutonAchat:hover{
@@ -153,12 +157,25 @@ cursor:pointer;
 h3{
 	margin-bottom:1%;
 }
-
+.zoneEffet{
+	display: flex;
+	width:80%;
+	min-width: 270px;
+	align-items: end;
+}
 .effets{
+	text-align: left;
 	font-weight: 600;
 	font-style:italic;
-	margin-top:3%;
 	color:#0c5d83;
+
+
+}
+.zoneBouton{
+	display:flex;
+	align-items: end;
+
+	width:20%
 }
 
 

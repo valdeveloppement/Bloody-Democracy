@@ -28,7 +28,7 @@ var $compteurArgentCaisseNoire;
 // localStorage.clear();
 
 // 1jour dure 4 min
-$ratioSecondesParJour=3;
+$ratioSecondesParJour=2*60;
 
 var $tempsDeJeuSeconde;
 var $tempsDeJeuJoursVirtuels;
@@ -74,7 +74,7 @@ function refreshCalendar(){
 }
 setInterval(refreshCalendar,1000);
 
-// ....................................................................................................................
+// ................................................FIN CALENDRIER....................................................................
 
 
 
@@ -454,6 +454,7 @@ function checkAchat($iD){
     $boutonSurvol.onmouseleave= stopInRed
     function putInRed(){$boutonSurvol.style.backgroundColor = "red"}
     function stopInRed(){$boutonSurvol.style.backgroundColor = "#19749f" }
+    // $boutonSurvol.style.cursor= "not-allowed";
 
   }
 
