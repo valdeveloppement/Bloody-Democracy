@@ -407,7 +407,38 @@ function showPossession(){
 
 //Bouton selection slider Store
 
+	document.getElementById("slideVote").classList.replace("notSelect", "select");
+	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
+	var carteListeVote = document.getElementsByClassName("carteVote");
+	carteListeVote[0].classList.replace("notSelect", "select");
+	document.getElementById("id1Vote").checked = "true"
+	document.getElementById("id1Gestion").checked = "true"
+	document.getElementById("id1Argent").checked = "true"
 
+
+
+function showVote(){
+	var slideStoreListe = document.getElementsByClassName("storeChoice");
+	for (let entry of slideStoreListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	var thumbListe = document.getElementsByClassName("thumbnails");
+	for (let entry of thumbListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("slideVote").classList.replace("notSelect", "select");
+	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
+	var carteListeVote = document.getElementsByClassName("carteVote");
+	carteListeVote[0].classList.replace("notSelect", "select");
+	document.getElementById("id1Vote").checked = "true"
+}
 
 function showArgent(){
 	var slideStoreListe = document.getElementsByClassName("storeChoice");
@@ -415,23 +446,44 @@ function showArgent(){
 		entry.classList.add("notSelect");
 		entry.classList.remove("select");
 	}
-	document.getElementById("slideVote").classList.replace("notSelect", "select");
-}
-function showVote(){
-	var slideStoreListe = document.getElementsByClassName("storeChoice");
-	for (let entry of slideStoreListe){
+			var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	var thumbListe = document.getElementsByClassName("thumbnails");
+	for (let entry of thumbListe){
 		entry.classList.add("notSelect");
 		entry.classList.remove("select");
 	}
 	document.getElementById("slideArgent").classList.replace("notSelect", "select");
+	document.getElementById("thumbnailsArgent").classList.replace("notSelect", "select");
+	var carteListeArgent = document.getElementsByClassName("carteArgent");
+	carteListeArgent[0].classList.replace("notSelect", "select");
+	document.getElementById("id1Argent").checked = "true"
 }
+
 function showGestion(){
 	var slideStoreListe = document.getElementsByClassName("storeChoice");
 	for (let entry of slideStoreListe){
 		entry.classList.add("notSelect");
 		entry.classList.remove("select");
 	}
+			var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	var thumbListe = document.getElementsByClassName("thumbnails");
+	for (let entry of thumbListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
 	document.getElementById("slideGestion").classList.replace("notSelect", "select");
+	document.getElementById("thumbnailsGestion").classList.replace("notSelect", "select");
+	var carteListeGestion = document.getElementsByClassName("carteGestion");
+	carteListeGestion[0].classList.replace("notSelect", "select");
+	document.getElementById("id1Gestion").checked = "true"
 }
 
 

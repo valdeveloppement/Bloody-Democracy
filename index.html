@@ -168,12 +168,12 @@
 				<div id="menuStore">
 					
 					<input type="radio" name="menuSwitchStore" id="selectVote" checked/>
-					<label for="selectVote" onclick="showArgent()" class="iconMenu">
+					<label for="selectVote" onclick="showVote()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
 
 					<input type="radio" name="menuSwitchStore" id="selectArgent"/>
-					<label for="selectArgent" onclick="showVote()" class="iconMenu">
+					<label for="selectArgent" onclick="showArgent()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
 						
@@ -186,7 +186,7 @@
 				
 				<div id="sliderStore">	
 					<div id="slideVote" class="storeChoice select">
-						<div id="belleFace" class="carte">
+						<div id="belleFace" class="carte carteVote">
 							<div class="illustration">
 								<img src="images/miniatures/belleGeule3.jpg">
 							</div>
@@ -216,7 +216,7 @@
 							</div>
 						</div>
 						
-						<div id="belleMeuf" class="carte">
+						<div id="belleMeuf" class="carte carteVote notSelect">
 
 							<div class="illustration">
 								<img src="images/miniatures/belleMeuf.jpg">
@@ -249,7 +249,7 @@
 					
 					<div id="slideArgent" class="storeChoice notSelect">
 					
-						<div id="belleGueule" class="carte">
+						<div id="belleGueule" class="carte carteArgent">
 							<div class="illustration">
 								<img src="images/miniatures/belleGeule3.jpg">
 							</div>
@@ -283,7 +283,7 @@
 					</div>
 					
 					<div id="slideGestion" class="storeChoice notSelect">
-						<div id="photoDeFamille" class="carte">
+						<div id="photoDeFamille" class="carte carteGestion">
 
 							<div class="illustration">
 								<img src="images/miniatures/PhotoDeFamille.jpg">
@@ -312,7 +312,7 @@
 							</div>
 						</div>
 						
-						<div id="articleJournal" class="carte">
+						<div id="articleJournal" class="carte carteGestion notSelect">
 
 							<div class="illustration">
 								<img src="images/miniatures/articleJournal.jpg">
@@ -344,74 +344,45 @@
 					
 					</div>
 				</div>
-			<div id="thumbnails">
-				<div id="thumbDumb">
-					<input type="radio" name="cardSwitch" id="id1" checked/>
-					<label for="id1" onclick="showBelleFace()">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
-							
-					<input type="radio" name="cardSwitch" id="id2"/>
-					<label for="id2" onclick="showBelleMeuf()">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
-							
-					<input type="radio" name="cardSwitch" id="id3"/>
-					<label for="id3" onclick="showBelleGueule()">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
-							
-					<input type="radio" name="cardSwitch" id="id4"/>
-					<label for="id4" onclick="showPhotoDeFamille()">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
-							
-					<input type="radio" name="cardSwitch" id="id5"/>
-					<label for="id5" onclick="showArticleJournal()">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
+			
+				<div id="thumbnailsVote" class="thumbnails select">
+					<div class="thumbDumb">
+						<input type="radio" name="cardSwitchVote" id="id1Vote" class="radioVote" checked/>
+						<label for="id1Vote" onclick="showBelleFace()">
+							<img src="images/miniatures/belleGeule3.jpg"/>
+						</label>
+								
+						<input type="radio" name="cardSwitchVote" id="id2Vote"/>
+						<label for="id2Vote" onclick="showBelleMeuf()">
+							<img src="images/miniatures/belleMeuf.jpg"/>
+						</label>
+					</div>
+				</div>
+				
+				<div id="thumbnailsArgent" class="thumbnails notSelect">
+					<div class="thumbDumb">
+						<input type="radio" name="cardSwitchArgent" id="id1Argent" class="radioArgent"/>
+						<label for="id1Argent" onclick="showBelleGueule()">
+							<img src="images/miniatures/belleGeule3.jpg"/>
+						</label>
+					</div>
+				</div>
+				
+				<div id="thumbnailsGestion" class="thumbnails notSelect">
+					<div class="thumbDumb">
+						<input type="radio" name="cardSwitchGestion" id="id1Gestion" class="radioGestion"/>
+						<label for="id1Gestion" onclick="showPhotoDeFamille()">
+							<img src="images/miniatures/PhotoDeFamille.jpg"/>
+						</label>
+								
+						<input type="radio" name="cardSwitchGestion" id="id2Gestion"/>
+						<label for="id2Gestion" onclick="showArticleJournal()">
+							<img src="images/miniatures/articleJournal.jpg"/>
+						</label>
+					</div>
 				</div>
 			</div>
 			<!-------------------------------Fin Sylvain------------------------------------->
-            <!-- Carte Template Debut->
-            <div id="carteNom" class="carte">
-                 <!-- Carte Template Debut-->
-                    
-					
-					
-					
-					
-					
-					
-					
-                
-                
-                
-                
-                    </div>
-                 <!-- Carte Template fin-->
-
-
-
-
-                 
-                   
-    
-    
-    
-    
-                   
-                 
-
-                
-                
-                    
-
-
-
-                        <!-- Carte Template Debut-->
-                       
-                                <!-- Carte Template fin-->
 
 
 
