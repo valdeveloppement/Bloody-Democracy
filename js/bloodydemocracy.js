@@ -103,8 +103,18 @@ if (localStorage.getItem("compteurArgent") === null) {
 
 $containerCompteurVote.innerHTML = $compteurVote;
 $containerCompteurArgent.innerHTML = $compteurArgent;
-$compteurVotesTotal = 0;
-$compteurArgentTotal = 0;
+if (localStorage.getItem("compteurArgentTotal") === null) {
+  $compteurArgentTotal =  0;
+}else{
+  $compteurArgentTotal = parseInt(localStorage.getItem("compteurArgentTotal"));
+}
+if (localStorage.getItem("compteurVotesTotal") === null) {
+  $compteurVotesTotal = 0;
+}else{
+  $compteurVotesTotal = parseInt(localStorage.getItem("compteurVotesTotal"));
+}
+
+
 ///////////////////////// FIN JULIEN //////////////////////////////////////////////////
 
 
@@ -690,8 +700,6 @@ function achat(){
     $compteurVote=$compteurVote-$coutVote;
     $compteurArgent=$compteurArgent+$mouvementArgentOneShot;
     $compteurVote=$compteurVote+$mouvementVoteOneShot;
-    $compteurArgentTotal=$compteurArgentTotal-$coutArgent;
-    $compteurVotesTotal=$compteurVotesTotal-$coutVote;
     $compteurArgentTotal=$compteurArgentTotal+$mouvementArgentOneShot;
     $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteOneShot;
     $compteurArgentCaisseNoire=$compteurArgentCaisseNoire+$mouvementArgentCaisseNoire;
@@ -808,7 +816,6 @@ function belleGueule(){                                                         
         
 
         $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
-        $compteurArgentTotal=$compteurArgentTotal-$mouvementArgentRecurrent;
         
 
       }
@@ -874,3 +881,23 @@ belleGueule ();
 
 
 
+///////////////////////////////////////////////////////// PARTIE JULIEN //////////////////////////////////////////////////////////////////
+if($compteurVote >= 1000){ //Valeur à changer pour les tests
+  reset();
+}
+
+
+
+function reset(){
+  localStorage.removeItem('compteurVote');
+  $compteurVote = 0;
+  $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
+  localStorage.removeItem('boutonAchatBelleGueule');
+  localStorage.removeItem('boutonAchatBelleMeuf');
+  localStorage.removeItem('boutonAchatarticleJournal');
+  localStorage.removeItem('boutonAchatphotoDeFamille');
+  $tempsDeJeuSeconde = 0;
+
+}
+
+//////////////////////////////////////////////// FIN JULIEN ////////////////////////////////////////////////////////////////////////////
