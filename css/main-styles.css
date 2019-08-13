@@ -84,7 +84,7 @@ body{
 	display: flex;
 	min-height: 210px;
 	max-height: 210px;
-	width: 100%;
+	width: 90%;
 }
 #sliderGeneral .menuGen {
 	position: absolute;
@@ -153,7 +153,7 @@ body{
 	display: flex;
 	min-height: 210px;
 	max-height: 210px;
-	width: 100%;
+	width: 90%;
 }
 #menuStore {
 	display: flex;
@@ -162,35 +162,32 @@ body{
 .storeChoice {
 	position: absolute;
 }
-#thumbDumb {
+.thumbDumb {
 	display: flex;
-	
-	
-	height: 70px;
 }
-#thumbnails {
+.thumbnails {
 	position: absolute;
 	bottom: 2%;
 	display: flex;
-	justify-self: end;
-	align-self: center;
-	width: 100%;
+	width: 50%;
+	justify-content: center;
 }
-#thumbnails img {
+#thumbnailsArgent, #thumbnailsGestion, #thumbnailsVote {
+}
+.thumbnails img {
 	width: 70px;
 	height: 70px;
 	display: block;
 }
-#thumbnails input {
+.thumbnails input {
   display: none;
 }
-#thumbnails label {
+.thumbnails label {
 	border: 3px solid #999;
 	cursor: pointer;
-	transition: all 0.5s;
 	opacity: 0.6;
 }
-#thumbnails input[name='cardSwitch']:checked+label {
+.thumbnails input[name='cardSwitch']:checked+label, .thumbnails input[name='cardSwitchVote']:checked+label, .thumbnails input[name='cardSwitchArgent']:checked+label, .thumbnails input[name='cardSwitchGestion']:checked+label {
 	border-color: #666;
 	opacity: 1;
 }
@@ -198,10 +195,12 @@ body{
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 20px;
+	justify-content: center;
 }
 #globalStore {
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
 }
 #slideVote {
 	width: 100%;
