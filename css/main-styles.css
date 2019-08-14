@@ -66,6 +66,30 @@ body{
 
 
 }
+
+
+
+.volume{
+	position: absolute;
+	bottom:0px;
+	right:0px;
+	font-size: 1.5vw;
+	margin: 1% 1% 0.5% 1%;
+	opacity: 0.4;
+	width:2vw;
+	height:2vw;
+
+}
+.volume:hover{
+	opacity:1;
+
+}
+
+.volumeInactif{
+	display:none;
+}
+
+
 /* ......................... WELCOME..................................... */
 
 #welcome{

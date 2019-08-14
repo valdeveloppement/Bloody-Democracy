@@ -105,10 +105,6 @@ function closeWelcome(){
 }
 
 
-
-
-
-
 // if ($welcome.offsetHeight != "0"){
 
 //   document.getElementById("gauche").className = "blur"; 
@@ -121,12 +117,37 @@ function closeWelcome(){
 
 //......................................... FIN WELCOME ......................................................
 
+//....................... VOLUME MUTE ..................................
+
+$volumeOn = document.getElementById("volumeOn");
+$volumeMute = document.getElementById("volumeMute");
+// $volumeMute.classList.add('volumeInactif');
+
+// alert($volumeOn.style.offsetHeight)
+
+function changeMute(){
+  // $volumeOn.classList.toogle("volumeInactif", true);
+  // $volumeMute.classList.toogle("volumeInactif", false);
+
+  if ($volumeMaster != 0){
+    $volumeMaster =0;
+  }
+  else{
+    $volumeMaster =1;
+  }
+
+
+}
 
 
 
 
+//....................... VOLUME MUTE FIN...............................
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////FIN VALENTIN/////////////////////////////////////////////////////////////////////
 
 
 
@@ -164,7 +185,7 @@ function majCompteurs (){
   $containerCompteurVote.innerHTML = $compteurVote;
   $containerCompteurArgent.innerHTML = $compteurArgent;
 }
-setInterval (majCompteurs, 2000)
+setInterval (majCompteurs, 2200)
 
 
 function storageRegulier(){
@@ -173,6 +194,7 @@ function storageRegulier(){
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
+  localStorage.setItem('$volumeMaster', $volumeMaster);
   
 }
 setInterval (storageRegulier, 4000)
