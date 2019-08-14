@@ -193,7 +193,7 @@ function storageRegulier(){
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
-  localStorage.setItem('$volumeMaster', $volumeMaster);
+
   
 }
 setInterval (storageRegulier, 4000)
