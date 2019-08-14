@@ -121,13 +121,12 @@ function closeWelcome(){
 
 $volumeOn = document.getElementById("volumeOn");
 $volumeMute = document.getElementById("volumeMute");
-// $volumeMute.classList.add('volumeInactif');
+$volumeMute.classList.add('volumeInactif');
 
-// alert($volumeOn.style.offsetHeight)
 
 function changeMute(){
-  // $volumeOn.classList.toogle("volumeInactif", true);
-  // $volumeMute.classList.toogle("volumeInactif", false);
+  $volumeOn.classList.toggle("volumeInactif");
+  $volumeMute.classList.toggle("volumeInactif");
 
   if ($volumeMaster != 0){
     $volumeMaster =0;
