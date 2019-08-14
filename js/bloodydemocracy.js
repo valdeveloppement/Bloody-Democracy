@@ -571,6 +571,22 @@ function showBelleGueule(){
 	}
 	document.getElementById("belleGueule").classList.replace("notSelect", "select");
 }
+function showbfntv(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("bfntv").classList.replace("notSelect", "select");
+}
+function showpanemCircenses(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("panemCircenses").classList.replace("notSelect", "select");
+}
 function showPhotoDeFamille(){
 	var carteListe = document.getElementsByClassName("carte");
 	for (let entry of carteListe){
@@ -586,6 +602,70 @@ function showArticleJournal(){
 		entry.classList.remove("select");
 	}
 	document.getElementById("articleJournal").classList.replace("notSelect", "select");
+}
+function showgnr(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("gnr").classList.replace("notSelect", "select");
+}
+function showGrenade(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("grenade").classList.replace("notSelect", "select");
+}
+function showTeachers(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("teachers").classList.replace("notSelect", "select");
+}
+function showfmi(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("fmi").classList.replace("notSelect", "select");
+}
+function showrmi(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("rmi").classList.replace("notSelect", "select");
+}
+function showAvocat(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("avocat").classList.replace("notSelect", "select");
+}
+function showCabinetAvocat(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("cabinetAvocat").classList.replace("notSelect", "select");
+}
+function showJustice(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("justice").classList.replace("notSelect", "select");
 }
 ///////////////////////////FinSylvain///////////////////////////////////////
 
