@@ -5,7 +5,6 @@ multiBelleGueule=1;                                                             
 
 
 
-
 $clicker = document.getElementById('clicker');
 $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
@@ -1020,12 +1019,33 @@ function reset(){
   localStorage.removeItem('compteurVote');
   $compteurVote = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
-  localStorage.removeItem('boutonAchatBelleGueule');
-  localStorage.removeItem('boutonAchatBelleMeuf');
-  localStorage.removeItem('boutonAchatarticleJournal');
-  localStorage.removeItem('boutonAchatphotoDeFamille');
+  localStorage.setItem('boutonAchatBelleGueule', '00');
+  localStorage.setItem('boutonAchatBelleMeuf', '00');
+  localStorage.setItem('boutonAchatarticleJournal', '00');
+  localStorage.setItem('boutonAchatphotoDeFamille', '00');
+  localStorage.setItem('boutonAchatJustice', '00');
+  localStorage.setItem('boutonAchatCabinetAvocat', '00');
+  localStorage.setItem('boutonAchatAvocat', '00');
+  localStorage.setItem('boutonAchatRMI', '00');
+  localStorage.setItem('boutonAchatFMI', '00');
+  localStorage.setItem('boutonAchatTeachers', '00');
+  localStorage.setItem('boutonAchatGrenade', '00');
+  localStorage.setItem('boutonAchatGunsRoses', '00');
+  localStorage.setItem('boutonAchatarticleJournal', '00');
+  localStorage.setItem('boutonAchatPanemCircenses', '00');
+  localStorage.setItem('boutonAchatBFNTV', '00');
   $tempsDeJeuSeconde = 0;
 
 }
 
 //////////////////////////////////////////////// FIN JULIEN ////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
