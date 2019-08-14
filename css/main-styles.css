@@ -36,6 +36,8 @@ body{
 	background-color: #f9b111;
 	overflow: hidden;
 	height: 760px;
+
+
 }
 
 
@@ -62,8 +64,60 @@ body{
 	width:75vw;
 
 
+
+}
+/* ......................... WELCOME..................................... */
+
+#welcome{
+	width:80vw;
+	height:80vh;
+	position:absolute;
+	z-index: 1000;
+	background-color: #2688af;
+	top:10vh;
+	left:10vw;
+	display: none;
+	color: white;
+	background: linear-gradient(90deg,#227da1, #2c9ac5,#2c9ac5, #227da1);
 }
 
+
+#close {
+	position: absolute;
+	z-index: 1001;
+	width:2.5vw;
+	font-size:2.5vw;
+	right: 15px;
+	top:12px;
+
+	
+}
+
+#close:hover {
+cursor: pointer;
+}
+
+.blur{
+	filter: blur(10px);
+    opacity: 1;
+}
+
+#welcomePresentation{
+	font-size:1.6vw;
+	margin: 5% 4% 4% 5%;
+	line-height: 2.2vw;
+
+}
+#welcomePresentation p:first-child{
+margin-bottom:3%;
+
+}
+#logoWelcome{
+	position: absolute;
+	width: 30%;
+}
+
+/* ......................... FIN WELCOME..................................... */
 
 
 

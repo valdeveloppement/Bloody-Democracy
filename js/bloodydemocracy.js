@@ -78,7 +78,55 @@ setInterval(refreshCalendar,1000);
 // ................................................FIN CALENDRIER....................................................................
 
 
+///////////////////////////////////////////////// VALENTIN ///////////////////////////////////////////////////////////////////
 
+//..........................................  WELCOME ............................................................
+$welcome = document.getElementById("welcome");
+$gauche = document.getElementById("gauche");
+$droite = document.getElementById("droite");
+$close = document.getElementById("close");
+$close.onclick = closeWelcome;
+
+
+if (localStorage.getItem("$nouveauUtilisateur") === null || parseInt(localStorage.getItem("$nouveauUtilisateur") == 0)) {
+
+  $welcome.style.display= "flex";
+  $gauche.classList.add("blur");
+  $droite.classList.add("blur");
+
+  localStorage.setItem('$nouveauUtilisateur', 1);
+}
+
+function closeWelcome(){
+  $welcome.style.display= "none";
+  $gauche.classList.remove("blur");
+  $droite.classList.remove("blur");
+
+}
+
+
+
+
+
+
+// if ($welcome.offsetHeight != "0"){
+
+//   document.getElementById("gauche").className = "blur"; 
+//   document.getElementById("droite").className = "blur"; 
+// }
+
+
+
+
+
+//......................................... FIN WELCOME ......................................................
+
+
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
