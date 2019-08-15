@@ -26,7 +26,7 @@ var $compteurArgentCaisseNoire;
 // localStorage.clear();
 
 // 1jour dure 4 min
-$ratioSecondesParJour=2*60;
+$ratioSecondesParJour=1;
 
 var $tempsDeJeuSeconde;
 var $tempsDeJeuJoursVirtuels;
@@ -54,7 +54,6 @@ setInterval( tempsQuiPasse, 1000)
 function storageTempsDeJeuSeconde(){
 
   localStorage.setItem('$tempsDeJeuSeconde', $tempsDeJeuSeconde);
-  localStorage.setItem('$volumeMaster', $volumeMaster);
 
 
 }
@@ -63,16 +62,26 @@ setInterval( storageTempsDeJeuSeconde, 5000)
 
 
 
+
+
 function refreshCalendar(){
-  $tempsDeJeuJoursVirtuels= Math.ceil($tempsDeJeuSeconde/$ratioSecondesParJour);
+  $tempsDeJeuJoursVirtuels= Math.floor($tempsDeJeuSeconde/$ratioSecondesParJour);
 
-  $jourDuMois=($tempsDeJeuJoursVirtuels % 29);
+  $jourDuMois=($tempsDeJeuJoursVirtuels % 28);
   
-  $tempsDeJeuMoisVirtuels=1+($tempsDeJeuJoursVirtuels-$jourDuMois)/29;
+  $tempsDeJeuMoisVirtuels=1+($tempsDeJeuJoursVirtuels-$jourDuMois)/28;
 
-  console.log("Jour "+$jourDuMois+"  Mois "+$tempsDeJeuMoisVirtuels);
+  $moisDeLannee=($tempsDeJeuMoisVirtuels % 13);
+  $tempsDeJeuAnneVirtuelle=1+($tempsDeJeuMoisVirtuels-$moisDeLannee)/13
+  $jourDuMois=$jourDuMois+1;
+  console.log("Jour:"+$jourDuMois+"  Mois:"+$moisDeLannee+ "   anne:"+$tempsDeJeuAnneVirtuelle);
+  $calendarTxt = document.getElementById("calendarTxt");
+  $calendarTxt.innerHTML="jour:"+$jourDuMois+" mois:"+$moisDeLannee+ " <br> année:"+$tempsDeJeuAnneVirtuelle;
 }
 setInterval(refreshCalendar,1000);
+
+
+
 
 // ................................................FIN CALENDRIER....................................................................
 
@@ -213,6 +222,16 @@ setInterval (storageRegulier, 4000)
 
 // Cette fonction met à jour les positions quand on change la taille d'ecran.
 function placeClicker() {
+  $calendar=document.getElementById("calendar");
+  $hauteurCompteurs=document.getElementById("compteurs").offsetHeight;
+  $calendarYPos=$hauteurCompteurs+40+20;
+  $calendar.style.top = $calendarYPos+'px';
+
+  $largeurCompteurs=document.getElementById("compteurs").offsetWidth;
+  $largeurCalendar=$calendar.offsetWidth;
+  $calendarXPos=($largeurCompteurs*1.3333-$largeurCalendar)/2;
+  $calendar.style.left = $calendarXPos+'px';
+
 
   $hauteurTable=document.getElementById("table").offsetHeight;
   $yPos= 0.75*$hauteurTable;
@@ -703,6 +722,9 @@ od = new Odometer({
   el: $containerCompteurVote,
   value: $compteurVote,
 
+
+
+
   // Any option (other than auto and selector) can be passed in here
   format: 'd',
   theme: 'train-station',
@@ -716,6 +738,7 @@ od1 = new Odometer({
   el: $containerCompteurArgent,
   value: $compteurArgent,
 
+
   // Any option (other than auto and selector) can be passed in here
   format: 'd',
   theme: 'dollar',
@@ -727,6 +750,54 @@ od1 = new Odometer({
 //////////////////////////////// FIN JULIEN ///////////////////////
 
 
+//....................compteurs 0000000..................
+
+$containerCompteurVote0 = document.getElementById('vote0');
+$containerCompteurArgent0 = document.getElementById('argent0');
+
+//Création du compteur vote 0
+od2 = new Odometer({
+  el: $containerCompteurVote0,
+
+  format: 'd',
+  theme: 'dollar',
+
+});
+
+
+////Création du compteur argent0
+od3 = new Odometer({
+  el: $containerCompteurArgent0,
+
+  format: 'd',
+  theme: 'dollar',
+
+});
+
+$containerCompteurVote00 = document.getElementById('vote00');
+$containerCompteurArgent00 = document.getElementById('argent00');
+
+//Création du compteur vote 0
+od4 = new Odometer({
+  el: $containerCompteurVote00,
+
+  format: 'd',
+  theme: 'dollar',
+
+});
+
+
+////Création du compteur argent0
+od5 = new Odometer({
+  el: $containerCompteurArgent00,
+
+  format: 'd',
+  theme: 'dollar',
+
+});
+
+
+//....................compteurs 0000000 FIN..................
 
 
 
@@ -1068,5 +1139,43 @@ function reset(){
 
 
 
+// $compteur=21;
+
+// $compteurFiltre=0;
+// $coeff="";
 
 
+
+//  if ($compteur<1000){
+//     $compteurFiltre=$compteur;
+//     $coeff="";
+//   }
+
+//   if ($compteur>=1000 & $compteur<1000000){
+//     $compteurFiltre=$compteur/1000;
+//     $compteurFiltre=""+$compteurFiltre+"";
+//     $compteurFiltre=$compteurFiltre.substring(0,5);
+//     $compteurFiltre=parseFloat($compteurFiltre);
+//     $coeff="K";
+//   }
+
+
+
+//   if ($compteur>=1000000 & $compteur<1000000000){
+//     $compteurFiltre=$compteur/1000000;
+//     $compteurFiltre=""+$compteurFiltre+"";
+//     $compteurFiltre=$compteurFiltre.substring(0,5);
+//     $compteurFiltre=parseFloat($compteurFiltre);
+//     $coeff="M";
+//   }
+
+//   if ($compteur>=1000000000 & $compteur<1000000000000){
+//     $compteurFiltre=$compteur/1000000000;
+//     $compteurFiltre=""+$compteurFiltre+"";
+//     $compteurFiltre=$compteurFiltre.substring(0,5);
+//     $compteurFiltre=parseFloat($compteurFiltre);
+//     $coeff="Md";
+//   }
+
+
+// console.log($compteurFiltre+" "+$coeff)
