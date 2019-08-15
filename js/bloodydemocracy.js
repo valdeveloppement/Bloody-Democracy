@@ -5,7 +5,6 @@ multiBelleGueule=1;                                                             
 
 
 
-
 $clicker = document.getElementById('clicker');
 $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
@@ -105,10 +104,6 @@ function closeWelcome(){
 }
 
 
-
-
-
-
 // if ($welcome.offsetHeight != "0"){
 
 //   document.getElementById("gauche").className = "blur"; 
@@ -121,12 +116,36 @@ function closeWelcome(){
 
 //......................................... FIN WELCOME ......................................................
 
+//....................... VOLUME MUTE ..................................
+
+$volumeOn = document.getElementById("volumeOn");
+$volumeMute = document.getElementById("volumeMute");
+$volumeMute.classList.add('volumeInactif');
+
+
+function changeMute(){
+  $volumeOn.classList.toggle("volumeInactif");
+  $volumeMute.classList.toggle("volumeInactif");
+
+  if ($volumeMaster != 0){
+    $volumeMaster =0;
+  }
+  else{
+    $volumeMaster =1;
+  }
+
+
+}
 
 
 
 
+//....................... VOLUME MUTE FIN...............................
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+////////////////////////////////////////////////////////FIN VALENTIN/////////////////////////////////////////////////////////////////////
 
 
 
@@ -174,7 +193,7 @@ function majCompteurs (){
   $containerCompteurVote.innerHTML = $compteurVote;
   $containerCompteurArgent.innerHTML = $compteurArgent;
 }
-setInterval (majCompteurs, 2000)
+setInterval (majCompteurs, 2200)
 
 
 function storageRegulier(){
@@ -183,7 +202,6 @@ function storageRegulier(){
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
-
 }
 setInterval (storageRegulier, 4000)
 
@@ -1056,12 +1074,33 @@ function reset(){
   localStorage.removeItem('compteurVote');
   $compteurVote = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
-  localStorage.removeItem('boutonAchatBelleGueule');
-  localStorage.removeItem('boutonAchatBelleMeuf');
-  localStorage.removeItem('boutonAchatarticleJournal');
-  localStorage.removeItem('boutonAchatphotoDeFamille');
+  localStorage.setItem('boutonAchatBelleGueule', '00');
+  localStorage.setItem('boutonAchatBelleMeuf', '00');
+  localStorage.setItem('boutonAchatarticleJournal', '00');
+  localStorage.setItem('boutonAchatphotoDeFamille', '00');
+  localStorage.setItem('boutonAchatJustice', '00');
+  localStorage.setItem('boutonAchatCabinetAvocat', '00');
+  localStorage.setItem('boutonAchatAvocat', '00');
+  localStorage.setItem('boutonAchatRMI', '00');
+  localStorage.setItem('boutonAchatFMI', '00');
+  localStorage.setItem('boutonAchatTeachers', '00');
+  localStorage.setItem('boutonAchatGrenade', '00');
+  localStorage.setItem('boutonAchatGunsRoses', '00');
+  localStorage.setItem('boutonAchatarticleJournal', '00');
+  localStorage.setItem('boutonAchatPanemCircenses', '00');
+  localStorage.setItem('boutonAchatBFNTV', '00');
   $tempsDeJeuSeconde = 0;
   
 }
 
 //////////////////////////////////////////////// FIN JULIEN ////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
