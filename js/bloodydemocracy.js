@@ -971,6 +971,8 @@ function belleGueule(){                                                         
 
     else{
       $onOff=0;
+      localStorage.setItem(boutonAchatBelleGueule,"00")
+
     }
 
   }
