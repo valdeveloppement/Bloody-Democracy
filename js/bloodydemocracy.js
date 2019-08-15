@@ -1137,7 +1137,7 @@ function reset(){
   var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
   if (isNaN(timeAdd)) {}
   else {$compteurVotesTotal += voteAddTotal;}
-  if (isNaN(VoteAddTotal)) {}
+  if (isNaN(voteAddTotal)) {}
   else { $compteurArgentTotal += argentAddTotal;}
   if (isNaN(argentAddTotal)) {}
   else {$tempsDeJeuSeconde += timeAdd;}
@@ -1152,14 +1152,15 @@ function reset(){
   localStorage.setItem('boutonAchatJustice', '00');
   localStorage.setItem('boutonAchatCabinetAvocat', '00');
   localStorage.setItem('boutonAchatAvocat', '00');
-  localStorage.setItem('boutonAchatRMI', '00');
-  localStorage.setItem('boutonAchatFMI', '00');
-  localStorage.setItem('boutonAchatTeachers', '00');
+  localStorage.setItem('boutonAchatrsa', '00');
+  localStorage.setItem('boutonAchatChomage', '00');
+  localStorage.setItem('boutonAchatEducation', '00');
   localStorage.setItem('boutonAchatGrenade', '00');
   localStorage.setItem('boutonAchatGunsRoses', '00');
   localStorage.setItem('boutonAchatarticleJournal', '00');
-  localStorage.setItem('boutonAchatPanemCircenses', '00');
-  localStorage.setItem('boutonAchatBFNTV', '00');
+  localStorage.setItem('boutonAchatPanem', '00');
+  localStorage.setItem('boutonAchatbfntv', '00');
+  localStorage.setItem('boutonAchatVenteArme','00');
   $tempsDeJeuSeconde = 0;
   
 }
