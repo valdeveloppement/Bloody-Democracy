@@ -196,7 +196,7 @@
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
 						
-					<input type="radio" name="menuSwitchGen" id="selectRanking"/>
+					<!--<input type="radio" name="menuSwitchGen" id="selectRanking"/>
 					<label for="selectRanking" onclick="showRanking()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
@@ -204,7 +204,7 @@
 					<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
 					<label for="selectAchievement" onclick="showAchievement()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>
+					</label>-->
 						
 				</div>
 					
@@ -214,12 +214,13 @@
 					<div id="buffTemporaire" class="menuGen select">
 						<img src="images/miniatures/belleGeule3.jpg"/>
 						<img src="images/miniatures/belleGeule3.jpg"/>
-						<img src="images/miniatures/belleGeule3.jpg"/>
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!--<img src="images/miniatures/belleGeule3.jpg"/>
+						<img src="images/miniatures/belleGeule3.jpg"/>-->
 					</div>
 					
 					
 					<div id="statistique" class="menuGen notSelect">
+						<p id="caisseNoire"></p>
 						<p id="argentTotalThisPlay"></p>
 						<p id="voteTotalThisPlay"></p>
 						<p id="argentTotalAllPlay"></p>
@@ -230,7 +231,7 @@
 						<p id="argentParClic"></p>
 					</div>
 					
-					<div id="ranking" class="menuGen notSelect">
+					<!--<div id="ranking" class="menuGen notSelect">
 						<p>Petine: 100000000000000</p>
 						<p>Kimi: 200000000000</p>
 						<p>Mao: 8888888888</p>
@@ -239,7 +240,7 @@
 					</div>
 					
 					<div id="achievement" class="menuGen notSelect">
-					</div>
+					</div>-->
 					
 				</div>
 			</div>
@@ -265,33 +266,36 @@
 				
 				<div id="sliderStore">	
 					<div id="slideVote" class="storeChoice select">
-						<div id="belleFace" class="carte carteVote">
+						
+						<div id="belleGueule" class="carte carteVote select">
 							<div class="illustration">
 								<img src="images/miniatures/belleGeule3.jpg">
 							</div>
-
+		
 							<div class="contenu">
 								<div class="description">
-									<h3>Belle Face</h3>
+									<h3>Belle Tronche</h3>
 									<p>Offrez -vous une Belle gueule.
 										Basta les discours à rallonge !
 										Oubliez les programmes qui finiront par caler le fauteuil de mamie, ou en liste de course pour Lidle le samedi.
 										Le blabla c'est pour les ringards, pas pour les smicards. Pour leur faire tourner la tête, offrez-vous une belle tête !
 									</p>
-
-									<p class="effets">Chirurgie esthétique: 100€. <br>A chaque clique, multiplie par deux les votes en votre faveur.
-									</p>
-
+			
 								</div>
 
 								<div class ="achat"> 
-									<div id="boutonAchatBelleGueule" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-										<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+									<div class="zoneEffet">
+										<p class="effets">Chirurgie esthétique: <b>100€</b>. <br>A chaque clique,  <b>multiplie par deux</b> les votes en votre faveur, et les revenus.<br> Durée: <b>1 an.</b>
+										</p>
 									</div>
-			<!-- 
-									<p class= "prix">50 euros</p>
-									<p>3 achetés</p> -->
+									<div class="zoneBouton">
+										<div id="boutonAchatBelleGueule" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
 								</div>
+			
 							</div>
 						</div>
 						
@@ -324,106 +328,8 @@
 		
 							</div>
 						</div>
-					</div>
 					
-					<div id="slideArgent" class="storeChoice notSelect">
-					
-						<div id="belleGueule" class="carte carteArgent">
-							<div class="illustration">
-								<img src="images/miniatures/belleGeule3.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>Belle Tronche</h3>
-									<p>Offrez -vous une Belle gueule.
-										Basta les discours à rallonge !
-										Oubliez les programmes qui finiront par caler le fauteuil de mamie, ou en liste de course pour Lidle le samedi.
-										Le blabla c'est pour les ringards, pas pour les smicards. Pour leur faire tourner la tête, offrez-vous une belle tête !
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Chirurgie esthétique: <b>100€</b>. <br>A chaque clique,  <b>multiplie par deux</b> les votes en votre faveur, et les revenus.<br> Durée: <b>1 an.</b>
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatBelleGueule" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
-						<div id="bfntv" class="carte carteArgent">
-							<div class="illustration">
-								<img src="images/miniatures/bfntv.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>Bloody For Nothing TV</h3>
-									<p>Vous aviez ciblé quelques vieux avec votre article dans le journal. Il est temps de voir les choses en grand et de toucher un max de beaufs en achetant la chaîne BFN TV. Imaginez une équipe entière déterminée à détruire l'esprit critique, rien que pour vous.
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Grâce à BFN TV faites exploser votre temps de parole et bénéficiez de <b>100</b> clicks par jours !. <br>La chaîne vous rapporte également un gain mensuel de <b>20 000</b> euros.</b>
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatBFNTV" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
-						<div id="panemCircenses" class="carte carteArgent">
-							<div class="illustration">
-								<img src="images/miniatures/panem.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>« Panem et Circenses »</h3>
-									<p>Du « Pain et des Jeux ». Les citoyens c'est comme les chiens, filez leur une baballe et vous pourrez les martyriser à votre guise sans que cela n'atteigne leur fidélité. Pour peu qu'ils gagnent et vous verrez tous ces crétinos en survet low-cost se prendre par la main ou faire la queue leu leu en braillant leur victoire imaginaire. Ils en oublierons qu'ils perdent tous les jours. Vous 1, le peuple 0. 
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Coût : 50000 euros. Remportez 50000 votes d'un coup. <br>Profitez pour faire vos magouilles toutes pénalités financières et politiques seront annulées pendant 2 mois. 
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatPanemCircenses" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
-						
-						
-					</div>
-					
-					<div id="slideGestion" class="storeChoice notSelect">
-						<div id="photoDeFamille" class="carte carteGestion">
+					<div id="photoDeFamille" class="carte carteVote notSelect">
 
 							<div class="illustration">
 								<img src="images/miniatures/PhotoDeFamille.jpg">
@@ -451,68 +357,8 @@
 
 							</div>
 						</div>
-						
-						<div id="articleJournal" class="carte carteGestion notSelect">
-
-							<div class="illustration">
-								<img src="images/miniatures/articleJournal.jpg">
-							</div>
-                
-							<div class="contenu">
-								<div class="description">
-									<h3>Article dans Bloody For Nothing Newspaper</h3>
-									<p><br>Et oui c'est fou, il reste quelques has been qui lisent encore les journaux.. Alors pour tous les ringards qui restent dix minutes aux toilettes en lisant leur journal, offrez leur un petit moment de propagande intimiste.
-									</p>
-                
-								</div>
-            
-                                <div class ="achat"> 
-                                    <div class="zoneEffet">
-                                        <p class="effets">Achat d'un article dans le journal papier  Bloddy For Nothing : <b>3000€</b>. <br>A chaque clique,  <b>multiplie par 5</b> les votes en votre faveur, et les revenus.<br> Durée: <b>2 semaines.</b>
-                                        </p>
-                                    </div>
-                                    <div class="zoneBouton">
-                                        <div id="boutonAchatarticleJournal" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-                                        <p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-                                    
-								</div>
-                
-							</div>
-						</div>
 					
-					
-						<div id="gnr" class="carte carteGestion">
-							<div class="illustration">
-								<img src="images/miniatures/venteArme.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>Guns N' Roses</h3>
-									<p>Avec un budget militaire en constante hausse, et 5 milliards d'euros annuels consacrés à la recherche et au développement, la France peut être fière de son savoir faire en matière de destruction de vie humaine. Valoriser ce savoir faire et faites en profiter quelques dictateurs impatients d’essayer vos nouveaux bijoux !Organisez une belle vente : L’Arabie saoudite attends impatiemment ses 50 canons Caesar  et ses 30 pods. Les chars Leclerc ont quant à eux taper dans l' œil des Émirats arabes unis ! Soyez discrets et livrez ce soir vos amis.
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Cette belle opération vous rapporte <b>100000</b> euros en cash dont <b>30000</b> ira directement dans votre caisse noire !.</b>
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatGunsRoses" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
-						<div id="grenade" class="carte carteGestion">
+					<div id="grenade" class="carte carteVote notSelect">
 
 							<div class="illustration">
 								<img src="images/miniatures/grenade.jpg">
@@ -542,7 +388,7 @@
 							</div>
 						</div>
 						
-						<div id="teachers" class="carte carteGestion">
+						<div id="teachers" class="carte carteVote notSelect">
 
 							<div class="illustration">
 								<img src="images/miniatures/education.jpg">
@@ -562,7 +408,7 @@
 										</p>
 									</div>
 									<div class="zoneBouton">
-										<div id="boutonAchatTeachers" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+										<div id="boutonAchatEducation" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
 											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
 										</div>
 									</div>
@@ -571,8 +417,69 @@
 
 							</div>
 						</div>
+					</div>
+					
+					<div id="slideArgent" class="storeChoice notSelect">
 						
-						<div id="fmi" class="carte carteGestion">
+						<div id="bfntv" class="carte carteArgent">
+							<div class="illustration">
+								<img src="images/miniatures/bfntv.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>Bloody For Nothing TV</h3>
+									<p>Vous aviez ciblé quelques vieux avec votre article dans le journal. Il est temps de voir les choses en grand et de toucher un max de beaufs en achetant la chaîne BFN TV. Imaginez une équipe entière déterminée à détruire l'esprit critique, rien que pour vous.
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">Grâce à BFN TV faites exploser votre temps de parole et bénéficiez de <b>100</b> clicks par jours !. <br>La chaîne vous rapporte également un gain mensuel de <b>20 000</b> euros.</b>
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatbfntv" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
+							</div>
+						</div>
+						
+						<div id="panemCircenses" class="carte carteArgent">
+							<div class="illustration">
+								<img src="images/miniatures/panem.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>« Panem et Circenses »</h3>
+									<p>Du « Pain et des Jeux ». Les citoyens c'est comme les chiens, filez leur une baballe et vous pourrez les martyriser à votre guise sans que cela n'atteigne leur fidélité. Pour peu qu'ils gagnent et vous verrez tous ces crétinos en survet low-cost se prendre par la main ou faire la queue leu leu en braillant leur victoire imaginaire. Ils en oublierons qu'ils perdent tous les jours. Vous 1, le peuple 0. 
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">Coût : 50000 euros. Remportez 50000 votes d'un coup. <br>Profitez pour faire vos magouilles toutes pénalités financières et politiques seront annulées pendant 2 mois. 
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatPanem" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
+							</div>
+						</div>
+						
+						<div id="fmi" class="carte carteArgent">
 
 							<div class="illustration">
 								<img src="images/miniatures/chomage.jpg">
@@ -592,7 +499,7 @@
 										</p>
 									</div>
 									<div class="zoneBouton">
-										<div id="boutonAchatFMI" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+										<div id="boutonAchatChomage" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
 											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
 										</div>
 									</div>
@@ -602,7 +509,7 @@
 							</div>
 						</div>
 						
-						<div id="rmi" class="carte carteGestion">
+						<div id="rmi" class="carte carteArgent">
 
 							<div class="illustration">
 								<img src="images/miniatures/rsa.jpg">
@@ -622,13 +529,76 @@
 										</p>
 									</div>
 									<div class="zoneBouton">
-										<div id="boutonAchatRMI" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+										<div id="boutonAchatrsa" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
 											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
 										</div>
 									</div>
 								
 								</div>
 
+							</div>
+						</div>
+						
+					</div>
+					
+					<div id="slideGestion" class="storeChoice notSelect">
+						
+						<div id="articleJournal" class="carte carteGestion notSelect">
+
+							<div class="illustration">
+								<img src="images/miniatures/articleJournal.jpg">
+							</div>
+                
+							<div class="contenu">
+								<div class="description">
+									<h3>Article dans Bloody For Nothing Newspaper</h3>
+									<p><br>Et oui c'est fou, il reste quelques has been qui lisent encore les journaux.. Alors pour tous les ringards qui restent dix minutes aux toilettes en lisant leur journal, offrez leur un petit moment de propagande intimiste.
+									</p>
+                
+								</div>
+                      <div class ="achat"> 
+                              <div class="zoneEffet">
+                                   <p class="effets">Achat d'un article dans le journal papier  Bloddy For Nothing : <b>3000€</b>. <br>A chaque clique,  <b>multiplie par 5</b> les votes en votre faveur, et les revenus.<br> Durée: <b>2 semaines.</b>
+                                   </p>
+                               </div>
+                               <div class="zoneBouton">
+                               <div id="boutonAchatarticleJournal" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+                               <p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+                                    
+								</div>
+                
+							</div>
+						</div>
+					
+					
+						<div id="gnr" class="carte carteGestion">
+							<div class="illustration">
+								<img src="images/miniatures/venteArme.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>Guns N' Roses</h3>
+									<p>Avec un budget militaire en constante hausse, et 5 milliards d'euros annuels consacrés à la recherche et au développement, la France peut être fière de son savoir faire en matière de destruction de vie humaine. Valoriser ce savoir faire et faites en profiter quelques dictateurs impatients d’essayer vos nouveaux bijoux !Organisez une belle vente : L’Arabie saoudite attends impatiemment ses 50 canons Caesar  et ses 30 pods. Les chars Leclerc ont quant à eux taper dans l' œil des Émirats arabes unis ! Soyez discrets et livrez ce soir vos amis.
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">Cette belle opération vous rapporte <b>100000</b> euros en cash dont <b>30000</b> ira directement dans votre caisse noire !.</b>
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatVenteArme" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
 							</div>
 						</div>
 						
@@ -727,33 +697,55 @@
 			
 				<div id="thumbnailsVote" class="thumbnails select">
 					<div class="thumbDumb">
-						<input type="radio" name="cardSwitchVote" id="id1Vote" class="radioVote" checked/>
-						<label for="id1Vote" onclick="showBelleFace()">
+						<input type="radio" name="cardSwitchVote" id="id1Vote" class="radioVote"/>
+						<label for="id1Vote" onclick="showBelleGueule()">
 							<img src="images/miniatures/belleGeule3.jpg"/>
 						</label>
 								
-						<input type="radio" name="cardSwitchVote" id="id2Vote"/>
+						<input type="radio" name="cardSwitchVote" id="id2Vote" class="radioVote"/>
 						<label for="id2Vote" onclick="showBelleMeuf()">
 							<img src="images/miniatures/belleMeuf.jpg"/>
 						</label>
+						
+						<input type="radio" name="cardSwitchVote" id="id3Vote" class="radioVote"/>
+						<label for="id3Vote" onclick="showPhotoDeFamille()">
+							<img src="images/miniatures/PhotoDeFamille.jpg"/>
+						</label>
+						
+						<input type="radio" name="cardSwitchVote" id="id4Vote" class="radioVote"/>
+						<label for="id4Vote" onclick="showGrenade()">
+							<img src="images/miniatures/grenade.jpg"/>
+						</label>
+						
+						<input type="radio" name="cardSwitchVote" id="id5Vote" class="radioVote"/>
+						<label for="id5Vote" onclick="showTeachers()">
+							<img src="images/miniatures/education.jpg"/>
+						</label>
+						
 					</div>
 				</div>
 				
 				<div id="thumbnailsArgent" class="thumbnails notSelect">
 					<div class="thumbDumb">
-						<input type="radio" name="cardSwitchArgent" id="id1Argent" class="radioArgent"/>
-						<label for="id1Argent" onclick="showBelleGueule()">
-							<img src="images/miniatures/belleGeule3.jpg"/>
-						</label>
 						
-						<input type="radio" name="cardSwitchArgent" id="id2Argent" class="radioArgent"/>
-						<label for="id2Argent" onclick="showbfntv()">
+						<input type="radio" name="cardSwitchArgent" id="id1Argent" class="radioArgent"/>
+						<label for="id1Argent" onclick="showbfntv()">
 							<img src="images/miniatures/bfntv.jpg">
 						</label>
 						
-						<input type="radio" name="cardSwitchArgent" id="id3Argent" class="radioArgent"/>
-						<label for="id3Argent" onclick="showpanemCircenses()">
+						<input type="radio" name="cardSwitchArgent" id="id2Argent" class="radioArgent"/>
+						<label for="id2Argent" onclick="showpanemCircenses()">
 							<img src="images/miniatures/panem.jpg">
+						</label>
+						
+						<input type="radio" name="cardSwitchGestion" id="id3Argent" class="radioArgent"/>
+						<label for="id3Argent" onclick="showfmi()">
+							<img src="images/miniatures/chomage.jpg"/>
+						</label>
+						
+						<input type="radio" name="cardSwitchGestion" id="id4Argent" class="radioArgent"/>
+						<label for="id4Argent" onclick="showrmi()">
+							<img src="images/miniatures/rsa.jpg"/>
 						</label>
 						
 					</div>
@@ -761,53 +753,30 @@
 				
 				<div id="thumbnailsGestion" class="thumbnails notSelect">
 					<div class="thumbDumb">
-						<input type="radio" name="cardSwitchGestion" id="id1Gestion" class="radioGestion"/>
-						<label for="id1Gestion" onclick="showPhotoDeFamille()">
-							<img src="images/miniatures/PhotoDeFamille.jpg"/>
-						</label>
+						
 								
-						<input type="radio" name="cardSwitchGestion" id="id2Gestion"/>
-						<label for="id2Gestion" onclick="showArticleJournal()">
+						<input type="radio" name="cardSwitchGestion" id="id1Gestion" class="radioGestion"/>
+						<label for="id1Gestion" onclick="showArticleJournal()">
 							<img src="images/miniatures/articleJournal.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id3Gestion"/>
-						<label for="id3Gestion" onclick="showgnr()">
+						<input type="radio" name="cardSwitchGestion" id="id2Gestion" class="radioGestion"/>
+						<label for="id2Gestion" onclick="showgnr()">
 							<img src="images/miniatures/venteArme.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id4Gestion"/>
-						<label for="id4Gestion" onclick="showGrenade()">
-							<img src="images/miniatures/grenade.jpg"/>
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id5Gestion"/>
-						<label for="id5Gestion" onclick="showTeachers()">
-							<img src="images/miniatures/education.jpg"/>
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id6Gestion"/>
-						<label for="id6Gestion" onclick="showfmi()">
-							<img src="images/miniatures/chomage.jpg"/>
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id7Gestion"/>
-						<label for="id7Gestion" onclick="showrmi()">
-							<img src="images/miniatures/rsa.jpg"/>
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id8Gestion"/>
-						<label for="id8Gestion" onclick="showAvocat()">
+						<input type="radio" name="cardSwitchGestion" id="id3Gestion" class="radioGestion"/>
+						<label for="id3Gestion" onclick="showAvocat()">
 							<img src="images/miniatures/avocat.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id9Gestion"/>
-						<label for="id9Gestion" onclick="showCabinetAvocat()">
+						<input type="radio" name="cardSwitchGestion" id="id4Gestion" class="radioGestion"/>
+						<label for="id4Gestion" onclick="showCabinetAvocat()">
 							<img src="images/miniatures/cabinetAvocat.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id10Gestion"/>
-						<label for="id10Gestion" onclick="showJustice()">
+						<input type="radio" name="cardSwitchGestion" id="id5Gestion" class="radioGestion"/>
+						<label for="id5Gestion" onclick="showJustice()">
 							<img src="images/miniatures/justice.jpg"/>
 						</label>
 						
@@ -823,7 +792,6 @@
 
 
         </div>
-
 
 
 		<div id= "volumeOn" class="volume" onclick="changeMute()">
@@ -844,4 +812,3 @@
 
     </body>
 </html>
-

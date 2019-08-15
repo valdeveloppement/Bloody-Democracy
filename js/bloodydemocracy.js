@@ -211,8 +211,6 @@ function storageRegulier(){
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
-
-  
 }
 setInterval (storageRegulier, 4000)
 
@@ -353,6 +351,7 @@ function clickAlgoBack(){
   localStorage.setItem('compteurArgent', $compteurArgent);
   localStorage.setItem('compteurVotesTotal', $compteurVotesTotal);
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
+
   ////////////////////////////////////// FIN JULIEN /////////////////////
 
 }
@@ -706,6 +705,31 @@ function showJustice(){
 	}
 	document.getElementById("justice").classList.replace("notSelect", "select");
 }
+
+//Statistique
+
+function stat(){
+	localStorage.setItem('timeFromStartAllPlay', $tempsDeJeuSeconde);
+	localStorage.setItem('argentTotalAllPlay', $compteurArgentTotal);
+	localStorage.setItem('voteTotalAllPlay', $compteurVotesTotal);
+	if (isNaN($compteurArgentCaisseNoire)){}
+	else { document.getElementById("caisseNoire").innerHTML = "Votre caisse noire: " + $compteurArgentCaisseNoire; }
+	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVotesTotal;
+	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgentTotal;
+	if (isNaN(localStorage.getItem('argentTotalAllPlay'))) {}
+	else {document.getElementById("argentTotalAllPlay").innerHTML = "Gain d'Argent Total :" + localStorage.getItem('argentTotalAllPlay');}
+	if (isNaN(localStorage.getItem('voteTotalAllPlay'))) {}
+	else { document.getElementById("voteTotalAllPlay").innerHTML = "Gain de vote Total: " + localStorage.getItem('voteTotalAllPlay');}
+	document.getElementById("timeFromStartThisPlay").innerHTML = "Temps de jeu cette Partie: " + $tempsDeJeuSeconde + " secondes";
+	if (isNaN(localStorage.getItem('timeFromStartAllPlay'))) {}
+	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total :" + localStorage.getItem('timeFromStartAllPlay') + " secondes";}
+	document.getElementById("voteParClic").innerHTML = "Gain de Vote au Clic " + $MultiClickGlobal;
+	document.getElementById("argentParClic").innerHTML = "Gain d'Argent au clic " + ($MultiClickGlobal*5);
+}
+
+setInterval(stat, 1000);
+
+
 ///////////////////////////FinSylvain///////////////////////////////////////
 
 // Sinus qui s'attenue :  ((6+cos(x-3)-0.5(x-3))/6)^2
@@ -1110,6 +1134,16 @@ if($compteurVote >= 1000){ //Valeur à changer pour les tests
 
 
 function reset(){
+  var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
+  var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
+  var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
+  if (isNaN(timeAdd)) {}
+  else {$compteurVotesTotal += voteAddTotal;}
+  if (isNaN(VoteAddTotal)) {}
+  else { $compteurArgentTotal += argentAddTotal;}
+  if (isNaN(argentAddTotal)) {}
+  else {$tempsDeJeuSeconde += timeAdd;}
+  
   localStorage.removeItem('compteurVote');
   $compteurVote = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
@@ -1129,7 +1163,7 @@ function reset(){
   localStorage.setItem('boutonAchatPanemCircenses', '00');
   localStorage.setItem('boutonAchatBFNTV', '00');
   $tempsDeJeuSeconde = 0;
-
+  
 }
 
 //////////////////////////////////////////////// FIN JULIEN ////////////////////////////////////////////////////////////////////////////
