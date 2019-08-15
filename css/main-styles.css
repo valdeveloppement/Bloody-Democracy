@@ -66,7 +66,7 @@ body{
 
 }
 
-
+/* ................ VOLUME ...................... */
 
 .volume{
 	position: absolute;
@@ -87,6 +87,91 @@ body{
 .volumeInactif{
 	display:none;
 }
+/* ................ FIN VOLUME ...................... */
+
+
+
+
+
+
+/* ................ CALENDAR et COMPTEURS ...................... */
+#donnees{
+	width:60%;
+	display:flex;
+	flex-direction: column;
+	margin: 40px 0% 0% 0%;
+	
+}
+
+#calendar  {
+	position: absolute;
+	/* width:60%; */
+	height:40px;
+	color:rgb(0, 0, 0);
+	font-size: 90%;
+	z-index: 10;
+	top:10vw;
+	left:10%;
+	font-weight: 600;
+	background-color: white;
+
+}
+#calendar p{
+text-align: center;
+}
+
+
+#compteurs, #compteurs00 {
+	position: absolute;
+	display:flex;
+	flex-direction:column;
+	width:40%;
+}
+
+
+
+#vote, #argent, #vote0, #vote00, #argent0, #argent00, #vote000, #argent000, #vote0000, #argent0000{
+	font-size: 1.8vw;
+	display:flex;
+	flex-direction:row;
+	justify-content: end;
+
+}
+
+
+#compteurs001, #compteurs002{
+	display:flex;
+	flex-direction: row;
+	justify-content: end;
+	font-size: 1.6vw;
+	color: rgb(22, 87, 22);
+}
+
+#compteurs001 p{
+	line-height: 2.1vw
+
+}
+
+#vote0, #vote00, #argent0, #argent00, #vote000, #argent000, #vote0000, #argent0000{
+	margin-left:0.1em;
+
+}
+
+
+
+#compteurs{
+	z-index: 1000;
+}
+
+#compteurs00{
+	z-index: 800;
+} 
+
+/* ................ CALENDAR et COMPTEURS ...................... */
+
+
+
+
 
 
 /* ......................... WELCOME..................................... */
@@ -137,7 +222,9 @@ margin-bottom:3%;
 }
 #logoWelcome{
 	position: absolute;
-	width: 30%;
+	width: 20%;
+	left: 18%;
+	top:5%;
 }
 
 /* ......................... FIN WELCOME..................................... */
