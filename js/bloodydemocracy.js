@@ -1869,8 +1869,6 @@ function PhotoDeFamille(){                                                      
   //..................................FIN AUTOCLICK...................................
 
 
-
-
   //..................................MULTICLICK.....................................
     if($multi!= 0){
       function multiActif (){
@@ -1938,12 +1936,6 @@ function PhotoDeFamille(){                                                      
   //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
 
 
-
-
-
-
-    
-  
 
 }
 PhotoDeFamille ();
@@ -2408,14 +2400,6 @@ function chomage(){                                                             
     
   //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
 
-
-
-
-
-
-    
-  
-
 }
 chomage ();
 
@@ -2719,14 +2703,6 @@ function cabinet(){                                                             
     
   //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
 
-
-
-
-
-
-    
-  
-
 }
 cabinet ();
 
@@ -2895,10 +2871,6 @@ bfntv ();
 
 
 
-
-
-
-
 ///////////////////////////////////////////////////////// PARTIE JULIEN //////////////////////////////////////////////////////////////////
 if($compteurVote >= 1000){ //Valeur à changer pour les tests
   reset();
@@ -2939,9 +2911,47 @@ function reset(){
   
 }
 
+
 //////////////////////////////////////////////// FIN JULIEN ////////////////////////////////////////////////////////////////////////////
 
 
 
 
+
+=======
+setInterval(blabla,1000);
+
+
+/////////////////////////////// JULIEN ////////////////////////////////////
+///////////////////////////// RANKING ///////////////////////////////
+function rankingSort(){
+
+    var $rankingTable = [
+            {name: 'Petine', val: 100000000000000},
+            {name: 'Kimi', val: 200000000000},
+            {name: 'Mao', val: 8888888888},
+            {name: 'Tutu', val: 2},
+            {name: 'Toto', val: 0},
+            {name:'Player', val: parseInt(localStorage.getItem("compteurVote"))}
+        ];
+
+    $rankingTable.sort(function(a,b) {
+        return b.val - a.val;
+    });
+    //console.log(rankingTable);
+
+        $elements = "";
+        for(var $ranking in $rankingTable)
+        {
+            $elements += '<p id=rank-'+$rankingTable[$ranking]['name']+'>' + $rankingTable[$ranking]['name']+' : '+ $rankingTable[$ranking]['val'] +'</p>'  ;
+        }
+
+        document.getElementById('ranking').innerHTML = $elements;
+        document.getElementById('rank-Player').style.color="red";
+}
+
+setInterval(rankingSort, 1000);
+/////////////////// FIN RANKING ////////////////////
+
+////////////////////////////////////// FIN JULIEN /////////////////////////////////////
 
