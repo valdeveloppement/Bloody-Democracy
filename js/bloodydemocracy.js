@@ -96,7 +96,7 @@ function refreshCalendar(){
   $jourDuMois=$jourDuMois+1;
   console.log("Jour:"+$jourDuMois+"  Mois:"+$moisDeLannee+ "   anne:"+$tempsDeJeuAnneVirtuelle);
   $calendarTxt = document.getElementById("calendarTxt");
-  $calendarTxt.innerHTML="jour:"+$jourDuMois+" mois:"+$moisDeLannee+ " <br> année:"+$tempsDeJeuAnneVirtuelle;
+  $calendarTxt.innerHTML="jour: "+$jourDuMois+" mois: "+$moisDeLannee+ " <br> année: "+$tempsDeJeuAnneVirtuelle;
 }
 setInterval(refreshCalendar,1000);
 
@@ -244,12 +244,13 @@ setInterval (storageRegulier, 4000)
 function placeClicker() {
   $calendar=document.getElementById("calendar");
   $coeffs=document.getElementById("coeffs");
+  $virgules=document.getElementById("virgules");
 
   $hauteurCompteurs=document.getElementById("compteurs").offsetHeight;
   $calendarYPos=$hauteurCompteurs+40+20;
   $calendar.style.top = $calendarYPos+'px';
   $coeffs.style.height=$hauteurCompteurs+'px';
-
+  $virgules.style.height=$hauteurCompteurs+'px';
   $largeurCompteurs=document.getElementById("compteurs").offsetWidth;
   $largeurCalendar=$calendar.offsetWidth;
   $calendarXPos=($largeurCompteurs*1.3333-$largeurCalendar)/2;
@@ -770,8 +771,25 @@ setInterval(stat, 1000);
 //.................................CHANGE COMPTEUR............................
 
 
-var $formatVote =',ddd';
-var $formatArgent=',ddd';
+$virguleVote1=document.getElementById("virguleVote1")
+$virguleVote2=document.getElementById("virguleVote2")
+$virguleVote3=document.getElementById("virguleVote3")
+$virguleArgent1=document.getElementById("virguleArgent1")
+$virguleArgent2=document.getElementById("virguleArgent2")
+$virguleArgent3=document.getElementById("virguleArgent3")
+
+$virguleVote1.classList.toggle("virguleVisible",true);
+$virguleVote2.classList.toggle("virguleVisible",true);
+$virguleVote3.classList.toggle("virguleVisible",true);
+$virguleArgent1.classList.toggle("virguleVisible",true);
+$virguleArgent2.classList.toggle("virguleVisible",true);
+$virguleArgent3.classList.toggle("virguleVisible",true);
+
+
+
+
+var $formatVote='d.d.d.d';
+var $formatArgent='d.d.d.d';
 
 function actualiseCompteursAffichage(){
 
@@ -810,11 +828,11 @@ $coeffVote="";
   }
 
 
-$indexoffVote=$compteurFiltreVote.indexOf(".")
+$indexoffVote=$compteurFiltreVote.indexOf(".");
 
 if ($indexoffVote==-1){
   $compteurAffichageVote=$compteurVote;
-  $formatVote=' ddd'
+  $formatVote="' ddd'";
 
 }
 
@@ -825,16 +843,29 @@ else{
 
 
 if ($indexoffVote==1){
-  $formatVote=',ddd'
+  $virguleVote1.classList.toggle("virguleVisible",false);
 }
-else if($indexoffVote==2){
-  $formatVote='d,dd'
-}
-else if($indexoffVote==3){
-  $formatVote='dd,d'
+else{
+  $virguleVote1.classList.toggle("virguleVisible",true);
 }
 
-console.log($compteurAffichageVote+" "+$coeffVote+"  "+$indexoffVote)
+if($indexoffVote==2){
+  $virguleVote2.classList.toggle("virguleVisible",false);
+}
+else{
+  $virguleVote2.classList.toggle("virguleVisible",true);
+
+}
+
+if($indexoffVote==3){
+  $virguleVote3.classList.toggle("virguleVisible",false);
+}
+
+else{
+  $virguleVote3.classList.toggle("virguleVisible",true);
+}
+
+// console.log($compteurAffichageVote+" "+$coeffVote+"  "+$indexoffVote)
 document.getElementById("coeffsVote").innerHTML = $coeffVote;
 
 
@@ -881,7 +912,7 @@ $indexoffArgent=$compteurFiltreArgent.indexOf(".")
 
 if ($indexoffArgent==-1){
   $compteurAffichageArgent=$compteurArgent;
-  $formatArgent=' ddd'
+  $formatArgent="' ddd'";
 
 }
 
@@ -892,20 +923,33 @@ else{
 
 
 if ($indexoffArgent==1){
-  $formatArgent=',ddd'
+  $virguleArgent1.classList.toggle("virguleVisible",false);
 }
-else if($indexoffArgent==2){
-  $formatArgent='d,dd'
-}
-else if($indexoffArgent==3){
-  $formatArgent='dd,d'
+else{
+  $virguleArgent1.classList.toggle("virguleVisible",true);
 }
 
-console.log($compteurAffichageArgent+" "+$coeffArgent+"  "+$indexoffArgent)
+if($indexoffArgent==2){
+  $virguleArgent2.classList.toggle("virguleVisible",false);
+}
+else{
+  $virguleArgent2.classList.toggle("virguleVisible",true);
+}
+
+if($indexoffArgent==3){
+  $virguleArgent3.classList.toggle("virguleVisible",false);
+}
+
+else{
+  $virguleArgent3.classList.toggle("virguleVisible",true);
+
+}
+
+// console.log($compteurAffichageArgent+" "+$coeffArgent+"  "+$indexoffArgent)
 document.getElementById("coeffsArgent").innerHTML = $coeffArgent;
 
 }
-setInterval(actualiseCompteursAffichage, 100)
+setInterval(actualiseCompteursAffichage, 50)
 
 
 
@@ -913,14 +957,11 @@ setInterval(actualiseCompteursAffichage, 100)
 
 
 
-
-
-
-
-
-
-
-
+function verifformat(){
+  console.log("format ="+$formatArgent)
+}
+setInterval(verifformat,1000)
+// console.log("format ="+$formatArgent)
 
 
 //////////////////////////////// JULIEN ////////////////////////
@@ -933,6 +974,8 @@ od = new Odometer({
 
 
   // Any option (other than auto and selector) can be passed in here
+
+
   format: $formatVote,
   theme: 'train-station',
   duration:200,
@@ -947,6 +990,10 @@ od1 = new Odometer({
 
 
   // Any option (other than auto and selector) can be passed in here
+ 
+ 
+
+
   format: $formatArgent,
   theme: 'dollar',
   duration:200,
@@ -956,56 +1003,54 @@ od1 = new Odometer({
 
 //////////////////////////////// FIN JULIEN ///////////////////////
 
+//....................compteurs 0000000..................
+
+$containerCompteurVote0 = document.getElementById('vote0');
+$containerCompteurArgent0 = document.getElementById('argent0');
+
+//Création du compteur vote 0
+od2 = new Odometer({
+  el: $containerCompteurVote0,
+
+  format: 'd',
+  theme: 'dollar',
+
+});
 
 
-// //....................compteurs 0000000..................
+////Création du compteur argent0
+od3 = new Odometer({
+  el: $containerCompteurArgent0,
 
-// $containerCompteurVote0 = document.getElementById('vote0');
-// $containerCompteurArgent0 = document.getElementById('argent0');
+  format: 'd',
+  theme: 'dollar',
 
-// //Création du compteur vote 0
-// od2 = new Odometer({
-//   el: $containerCompteurVote0,
+});
 
-//   format: 'd',
-//   theme: 'dollar',
+$containerCompteurVote00 = document.getElementById('vote00');
+$containerCompteurArgent00 = document.getElementById('argent00');
 
-// });
+//Création du compteur vote 0
+od4 = new Odometer({
+  el: $containerCompteurVote00,
 
+  format: 'd',
+  theme: 'dollar',
 
-// ////Création du compteur argent0
-// od3 = new Odometer({
-//   el: $containerCompteurArgent0,
-
-//   format: 'd',
-//   theme: 'dollar',
-
-// });
-
-// $containerCompteurVote00 = document.getElementById('vote00');
-// $containerCompteurArgent00 = document.getElementById('argent00');
-
-// //Création du compteur vote 0
-// od4 = new Odometer({
-//   el: $containerCompteurVote00,
-
-//   format: 'd',
-//   theme: 'dollar',
-
-// });
+});
 
 
-// ////Création du compteur argent0
-// od5 = new Odometer({
-//   el: $containerCompteurArgent00,
+////Création du compteur argent0
+od5 = new Odometer({
+  el: $containerCompteurArgent00,
 
-//   format: 'd',
-//   theme: 'dollar',
+  format: 'd',
+  theme: 'dollar',
 
-// });
+});
 
 
-// //....................compteurs 0000000 FIN..................
+//....................compteurs 0000000 FIN..................
 
 
 
