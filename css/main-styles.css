@@ -104,8 +104,13 @@ body{
 }
 
 #calendar  {
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	position: absolute;
-	/* width:60%; */
+	min-width:105px;
+	width:8vw;
+	
 	height:40px;
 	color:rgb(0, 0, 0);
 	font-size: 90%;
@@ -113,11 +118,13 @@ body{
 	top:10vw;
 	left:10%;
 	font-weight: 600;
-	background-color: white;
+	background-color: rgba(255, 255, 255, 0.2);
+	box-shadow: -1px 2px 6px 3px rgba(0, 0, 0, 0.3) inset;
 
 }
 #calendar p{
 text-align: center;
+
 }
 
 
@@ -140,18 +147,18 @@ text-align: center;
 }
 
 .odometer-formatting-mark{font-size:3vw; line-height: 0.5%; }
-#vote0, #vote000{
+/* #vote0, #vote000{
 margin-right:0.2em;
-}
+} */
 
 .virguleEspace{
 	margin-right:0.2em;
 
 }
 
-/* span.odometer-formatting-mark {
+span.odometer-formatting-mark {
 	visibility: hidden;
-} */
+}
 
 /* #virgule{
 	visibility: hidden;
@@ -162,7 +169,7 @@ margin-right:0.2em;
 	display:flex;
 	flex-direction: row;
 	justify-content: end;
-	font-size: 1.6vw;
+	font-size: 1.3vw;
 	color: rgb(22, 87, 22);
 }
 
@@ -172,7 +179,7 @@ margin-right:0.2em;
 }
 
 #vote0, #vote00, #argent0, #argent00, #vote000, #argent000, #vote0000, #argent0000{
-	margin-left:0.1em;
+	margin-left:0.29em;
 
 }
 
@@ -208,6 +215,37 @@ margin-right:0.2em;
 	font-weight: 600;
 
 }
+
+.virgule{
+	font-size:3vw;
+	line-height: 1.3vw;
+	width:2vw;
+}
+
+#virgules{
+	position:absolute;
+	top:50px;
+	width:40%;
+	display:flex;
+	flex-direction: column;
+	z-index: 990000;
+
+}
+
+#virgulesArgent, #virgulesVote{
+
+	display:flex;
+	flex-direction: row;
+	height:50%;
+	justify-content: end;
+
+
+
+}
+.virguleVisible{
+	visibility: hidden;	
+}
+
 
 /* ................ CALENDAR et COMPTEURS ...................... */
 
