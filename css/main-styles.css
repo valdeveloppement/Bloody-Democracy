@@ -121,6 +121,7 @@ text-align: center;
 }
 
 
+
 #compteurs, #compteurs00 {
 	position: absolute;
 	display:flex;
@@ -135,9 +136,27 @@ text-align: center;
 	display:flex;
 	flex-direction:row;
 	justify-content: end;
+	margin-bottom:2%;
+}
+
+.odometer-formatting-mark{font-size:3vw; line-height: 0.5%; }
+#vote0, #vote000{
+margin-right:0.2em;
+}
+
+.virguleEspace{
+	margin-right:0.2em;
 
 }
 
+/* span.odometer-formatting-mark {
+	visibility: hidden;
+} */
+
+/* #virgule{
+	visibility: hidden;
+
+} */
 
 #compteurs001, #compteurs002{
 	display:flex;
@@ -166,6 +185,29 @@ text-align: center;
 #compteurs00{
 	z-index: 800;
 } 
+
+
+#coeffs{
+	position: absolute;
+	display:flex;
+	flex-direction:column;
+	align-items:flex-end;
+	top:40px;
+	left:43%;
+	z-index:50000;
+	/* height:5vw; */
+
+}
+#coeffsVote, #coeffsArgent{
+	display: flex;
+	align-items: flex-end;
+	justify-content: left;
+	height:50%;
+	font-size:1.3vw;
+	width:50px;
+	font-weight: 600;
+
+}
 
 /* ................ CALENDAR et COMPTEURS ...................... */
 
@@ -562,6 +604,7 @@ h3{
 #brasDessus{
 	z-index: 6;
 }
+
 
 
 

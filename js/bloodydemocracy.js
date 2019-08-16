@@ -1,8 +1,12 @@
 /////////////////////////////////////// VALENTIN  /////////////////////////////////////////////
 
+
 //declaration de tous les multiplicateurs des cartes
 $multiBelleGueule=1;
 $multiArticleJournal=1;                                                                                                         //changeHere
+$multiGrenade=1;
+var $compteurAffichageVote;
+var $compteurAffichageArgent;
 
 
 
@@ -193,8 +197,8 @@ if (localStorage.getItem("compteurArgent") === null) {
   $compteurArgent = parseInt(localStorage.getItem("compteurArgent"));
 }
 
-$containerCompteurVote.innerHTML = $compteurVote;
-$containerCompteurArgent.innerHTML = $compteurArgent;
+$containerCompteurVote.innerHTML = $compteurAffichageVote;
+$containerCompteurArgent.innerHTML = $compteurAffichageArgent;
 if (localStorage.getItem("compteurArgentTotal") === null) {
   $compteurArgentTotal =  0;
 }else{
@@ -215,10 +219,10 @@ if (localStorage.getItem("compteurVotesTotal") === null) {
 
 /////////////////////////////////// VAL ///////////////////////////////////////
 function majCompteurs (){
-  $containerCompteurVote.innerHTML = $compteurVote;
-  $containerCompteurArgent.innerHTML = $compteurArgent;
+  $containerCompteurVote.innerHTML = $compteurAffichageVote;
+  $containerCompteurArgent.innerHTML = $compteurAffichageArgent;
 }
-setInterval (majCompteurs, 2200)
+setInterval (majCompteurs, 100)
 
 
 function storageRegulier(){
@@ -239,9 +243,12 @@ setInterval (storageRegulier, 4000)
 // Cette fonction met à jour les positions quand on change la taille d'ecran.
 function placeClicker() {
   $calendar=document.getElementById("calendar");
+  $coeffs=document.getElementById("coeffs");
+
   $hauteurCompteurs=document.getElementById("compteurs").offsetHeight;
   $calendarYPos=$hauteurCompteurs+40+20;
   $calendar.style.top = $calendarYPos+'px';
+  $coeffs.style.height=$hauteurCompteurs+'px';
 
   $largeurCompteurs=document.getElementById("compteurs").offsetWidth;
   $largeurCalendar=$calendar.offsetWidth;
@@ -262,7 +269,6 @@ function placeClicker() {
   $brasPaper.style.bottom = $yBrasPos+'px';
   $brasDessus.style.bottom = $yBrasPos+'px';
   $brasDessous.style.bottom = $yBrasPos+'px';
-
 
 
 }
@@ -365,8 +371,8 @@ function clickAlgoBack(){
   $compteurArgent=$compteurArgent+(5*$MultiClickGlobal);
   $compteurVotesTotal=$compteurVotesTotal+(1*$MultiClickGlobal);
   $compteurArgentTotal=$compteurArgentTotal+(5*$MultiClickGlobal);
-  $containerCompteurVote.innerHTML = $compteurVote;
-  $containerCompteurArgent.innerHTML = $compteurArgent;
+  $containerCompteurVote.innerHTML = $compteurAffichageVote;
+  $containerCompteurArgent.innerHTML = $compteurAffichageArgent;
  
   localStorage.setItem('compteurVote', $compteurVote);
   localStorage.setItem('compteurArgent', $compteurArgent);
@@ -761,17 +767,173 @@ setInterval(stat, 1000);
 /////////////////////////////////////// FIN VALENTIN  /////////////////////////////////////////////
 
 
+//.................................CHANGE COMPTEUR............................
+
+
+var $formatVote =',ddd';
+var $formatArgent=',ddd';
+
+function actualiseCompteursAffichage(){
+
+$compteurFiltreVote=0;
+$coeffVote="";
+
+ if ($compteurVote<1000){
+    $compteurFiltreVote=""+$compteurVote+"";
+    $coeffVote=" ";
+  }
+
+  if ($compteurVote>=1000 & $compteurVote<1000000){
+    $compteurFiltreVote=$compteurVote/1000;
+    $compteurFiltreVote=""+$compteurFiltreVote+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffVote="K";
+  }
+
+
+
+  if ($compteurVote>=1000000 & $compteurVote<1000000000){
+    $compteurFiltreVote=$compteurVote/1000000;
+    $compteurFiltreVote=""+$compteurFiltreVote+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffVote="M";
+  }
+
+  if ($compteurVote>=1000000000 & $compteurVote<1000000000000){
+    $compteurFiltreVote=$compteurVote/1000000000;
+    $compteurFiltreVote=""+$compteurFiltreVote+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffVote="Md";
+  }
+
+
+$indexoffVote=$compteurFiltreVote.indexOf(".")
+
+if ($indexoffVote==-1){
+  $compteurAffichageVote=$compteurVote;
+  $formatVote=' ddd'
+
+}
+
+else{
+  $compteurAffichageVote=(""+$compteurVote+"").substring(0,4);
+
+}
+
+
+if ($indexoffVote==1){
+  $formatVote=',ddd'
+}
+else if($indexoffVote==2){
+  $formatVote='d,dd'
+}
+else if($indexoffVote==3){
+  $formatVote='dd,d'
+}
+
+console.log($compteurAffichageVote+" "+$coeffVote+"  "+$indexoffVote)
+document.getElementById("coeffsVote").innerHTML = $coeffVote;
+
+
+
+
+
+
+$compteurFiltreArgent=0;
+$coeffArgent="";
+
+ if ($compteurArgent<1000){
+    $compteurFiltreArgent=""+$compteurArgent+"";
+    $coeffArgent=" ";
+  }
+
+  if ($compteurArgent>=1000 & $compteurArgent<1000000){
+    $compteurFiltreArgent=$compteurArgent/1000;
+    $compteurFiltreArgent=""+$compteurFiltreArgent+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffArgent="K";
+  }
+
+
+
+  if ($compteurArgent>=1000000 & $compteurArgent<1000000000){
+    $compteurFiltreArgent=$compteurArgent/1000000;
+    $compteurFiltreArgent=""+$compteurFiltreArgent+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffArgent="M";
+  }
+
+  if ($compteurArgent>=1000000000 & $compteurArgent<1000000000000){
+    $compteurFiltreArgent=$compteurArgent/1000000000;
+    $compteurFiltreArgent=""+$compteurFiltreArgent+"";
+    // $compteurFiltre=$compteurFiltre.substring(0,5);
+    // $compteurFiltre=parseFloat($compteurFiltre);
+    $coeffArgent="Md";
+  }
+
+
+$indexoffArgent=$compteurFiltreArgent.indexOf(".")
+
+if ($indexoffArgent==-1){
+  $compteurAffichageArgent=$compteurArgent;
+  $formatArgent=' ddd'
+
+}
+
+else{
+  $compteurAffichageArgent=(""+$compteurArgent+"").substring(0,4);
+
+}
+
+
+if ($indexoffArgent==1){
+  $formatArgent=',ddd'
+}
+else if($indexoffArgent==2){
+  $formatArgent='d,dd'
+}
+else if($indexoffArgent==3){
+  $formatArgent='dd,d'
+}
+
+console.log($compteurAffichageArgent+" "+$coeffArgent+"  "+$indexoffArgent)
+document.getElementById("coeffsArgent").innerHTML = $coeffArgent;
+
+}
+setInterval(actualiseCompteursAffichage, 100)
+
+
+
+//........................................FIN CHANGE COMPTEUR................
+
+
+
+
+
+
+
+
+
+
+
+
+
 //////////////////////////////// JULIEN ////////////////////////
 //Création du compteur vote
 od = new Odometer({
   el: $containerCompteurVote,
-  value: $compteurVote,
+  value: $compteurAffichageVote,
 
 
 
 
   // Any option (other than auto and selector) can be passed in here
-  format: 'd',
+  format: $formatVote,
   theme: 'train-station',
   duration:200,
   //animation: 'count'
@@ -781,11 +943,11 @@ od = new Odometer({
 ////Création du compteur argent
 od1 = new Odometer({
   el: $containerCompteurArgent,
-  value: $compteurArgent,
+  value: $compteurAffichageArgent,
 
 
   // Any option (other than auto and selector) can be passed in here
-  format: 'd',
+  format: $formatArgent,
   theme: 'dollar',
   duration:200,
   //animation: 'count'
@@ -795,54 +957,55 @@ od1 = new Odometer({
 //////////////////////////////// FIN JULIEN ///////////////////////
 
 
-//....................compteurs 0000000..................
 
-$containerCompteurVote0 = document.getElementById('vote0');
-$containerCompteurArgent0 = document.getElementById('argent0');
+// //....................compteurs 0000000..................
 
-//Création du compteur vote 0
-od2 = new Odometer({
-  el: $containerCompteurVote0,
+// $containerCompteurVote0 = document.getElementById('vote0');
+// $containerCompteurArgent0 = document.getElementById('argent0');
 
-  format: 'd',
-  theme: 'dollar',
+// //Création du compteur vote 0
+// od2 = new Odometer({
+//   el: $containerCompteurVote0,
 
-});
+//   format: 'd',
+//   theme: 'dollar',
 
-
-////Création du compteur argent0
-od3 = new Odometer({
-  el: $containerCompteurArgent0,
-
-  format: 'd',
-  theme: 'dollar',
-
-});
-
-$containerCompteurVote00 = document.getElementById('vote00');
-$containerCompteurArgent00 = document.getElementById('argent00');
-
-//Création du compteur vote 0
-od4 = new Odometer({
-  el: $containerCompteurVote00,
-
-  format: 'd',
-  theme: 'dollar',
-
-});
+// });
 
 
-////Création du compteur argent0
-od5 = new Odometer({
-  el: $containerCompteurArgent00,
+// ////Création du compteur argent0
+// od3 = new Odometer({
+//   el: $containerCompteurArgent0,
 
-  format: 'd',
-  theme: 'dollar',
+//   format: 'd',
+//   theme: 'dollar',
 
-});
+// });
+
+// $containerCompteurVote00 = document.getElementById('vote00');
+// $containerCompteurArgent00 = document.getElementById('argent00');
+
+// //Création du compteur vote 0
+// od4 = new Odometer({
+//   el: $containerCompteurVote00,
+
+//   format: 'd',
+//   theme: 'dollar',
+
+// });
 
 
-//....................compteurs 0000000 FIN..................
+// ////Création du compteur argent0
+// od5 = new Odometer({
+//   el: $containerCompteurArgent00,
+
+//   format: 'd',
+//   theme: 'dollar',
+
+// });
+
+
+// //....................compteurs 0000000 FIN..................
 
 
 
@@ -2782,65 +2945,3 @@ function reset(){
 
 
 
-
-
-
-// $compteur=21;
-
-// $compteurFiltre=0;
-// $coeff="";
-
-
-
-//  if ($compteur<1000){
-//     $compteurFiltre=$compteur;
-//     $coeff="";
-//   }
-
-//   if ($compteur>=1000 & $compteur<1000000){
-//     $compteurFiltre=$compteur/1000;
-//     $compteurFiltre=""+$compteurFiltre+"";
-//     $compteurFiltre=$compteurFiltre.substring(0,5);
-//     $compteurFiltre=parseFloat($compteurFiltre);
-//     $coeff="K";
-//   }
-
-
-
-//   if ($compteur>=1000000 & $compteur<1000000000){
-//     $compteurFiltre=$compteur/1000000;
-//     $compteurFiltre=""+$compteurFiltre+"";
-//     $compteurFiltre=$compteurFiltre.substring(0,5);
-//     $compteurFiltre=parseFloat($compteurFiltre);
-//     $coeff="M";
-//   }
-
-//   if ($compteur>=1000000000 & $compteur<1000000000000){
-//     $compteurFiltre=$compteur/1000000000;
-//     $compteurFiltre=""+$compteurFiltre+"";
-//     $compteurFiltre=$compteurFiltre.substring(0,5);
-//     $compteurFiltre=parseFloat($compteurFiltre);
-//     $coeff="Md";
-//   }
-
-
-// console.log($compteurFiltre+" "+$coeff)
-
-
-
-
-
-// function tessmulti(){
-// console.log($multiBelleGueule)
-
-// }
-// setInterval(tessmulti, 1000)
-
-
-
-// function blabla(){
-// console.log("onoff"+$onOff)
-
-// }
-
-// setInterval(blabla,1000)
