@@ -1,7 +1,8 @@
 /////////////////////////////////////// VALENTIN  /////////////////////////////////////////////
 
 //declaration de tous les multiplicateurs des cartes
-multiBelleGueule=1;                                                                                                          //changeHere
+$multiBelleGueule=1;
+$multiArticleJournal=1;                                                                                                         //changeHere
 
 
 
@@ -10,8 +11,17 @@ $brasDessous = document.getElementById('brasDessous');
 $brasDessus = document.getElementById('brasDessus');
 $brasPaper = document.getElementById('brasPaper');
 $nbClicks=0;
+$nbClicks2=0;
 $volumeMaster=1;
-$MultiClickGlobal=1*multiBelleGueule;    
+$MultiClickGlobal=1;    
+
+function majMulti(){
+  $MultiClickGlobal=1*$multiBelleGueule*$multiArticleJournal;    
+
+}
+setInterval(majMulti,50)
+
+$attenuationPertesGlobal=1;
 
 var $compteurArgent;
 var $compteurVote;
@@ -262,6 +272,9 @@ $boiteDessus.onclick=click;
 $boiteDessus.onmouseenter=playBloup;
 $boiteDessus.onmouseleave=playBloup;
 
+var $vitesseUp;
+var $vitesseDownPaper;
+var $vitesseDown;
 
 
 $angle=0;
@@ -337,7 +350,7 @@ function clickAlgoBack(){
 
   //// VAL //////
   $nbClicks=$nbClicks+1;
-  console.log($nbClicks)
+  // console.log($nbClicks)
   //// FIN VAL ///
 
   $compteurVote=$compteurVote+(1*$MultiClickGlobal);
@@ -359,10 +372,10 @@ function clickAlgoBack(){
 
 
 // Fonction du click sur la boite
-
 function click() {
+  $nbClicks2=$nbClicks2+1
 
-  if($nbClicks>0){
+  if($nbClicks+2>0){
     $chute=0;
     $angle=0;    
     clearInterval($vitesseUp);
@@ -853,7 +866,7 @@ var $attenuationPertes;                                 //
 // fonction de mise à jour des variables et du check de disponibilité
 function checkAchat($iD){
   $iDBouton=$iD.id;
-  
+  console.log($iDBouton)
 
   if(0+0=="la tete à toto"){alert("LOL")}   // franchement, cherchez pas à comprendre, mais ne touchez pas XD
 
@@ -861,7 +874,7 @@ function checkAchat($iD){
   //.........................  BELLE GUEULE  ................................
   else if($iDBouton== "boutonAchatBelleGueule"){                                                                                        // changeHere
     $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
-    $coutArgent=200;                                                                                                                    // changeHere
+    $coutArgent=1000;                                                                                                                    // changeHere
     $coutVote=0;                                                                                                                        // changeHere
     $mouvementArgentOneShot=0;                                                                                                          // changeHere
     $mouvementVoteOneShot=0;                                                                                                            // changeHere
@@ -872,6 +885,37 @@ function checkAchat($iD){
   }
   //.........................  FIN BELLE GUEULE  ................................
 
+
+
+
+  //.........................  BELLE MEUF  ................................
+  else if($iDBouton== "boutonAchatBelleMeuf"){                                                                                        // changeHere
+    $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
+    $coutArgent=10000;                                                                                                                    // changeHere
+    $coutVote=0;                                                                                                                        // changeHere
+    $mouvementArgentOneShot=0;                                                                                                          // changeHere
+    $mouvementVoteOneShot=0;                                                                                                            // changeHere
+    $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
+    $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;               // changeHere
+
+   
+  }
+  //.........................  FIN BELLE MEUF  ................................
+
+
+    //......................... ARTICLE ................................
+    else if($iDBouton== "boutonAchatarticleJournal"){                                                                                        // changeHere
+      $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
+      $coutArgent=5000;                                                                                                                    // changeHere
+      $coutVote=0;                                                                                                                        // changeHere
+      $mouvementArgentOneShot=0;                                                                                                          // changeHere
+      $mouvementVoteOneShot=0;                                                                                                            // changeHere
+      $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
+      $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;               // changeHere
+  
+     
+    }
+    //.........................  FIN ARTICLE  ................................
 
 
 
@@ -964,28 +1008,28 @@ function achat(){
 
 
 
-// ............................................ FONCTION PERSISTANTE..................................
+// ............................................ FONCTION PERSISTANTE Belle Gueule..................................
 
                                                                                                                // changeHere
 
 function belleGueule(){                                                                                      // changeHere
 
-  $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  $intervalMouvementArgent=0;
-  $intervalMouvementVote=0;
-  $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
-  $mouvementVoteRecurrent=0;                                                                                // changeHere
-  $multi=0;                                                                                                 // changeHere
-  $duree=30;                     //$duree s'exprime en JOURS                                                // changeHere
+  let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalMouvementArgent=0;
+  let $intervalMouvementVote=0;
+  let $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  let $mouvementVoteRecurrent=0;                                                                                // changeHere
+  let $multi=2;                                                                                                 // changeHere
+  let $duree=30;                     //$duree s'exprime en JOURS                                                // changeHere
 
   // ADAPTATION MATHEMATIQUE DES VARIABLES
-  $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
+   $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
 
 
 
 
 
-  $onOff=0;
+  let $onOff=0;
   function checkSiValable(){
 
     // check si la date limite n'est pas atteinte et si activée
@@ -995,10 +1039,12 @@ function belleGueule(){                                                         
 
     else{
       $onOff=0;
+      localStorage.setItem('boutonAchatBelleGueule',"00")
+
     }
 
   }
-  setInterval( checkSiValable, 2000);
+  setInterval( checkSiValable, 1000);
 
   // function testesttest (){
   //   console.log("actif=  "+$onOff)
@@ -1039,8 +1085,10 @@ function belleGueule(){                                                         
     if($multi!= 0){
       function multiActif (){
       $multiBelleGueule=Math.pow($multi, $onOff)                                                                                //changeHere
+
+      console.log("multigueulefonc"+$onOff)
     }
-    setInterval( multiActif, 10000);
+    setInterval( multiActif, 100);
 
     }
   //..................................FIN MULTICLICK..................................
@@ -1112,7 +1160,338 @@ function belleGueule(){                                                         
 belleGueule ();
 
 
-// .................................................... FIN FONCTION PERSISTANTE......................................................
+//.................................................... FIN FONCTION PERSISTANTE BELLE Gueule......................................................
+
+
+
+
+
+// ............................................ FONCTION PERSISTANTE Belle Meuf..................................
+
+                                                                                                               // changeHere
+
+function belleMeuf(){                                                                                      // changeHere
+
+  let $intervalAutoClick=120/600;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalMouvementArgent=0;
+  let $intervalMouvementVote=0;
+  let $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  let $mouvementVoteRecurrent=0;                                                                                // changeHere
+  let  $multi=0;                                                                                                 // changeHere
+  let $duree=30;                     //$duree s'exprime en JOURS                                                // changeHere
+
+  // ADAPTATION MATHEMATIQUE DES VARIABLES
+  $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
+
+
+
+
+
+  let $onOff=0;
+  function checkSiValable(){
+
+    // check si la date limite n'est pas atteinte et si activée
+    if (((parseInt(localStorage.getItem('boutonAchatBelleMeuf').substr(1))+$duree) >= $tempsDeJeuJoursVirtuels) & (parseInt(localStorage.getItem('boutonAchatBelleMeuf').substr(0, 1))==1)){
+      $onOff=1;
+    }
+
+    else{
+      $onOff=0;
+      localStorage.setItem('boutonAchatBelleMeuf',"00")
+
+    }
+
+  }
+  setInterval( checkSiValable, 1000);
+
+  // function testesttest (){
+  //   console.log("actif=  "+$onOff)
+  // }
+  // setInterval( testesttest, 500);
+
+
+
+  //Ici on mets les algos qu'execute la carte bonus
+  
+
+
+
+  //..................................AUTOCLICK.....................................
+
+  if($intervalAutoClick!=0){
+
+    function autoClick(){
+
+      if($onOff==1){
+        clickAlgoBack()
+      }
+
+    }
+    setInterval( autoClick, $intervalAutoClick);
+
+
+  }
+  
+
+    
+  //..................................FIN AUTOCLICK...................................
+
+
+
+
+  //..................................MULTICLICK.....................................
+    if($multi!= 0){
+      function multiActif (){
+      $multiBelleMeuf=Math.pow($multi, $onOff)                                                                                //changeHere
+    }
+    setInterval( multiActif, 100);
+
+    }
+  //..................................FIN MULTICLICK..................................
+
+
+
+
+
+  //..................................MOUVEMENT ARGENT PERSISTANT................................
+
+  if($intervalMouvementArgent!=0){
+
+    function mouvementArgent(){
+
+      if($onOff==1){
+        
+
+        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementArgent, $intervalMouvementArgent);
+  }
+
+    
+  //..................................FIN MOUVEMENT ARGENT PERSISTANT...................................
+
+
+
+
+
+
+
+  //..................................MOUVEMENT VOTE PERSISTANT................................
+
+  if($intervalMouvementVote!=0){
+
+    function mouvementVote(){
+
+      if($onOff==1){
+        
+
+        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementVote, $intervalMouvementVote);
+  }
+
+    
+  //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
+
+
+
+
+
+
+    
+  
+
+}
+belleMeuf ();
+
+
+// .................................................... FIN FONCTION PERSISTANTE belle meuf......................................................
+
+
+
+
+
+// ............................................ FONCTION PERSISTANTE ARTICLE..................................
+
+                                                                                                               // changeHere
+
+function article(){                                                                                      // changeHere
+
+  let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalMouvementArgent=0;
+  let $intervalMouvementVote=0;
+  let $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  let $mouvementVoteRecurrent=0;                                                                                // changeHere
+  let $multi=4;                                                                                                 // changeHere
+  let $duree=21;                     //$duree s'exprime en JOURS                                                // changeHere
+
+  // ADAPTATION MATHEMATIQUE DES VARIABLES
+  $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
+
+
+
+
+
+  let $onOff=0;
+  function checkSiValable(){
+
+    // check si la date limite n'est pas atteinte et si activée
+    if (((parseInt(localStorage.getItem('boutonAchatarticleJournal').substr(1))+$duree) >= $tempsDeJeuJoursVirtuels) & (parseInt(localStorage.getItem('boutonAchatarticleJournal').substr(0, 1))==1)){
+      $onOff=1;
+    }
+
+    else{
+      $onOff=0;
+      localStorage.setItem('boutonAchatarticleJournal',"00")
+
+    }
+
+  }
+  setInterval( checkSiValable, 1000);
+
+  // function testesttest (){
+  //   console.log("actif=  "+$onOff)
+  // }
+  // setInterval( testesttest, 500);
+
+
+
+  //Ici on mets les algos qu'execute la carte bonus
+  
+
+
+
+  //..................................AUTOCLICK.....................................
+
+  if($intervalAutoClick!=0){
+
+    function autoClick(){
+
+      if($onOff==1){
+        clickAlgoBack()
+      }
+
+    }
+    setInterval( autoClick, $intervalAutoClick);
+
+
+  }
+  
+
+    
+  //..................................FIN AUTOCLICK...................................
+
+
+
+
+  //..................................MULTICLICK.....................................
+    if($multi!= 0){
+      function multiActif (){
+      $multiArticleJournal=Math.pow($multi, $onOff)                                                                                //changeHere
+    }
+    setInterval( multiActif, 1000);
+
+    }
+  //..................................FIN MULTICLICK..................................
+
+
+
+
+
+  //..................................MOUVEMENT ARGENT PERSISTANT................................
+
+  if($intervalMouvementArgent!=0){
+
+    function mouvementArgent(){
+
+      if($onOff==1){
+        
+
+        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementArgent, $intervalMouvementArgent);
+  }
+
+    
+  //..................................FIN MOUVEMENT ARGENT PERSISTANT...................................
+
+
+
+
+
+
+
+  //..................................MOUVEMENT VOTE PERSISTANT................................
+
+  if($intervalMouvementVote!=0){
+
+    function mouvementVote(){
+
+      if($onOff==1){
+        
+
+        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementVote, $intervalMouvementVote);
+  }
+
+    
+  //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
+
+
+
+
+
+
+    
+  
+
+}
+article ();
+
+
+// .................................................... FIN FONCTION PERSISTANTE ARTICLE......................................................
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ..................................................... FIN CARTES BONUS ..................................................................
@@ -1137,7 +1516,7 @@ function reset(){
   var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
   if (isNaN(timeAdd)) {}
   else {$compteurVotesTotal += voteAddTotal;}
-  if (isNaN(VoteAddTotal)) {}
+  if (isNaN(voteAddTotal)) {}
   else { $compteurArgentTotal += argentAddTotal;}
   if (isNaN(argentAddTotal)) {}
   else {$tempsDeJeuSeconde += timeAdd;}
@@ -1152,14 +1531,15 @@ function reset(){
   localStorage.setItem('boutonAchatJustice', '00');
   localStorage.setItem('boutonAchatCabinetAvocat', '00');
   localStorage.setItem('boutonAchatAvocat', '00');
-  localStorage.setItem('boutonAchatRMI', '00');
-  localStorage.setItem('boutonAchatFMI', '00');
-  localStorage.setItem('boutonAchatTeachers', '00');
+  localStorage.setItem('boutonAchatrsa', '00');
+  localStorage.setItem('boutonAchatChomage', '00');
+  localStorage.setItem('boutonAchatEducation', '00');
   localStorage.setItem('boutonAchatGrenade', '00');
   localStorage.setItem('boutonAchatGunsRoses', '00');
   localStorage.setItem('boutonAchatarticleJournal', '00');
-  localStorage.setItem('boutonAchatPanemCircenses', '00');
-  localStorage.setItem('boutonAchatBFNTV', '00');
+  localStorage.setItem('boutonAchatPanem', '00');
+  localStorage.setItem('boutonAchatbfntv', '00');
+  localStorage.setItem('boutonAchatVenteArme','00');
   $tempsDeJeuSeconde = 0;
   
 }
@@ -1213,3 +1593,22 @@ function reset(){
 
 
 // console.log($compteurFiltre+" "+$coeff)
+
+
+
+
+
+function tessmulti(){
+console.log($multiBelleGueule)
+
+}
+setInterval(tessmulti, 1000)
+
+
+
+function blabla(){
+console.log("onoff"+$onOff)
+
+}
+
+setInterval(blabla,1000)
