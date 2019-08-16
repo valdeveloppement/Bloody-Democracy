@@ -58,16 +58,12 @@ if (localStorage.getItem("$tempsDeJeuSeconde") === null) {
 }else{
   $tempsDeJeuSeconde = parseInt(localStorage.getItem("$tempsDeJeuSeconde"));
 }
-if (localStorage.getItem("$timeFromStartAllPlay") === null) {
-  $tempsTotal = $tempsDeJeuSeconde;
-}else{
-  $tempsTotal = parseInt(localStorage.getItem("$timeFromStartAllPlay"));
-}
+
+
 
 
 function tempsQuiPasse(){
   $tempsDeJeuSeconde=$tempsDeJeuSeconde+1
-  $tempsTotal = $tempsTotal+1;
 
 }
 
@@ -78,7 +74,7 @@ setInterval( tempsQuiPasse, 1000)
 function storageTempsDeJeuSeconde(){
 
   localStorage.setItem('$tempsDeJeuSeconde', $tempsDeJeuSeconde);
-  localStorage.setItem('$timeFromStartAllPlay', $tempsTotal);
+
 
 }
 setInterval( storageTempsDeJeuSeconde, 5000)
@@ -212,11 +208,6 @@ if (localStorage.getItem("compteurVotesTotal") === null) {
   $compteurVotesTotal = 0;
 }else{
   $compteurVotesTotal = parseInt(localStorage.getItem("compteurVotesTotal"));
-}
-if(localStorage.getItem('timeFromStartAllPlay') === null){
-  $timeAdd = 0;
-}else{
-  $timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
 }
 
 
@@ -746,20 +737,20 @@ function showJustice(){
 //Statistique
 
 function stat(){
-	//localStorage.setItem('timeFromStartAllPlay', $tempsDeJeuSeconde);
+	localStorage.setItem('timeFromStartAllPlay', $tempsDeJeuSeconde);
 	localStorage.setItem('argentTotalAllPlay', $compteurArgentTotal);
 	localStorage.setItem('voteTotalAllPlay', $compteurVotesTotal);
 	if (isNaN($compteurArgentCaisseNoire)){}
 	else { document.getElementById("caisseNoire").innerHTML = "Votre caisse noire: " + $compteurArgentCaisseNoire; }
-	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVote;
-	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgent;
+	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVotesTotal;
+	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgentTotal;
 	if (isNaN(localStorage.getItem('argentTotalAllPlay'))) {}
 	else {document.getElementById("argentTotalAllPlay").innerHTML = "Gain d'Argent Total :" + localStorage.getItem('argentTotalAllPlay');}
 	if (isNaN(localStorage.getItem('voteTotalAllPlay'))) {}
 	else { document.getElementById("voteTotalAllPlay").innerHTML = "Gain de vote Total: " + localStorage.getItem('voteTotalAllPlay');}
 	document.getElementById("timeFromStartThisPlay").innerHTML = "Temps de jeu cette Partie: " + $tempsDeJeuSeconde + " secondes";
 	if (isNaN(localStorage.getItem('timeFromStartAllPlay'))) {}
-	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total :" + $tempsTotal + " secondes";}
+	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total :" + localStorage.getItem('timeFromStartAllPlay') + " secondes";}
 	document.getElementById("voteParClic").innerHTML = "Gain de Vote au Clic " + $MultiClickGlobal;
 	document.getElementById("argentParClic").innerHTML = "Gain d'Argent au clic " + ($MultiClickGlobal*5);
 }
@@ -2906,7 +2897,7 @@ function bfntv(){                                                               
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -3094,16 +3085,24 @@ education ();
 
 
 ///////////////////////////////////////////////////////// PARTIE JULIEN //////////////////////////////////////////////////////////////////
-if(parseInt(localStorage.getItem('compteurVote')) >= 100){ //Valeur à changer pour les tests
+if($compteurVote >= 300){ //Valeur à changer pour les tests
   reset();
 }
 
 ////////////////////////////////// RESET ////////////////////////////////////
 
 function reset(){
-
+  var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
+  var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
+  var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
+  if (isNaN(timeAdd)) {}
+  else {$compteurVotesTotal += voteAddTotal;}
+  if (isNaN(VoteAddTotal)) {}
+  else { $compteurArgentTotal += argentAddTotal;}
+  if (isNaN(argentAddTotal)) {}
+  else {$tempsDeJeuSeconde += timeAdd;}
   
-  $tempsDeJeuSeconde = 0;
+  localStorage.removeItem('compteurVote');
   $compteurVote = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
   localStorage.setItem('boutonAchatBelleGueule', '00');
@@ -3114,13 +3113,14 @@ function reset(){
   localStorage.setItem('boutonAchatCabinetAvocat', '00');
   localStorage.setItem('boutonAchatAvocat', '00');
   localStorage.setItem('boutonAchatrsa', '00');
-  localStorage.setItem('boutonAchatChomage', '00');
-  localStorage.setItem('boutonAchatEducation', '00');
+  localStorage.setItem('boutonAchatchomage', '00');
+  localStorage.setItem('boutonAchatTeachers', '00');
   localStorage.setItem('boutonAchatGrenade', '00');
   localStorage.setItem('boutonAchatGunsRoses', '00');
   localStorage.setItem('boutonAchatarticleJournal', '00');
-  localStorage.setItem('boutonAchatPanem', '00');
-  localStorage.setItem('boutonAchatbfntv', '00');
+  localStorage.setItem('boutonAchatPanemCircenses', '00');
+  localStorage.setItem('boutonAchatBFNTV', '00');
+  $tempsDeJeuSeconde = 0;
   
 }
 //////////////////////////////// FIN RESET ////////////////////////////////
