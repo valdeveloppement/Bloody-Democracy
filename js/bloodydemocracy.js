@@ -1284,6 +1284,21 @@ else if($iDBouton== "boutonAchatbfntv"){                                        
   }
   //.........................  ppanem................................
 
+ 
+  //.........................  EDUCATION ................................
+  else if($iDBouton== "boutonAchatEducation"){                                                                                        // changeHere
+    $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
+    $coutArgent=50000;                                                                                                                    // changeHere
+    $coutVote=5000;                                                                                                                        // changeHere
+    $mouvementArgentOneShot=0;                                                                                                          // changeHere
+    $mouvementVoteOneShot=0;                                                                                                            // changeHere
+    $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
+    $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;               // changeHere
+
+   
+  }
+  //.........................  ppanem................................
+
 
 
 
@@ -1474,7 +1489,7 @@ function belleGueule(){                                                         
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -1502,8 +1517,8 @@ function belleGueule(){                                                         
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -1630,7 +1645,7 @@ function belleMeuf(){                                                           
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -1658,8 +1673,8 @@ function belleMeuf(){                                                           
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -1814,8 +1829,8 @@ function article(){                                                             
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -1938,7 +1953,7 @@ function PhotoDeFamille(){                                                      
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -1966,8 +1981,8 @@ function PhotoDeFamille(){                                                      
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2088,7 +2103,7 @@ function Grenade(){                                                             
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2116,8 +2131,8 @@ function Grenade(){                                                             
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2246,7 +2261,7 @@ function avocat(){                                                              
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2274,8 +2289,8 @@ function avocat(){                                                              
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2403,7 +2418,7 @@ function chomage(){                                                             
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2431,8 +2446,8 @@ function chomage(){                                                             
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2553,7 +2568,7 @@ function rsa(){                                                                 
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2581,8 +2596,8 @@ function rsa(){                                                                 
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2706,7 +2721,7 @@ function cabinet(){                                                             
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2734,8 +2749,8 @@ function cabinet(){                                                             
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2853,7 +2868,7 @@ function bfntv(){                                                               
       if($onOff==1){
         
 
-        $compteurArgent=$compteurArgent-$mouvementArgentRecurrent;
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
         
 
       }
@@ -2881,8 +2896,8 @@ function bfntv(){                                                               
       if($onOff==1){
         
 
-        $compteurVote=$compteurVote-$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal-$mouvementVoteRecurrent;
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2909,6 +2924,159 @@ bfntv ();
 
 //.................................................... FIN FONCTION PERSISTANTE BFNTV......................................................
 
+
+// ............................................ FONCTION PERSISTANTE education..................................
+
+                                                                                                               // changeHere
+
+function education(){                                                                                      // changeHere
+
+  let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalMouvementArgent=28;
+  let $intervalMouvementVote=0;
+  let $mouvementArgentRecurrent=60000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
+  let $mouvementVoteRecurrent=0;                                                                                // changeHere
+  let $multi=0;                                                                                                 // changeHere
+  let $duree=6*30;                     //$duree s'exprime en JOURS                                                // changeHere
+
+  // ADAPTATION MATHEMATIQUE DES VARIABLES
+   $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
+
+
+
+
+
+  let $onOff=0;
+  function checkSiValable(){
+
+    // check si la date limite n'est pas atteinte et si activée
+    if (((parseInt(localStorage.getItem('boutonAchatEducation').substr(1))+$duree) >= $tempsDeJeuJoursVirtuels) & (parseInt(localStorage.getItem('boutonAchatEducation').substr(0, 1))==1)){
+      $onOff=1;
+    }
+
+    else{
+      $onOff=0;
+      localStorage.setItem('boutonAchatEducation',"00")
+
+    }
+
+  }
+  setInterval( checkSiValable, 1000);
+
+  // function testesttest (){
+  //   console.log("actif=  "+$onOff)
+  // }
+  // setInterval( testesttest, 500);
+
+
+
+  //Ici on mets les algos qu'execute la carte bonus
+  
+
+
+
+  //..................................AUTOCLICK.....................................
+
+  if($intervalAutoClick!=0){
+
+    function autoClick(){
+
+      if($onOff==1){
+        clickAlgoBack()
+      }
+
+    }
+    setInterval( autoClick, $intervalAutoClick);
+
+
+  }
+  
+
+    
+  //..................................FIN AUTOCLICK...................................
+
+
+
+
+  //..................................MULTICLICK.....................................
+    if($multi!= 0){
+      function multiActif (){
+      $multiBelleGueule=Math.pow($multi, $onOff)                                                                                //changeHere
+
+    }
+    setInterval( multiActif, 100);
+
+    }
+  //..................................FIN MULTICLICK..................................
+
+
+
+
+
+  //..................................MOUVEMENT ARGENT PERSISTANT................................
+
+  if($intervalMouvementArgent!=0){
+
+    function mouvementArgent(){
+
+      if($onOff==1){
+        
+
+        $compteurArgent=$compteurArgent+$mouvementArgentRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementArgent, $intervalMouvementArgent);
+  }
+
+    
+  //..................................FIN MOUVEMENT ARGENT PERSISTANT...................................
+
+
+
+
+
+
+
+  //..................................MOUVEMENT VOTE PERSISTANT................................
+
+  if($intervalMouvementVote!=0){
+
+    function mouvementVote(){
+
+      if($onOff==1){
+        
+
+        $compteurVote=$compteurVote+$mouvementVoteRecurrent;
+        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        
+
+      }
+
+    }
+
+    setInterval( mouvementVote, $intervalMouvementVote);
+  }
+
+    
+  //..................................FIN MOUVEMENT VOTE PERSISTANT...................................
+
+
+
+
+
+
+    
+  
+
+}
+education ();
+
+
+//.................................................... FIN FONCTION PERSISTANTE education.....................................................
 
 
 // ..................................................... FIN CARTES BONUS ..................................................................
