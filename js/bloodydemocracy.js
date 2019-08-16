@@ -2918,7 +2918,7 @@ function reset(){
 
 
 
-=======
+
 setInterval(blabla,1000);
 
 
