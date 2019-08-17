@@ -3299,6 +3299,10 @@ education ();
 ////////////////////////////////// RESET ////////////////////////////////////
 
 function reset(){
+
+  /*var video = document.getElementById('#video');
+  video.play();*/
+
   var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
   var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
   var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
