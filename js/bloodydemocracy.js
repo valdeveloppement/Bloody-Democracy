@@ -42,7 +42,6 @@ var $compteurArgentCaisseNoire;
 
 
 //....................................CALENDRIER INTERSIDERAL....................................................
-
 // localStorage.clear();
 
 // 1jour dure 2 min
@@ -631,7 +630,7 @@ function showPossession(){
 	document.getElementById("id1Vote").checked = "true"
 	document.getElementById("id1Gestion").checked = "true"
 	document.getElementById("id1Argent").checked = "true"
-
+	document.getElementById("selectBuffTemporaire").checked = "true"
 
 
 function showVote(){
@@ -652,6 +651,7 @@ function showVote(){
 	}
 	document.getElementById("slideVote").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
+	document.getElementById("miniatureMenuVote").style.borderColor= "grey";
 	var carteListeVote = document.getElementsByClassName("carteVote");
 	carteListeVote[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Vote").checked = "true"
@@ -675,6 +675,7 @@ function showArgent(){
 	}
 	document.getElementById("slideArgent").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsArgent").classList.replace("notSelect", "select");
+	document.getElementById("miniatureMenuArgent").style.borderColor= "grey";
 	var carteListeArgent = document.getElementsByClassName("carteArgent");
 	carteListeArgent[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Argent").checked = "true"
@@ -692,12 +693,14 @@ function showGestion(){
 		entry.classList.remove("select");
 	}
 	var thumbListe = document.getElementsByClassName("thumbnails");
+	var thumbListe = document.getElementsByClassName("thumbnails");
 	for (let entry of thumbListe){
 		entry.classList.add("notSelect");
 		entry.classList.remove("select");
 	}
 	document.getElementById("slideGestion").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsGestion").classList.replace("notSelect", "select");
+	document.getElementById("miniatureMenuGestion").style.borderColor= "grey";
 	var carteListeGestion = document.getElementsByClassName("carteGestion");
 	carteListeGestion[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Gestion").checked = "true"
@@ -850,6 +853,114 @@ function stat(){
 
 setInterval(stat, 1000);
 
+// Déclarations Cout des Cartes
+var coutArgentBelleGueule= 1000;
+var coutVoteBelleGueule= 0;
+
+var coutArgentBelleMeuf = 10000;
+var coutVoteBelleMeuf = 0;
+
+var coutArgentArticle = 5000;
+var coutVoteArticle = 0;
+
+var coutArgentPhoto = 20000;
+var coutVotePhoto = 0;
+
+var coutArgentGrenade = 50000;
+var coutVoteGrenade = 15000;
+
+var coutArgentAvocat = 60000;
+var coutVoteAvocat = 0;
+
+var coutArgentChomage = 100000;
+var coutVoteChomage = 0;
+
+var coutArgentrsa = 130000;
+var coutVotersa = 0;
+
+var coutArgentCabinetAvocat = 150000;
+var coutVoteCabinetAvocat = 0;
+
+var coutArgentVentesArme = 200000;
+var coutVoteVentesArme = 0;
+
+var coutArgentJustice = 500000;
+var coutVoteJustice = 20000;
+
+var coutArgentbfntv = 250000;
+var coutVotebfntv = 0;
+
+var coutArgentPanem = 400000;
+var coutVotePanem = 0;
+
+var coutArgentEducation = 50000;
+var coutVoteEducation = 5000;
+
+
+
+//Display carte disponible
+function checkCardDisplay(){
+
+		if ($compteurArgentTotal >= coutArgentBelleMeuf && $compteurVotesTotal >= coutVoteBelleMeuf){
+			document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
+		}
+
+	
+		if ($compteurArgentTotal >= coutArgentPhoto && $compteurVotesTotal >= coutVotePhoto) {
+			document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
+		}
+
+	
+		if ($compteurArgentTotal >= coutArgentGrenade && $compteurGrenade >= coutArgentGrenade){
+			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
+		}
+
+		if ($compteurArgentTotal >= coutArgentEducation && $compteurVotesTotal >= coutVoteEducation){
+			document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
+		}
+	
+		if ($compteurArgentTotal >= coutArgentbfntv && $compteurVotesTotal >= coutVotebfntv){
+			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
+		}
+
+		if ($compteurArgentTotal >= coutArgentPanem && $compteurVotesTotal >= coutVotePanem){
+			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
+		}
+	
+		if ($compteurArgentTotal >= coutArgentChomage && $compteurVotesTotal >= coutVoteChomage){
+			document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
+		}
+		
+		if ($compteurArgentTotal >= coutArgentrsa && $compteurVotesTotal >= coutVotersa){
+			document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
+		}
+
+	
+		if ($compteurArgentTotal >= coutArgentArticle && $compteurVotesTotal >= coutVoteArticle){
+			document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
+		}
+	
+		if ($compteurArgentTotal >= coutArgentVentesArme && $compteurVotesTotal >= coutVoteVentesArme){
+			document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
+		}
+	
+		if ($compteurArgentTotal >= coutArgentAvocat && $compteurVotesTotal >= coutVoteAvocat){
+			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
+		}
+
+		if ($compteurArgentTotal >= coutArgentCabinetAvocat && $compteurVotesTotal >= coutVoteCabinetAvocat){
+			document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
+		}
+
+		if ($compteurArgentTotal >= coutArgentJustice && $compteurVotesTotal >= coutVoteJustice){
+			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
+		}
+}
+
+setInterval(checkCardDisplay, 500);
 
 ///////////////////////////FinSylvain///////////////////////////////////////
 
