@@ -45,7 +45,7 @@ var $compteurArgentCaisseNoire;
 // localStorage.clear();
 
 // 1jour dure 2 min
-$ratioSecondesParJour=2*60;
+$ratioSecondesParJour=30;
 
 var $tempsDeJeuSeconde;
 var $tempsDeJeuJoursVirtuels;
@@ -911,7 +911,7 @@ function checkCardDisplay(){
 		}
 
 	
-		if ($compteurArgentTotal >= coutArgentGrenade && $compteurGrenade >= coutArgentGrenade){
+		if ($compteurArgentTotal >= coutArgentGrenade && $compteurVotesTotal >= coutVoteGrenade){
 			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
 		}
 
@@ -3292,9 +3292,9 @@ education ();
 
 
 ///////////////////////////////////////////////////////// PARTIE JULIEN //////////////////////////////////////////////////////////////////
-if($compteurVote >= 300){ //Valeur à changer pour les tests
+/*if($compteurVote >= 300){ //Valeur à changer pour les tests
   reset();
-}
+}*/
 
 ////////////////////////////////// RESET ////////////////////////////////////
 
@@ -3302,31 +3302,37 @@ function reset(){
   var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
   var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
   var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
+  localStorage.setItem('timeFromStartAllPlay', timeAdd);
+  localStorage.setItem('argentTotalAllPlay', argentAddTotal);
+  localStorage.setItem('voteTotalAllPlay', voteAddTotal);
+
+  
   if (isNaN(timeAdd)) {}
   else {$compteurVotesTotal += voteAddTotal;}
-  if (isNaN(VoteAddTotal)) {}
+  if (isNaN(voteAddTotal)) {}
   else { $compteurArgentTotal += argentAddTotal;}
   if (isNaN(argentAddTotal)) {}
   else {$tempsDeJeuSeconde += timeAdd;}
   
-  localStorage.removeItem('compteurVote');
   $compteurVote = 0;
+   $compteurVotesTotal = 0;
+   $compteurArgentTotal = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
-  localStorage.setItem('boutonAchatBelleGueule', '00');
-  localStorage.setItem('boutonAchatBelleMeuf', '00');
-  localStorage.setItem('boutonAchatarticleJournal', '00');
-  localStorage.setItem('boutonAchatphotoDeFamille', '00');
-  localStorage.setItem('boutonAchatJustice', '00');
-  localStorage.setItem('boutonAchatCabinetAvocat', '00');
-  localStorage.setItem('boutonAchatAvocat', '00');
-  localStorage.setItem('boutonAchatrsa', '00');
-  localStorage.setItem('boutonAchatchomage', '00');
-  localStorage.setItem('boutonAchatTeachers', '00');
-  localStorage.setItem('boutonAchatGrenade', '00');
-  localStorage.setItem('boutonAchatGunsRoses', '00');
-  localStorage.setItem('boutonAchatarticleJournal', '00');
-  localStorage.setItem('boutonAchatPanemCircenses', '00');
-  localStorage.setItem('boutonAchatBFNTV', '00');
+  localStorage.setItem('boutonAchatBelleGueule', '000');
+  localStorage.setItem('boutonAchatBelleMeuf', '000');
+  localStorage.setItem('boutonAchatarticleJournal', '000');
+  localStorage.setItem('boutonAchatphotoDeFamille', '000');
+  localStorage.setItem('boutonAchatJustice', '000');
+  localStorage.setItem('boutonAchatCabinetAvocat', '000');
+  localStorage.setItem('boutonAchatAvocat', '000');
+  localStorage.setItem('boutonAchatrsa', '000');
+  localStorage.setItem('boutonAchatChomage', '000');
+  localStorage.setItem('boutonAchatEductaion', '000');
+  localStorage.setItem('boutonAchatGrenade', '000');
+  localStorage.setItem('boutonAchatGunsRoses', '000');
+  localStorage.setItem('boutonAchatarticleJournal', '000');
+  localStorage.setItem('boutonAchatPanem', '000');
+  localStorage.setItem('boutonAchatbfntv', '000');
   $tempsDeJeuSeconde = 0;
   
 }
