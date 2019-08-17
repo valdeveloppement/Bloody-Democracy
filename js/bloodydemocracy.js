@@ -3300,7 +3300,7 @@ education ();
 
 function reset(){
 
-  /*var video = document.getElementById('#video');
+  /*var video = document.getElementById('video');
   video.play();*/
 
   var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
