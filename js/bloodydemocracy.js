@@ -3317,11 +3317,8 @@ function reset(){
   else { $compteurArgentTotal += argentAddTotal;}
   if (isNaN(argentAddTotal)) {}
   else {$tempsDeJeuSeconde += timeAdd;}
-  
-  $compteurVote = 0;
-   $compteurVotesTotal = 0;
-   $compteurArgentTotal = 0;
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
+  $compteurVote = 0;
   localStorage.setItem('boutonAchatBelleGueule', '000');
   localStorage.setItem('boutonAchatBelleMeuf', '000');
   localStorage.setItem('boutonAchatarticleJournal', '000');
@@ -3338,6 +3335,8 @@ function reset(){
   localStorage.setItem('boutonAchatPanem', '000');
   localStorage.setItem('boutonAchatbfntv', '000');
   $tempsDeJeuSeconde = 0;
+  $compteurVotesTotal = 0;
+  $compteurArgentTotal = 0;
   
 }
 //////////////////////////////// FIN RESET ////////////////////////////////
