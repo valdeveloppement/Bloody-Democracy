@@ -353,9 +353,9 @@ function clickAlgoBack(){
   //// FIN VAL ///
 
   $compteurVote=$compteurVote+(1*$MultiClickGlobal);
-  $compteurArgent=$compteurArgent+(5*$MultiClickGlobal);
-  $compteurVotesTotal=$compteurVotesTotal+(1*$MultiClickGlobal);
-  $compteurArgentTotal=$compteurArgentTotal+(5*$MultiClickGlobal);
+  $compteurArgent=$compteurArgent+(5000*$MultiClickGlobal);
+  $compteurVotesTotal=$compteurVotesTotal+(1000*$MultiClickGlobal);
+  $compteurArgentTotal=$compteurArgentTotal+(5000*$MultiClickGlobal);
   $containerCompteurVote.innerHTML = $compteurVote;
   $containerCompteurArgent.innerHTML = $compteurArgent;
  
@@ -543,7 +543,7 @@ function showVote(){
 	}
 	document.getElementById("slideVote").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuVote").style.borderColor= "grey";
+	document.getElementById("miniatureMenuVote").style.backgroundColor= "blue";
 	var carteListeVote = document.getElementsByClassName("carteVote");
 	carteListeVote[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Vote").checked = "true"
@@ -567,7 +567,7 @@ function showArgent(){
 	}
 	document.getElementById("slideArgent").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsArgent").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuArgent").style.borderColor= "grey";
+	document.getElementById("miniatureMenuArgent").style.backgroundColor= "blue";
 	var carteListeArgent = document.getElementsByClassName("carteArgent");
 	carteListeArgent[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Argent").checked = "true"
@@ -592,7 +592,7 @@ function showGestion(){
 	}
 	document.getElementById("slideGestion").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsGestion").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuGestion").style.borderColor= "grey";
+	document.getElementById("miniatureMenuGestion").style.backgroundColor= "blue";
 	var carteListeGestion = document.getElementsByClassName("carteGestion");
 	carteListeGestion[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Gestion").checked = "true"
@@ -601,14 +601,7 @@ function showGestion(){
 
 //Carte affiche
 
-function showBelleFace(){
-	var carteListe = document.getElementsByClassName("carte");
-	for (let entry of carteListe){
-		entry.classList.add("notSelect");
-		entry.classList.remove("select");
-	}
-	document.getElementById("belleFace").classList.replace("notSelect", "select");
-}
+
 function showBelleMeuf(){
 	var carteListe = document.getElementsByClassName("carte");
 	for (let entry of carteListe){
@@ -617,7 +610,7 @@ function showBelleMeuf(){
 	}
 	document.getElementById("belleMeuf").classList.replace("notSelect", "select");
 }
-function showBelleGueule(){
+function showbelleGueule(){
 	var carteListe = document.getElementsByClassName("carte");
 	for (let entry of carteListe){
 		entry.classList.add("notSelect");
@@ -746,8 +739,6 @@ function stat(){
 setInterval(stat, 1000);
 
 // Déclarations Cout des Cartes
-var coutArgentBelleGueule= 1000;
-var coutVoteBelleGueule= 0;
 
 var coutArgentBelleMeuf = 10000;
 var coutVoteBelleMeuf = 0;
@@ -789,71 +780,117 @@ var coutArgentEducation = 50000;
 var coutVoteEducation = 5000;
 
 
-
 //Display carte disponible
-function checkCardDisplay(){
-
-		if ($compteurArgentTotal >= coutArgentBelleMeuf && $compteurVotesTotal >= coutVoteBelleMeuf){
+function checkDisplay(){
+		function checkDisplayBelleMeuf(){
+		if ($compteurArgent >= coutArgentBelleMeuf && $compteurVote >= coutVoteBelleMeuf){
 			document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			clearInterval(interBelleMeuf);
+			console.log("interval bellemeuf clear");
 		}
-
-	
-		if ($compteurArgentTotal >= coutArgentPhoto && $compteurVotesTotal >= coutVotePhoto) {
+	}
+	function checkDisplayPhoto() {
+		if ($compteurArgent >= coutArgentPhoto && $compteurVote >= coutVotePhoto) {
 			document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			clearInterval(interPhoto);
 		}
-
-	
-		if ($compteurArgentTotal >= coutArgentGrenade && $compteurGrenade >= coutArgentGrenade){
+	}
+	function checkDisplayGrenade(){
+		if ($compteurArgent >= coutArgentGrenade && $compteurVote >= coutVoteGrenade){
 			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			clearInterval(interGrenade);
 		}
-
-		if ($compteurArgentTotal >= coutArgentEducation && $compteurVotesTotal >= coutVoteEducation){
+	}
+	function checkDisplayEducation(){
+		if ($compteurArgent >= coutArgentEducation && $compteurVote >= coutVoteEducation){
 			document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			clearInterval(interEducation);
 		}
-	
-		if ($compteurArgentTotal >= coutArgentbfntv && $compteurVotesTotal >= coutVotebfntv){
-			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
-		}
-
-		if ($compteurArgentTotal >= coutArgentPanem && $compteurVotesTotal >= coutVotePanem){
-			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
-		}
-	
-		if ($compteurArgentTotal >= coutArgentChomage && $compteurVotesTotal >= coutVoteChomage){
+	}
+	function checkDisplayChomage(){
+		if ($compteurArgent >= coutArgentChomage && $compteurVote >= coutVoteChomage){
 			document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			clearInterval(interChomage);
 		}
-		
-		if ($compteurArgentTotal >= coutArgentrsa && $compteurVotesTotal >= coutVotersa){
+	}
+	function checkDisplayrsa(){
+		if ($compteurArgent >= coutArgentrsa && $compteurVote >= coutVotersa){
 			document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			clearInterval(interrsa);
 		}
-
-	
-		if ($compteurArgentTotal >= coutArgentArticle && $compteurVotesTotal >= coutVoteArticle){
+	}
+	function checkDisplaybfntv(){
+		if ($compteurArgent >= coutArgentbfntv && $compteurVote >= coutVotebfntv){
+			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			clearInterval(interbfntv);
+		}
+	}
+	function checkDisplayPanem(){
+		if ($compteurArgent >= coutArgentPanem && $compteurVote >= coutVotePanem){
+			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			clearInterval(interPanem);
+		}
+	}
+	function checkDisplayArticle(){
+		if ($compteurArgent >= coutArgentArticle && $compteurVote >= coutVoteArticle){
 			document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			clearInterval(interArticle);
 		}
-	
-		if ($compteurArgentTotal >= coutArgentVentesArme && $compteurVotesTotal >= coutVoteVentesArme){
+	}
+	function checkDisplayVentesArme(){
+		if ($compteurArgent >= coutArgentVentesArme && $compteurVote >= coutVoteVentesArme){
 			document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			clearInterval(interVentesArme);
 		}
-	
-		if ($compteurArgentTotal >= coutArgentAvocat && $compteurVotesTotal >= coutVoteAvocat){
+	}
+	function checkDisplayAvocat(){
+		if ($compteurArgent >= coutArgentAvocat && $compteurVote >= coutVoteAvocat){
 			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			clearInterval(interAvocat);
 		}
-
-		if ($compteurArgentTotal >= coutArgentCabinetAvocat && $compteurVotesTotal >= coutVoteCabinetAvocat){
+	}
+	function checkDisplayCabinetAvocat(){
+		if ($compteurArgent >= coutArgentCabinetAvocat && $compteurVote >= coutVoteCabinetAvocat){
 			document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			clearInterval(interCabinetAvocat);
 		}
-
-		if ($compteurArgentTotal >= coutArgentJustice && $compteurVotesTotal >= coutVoteJustice){
+	}
+	function checkDisplayJustice(){
+		if ($compteurArgent >= coutArgentJustice && $compteurVote >= coutVoteJustice){
 			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			clearInterval(interJustice);
 		}
+	}
+	var interBelleMeuf = setInterval(checkDisplayBelleMeuf, 500);
+	var interPhoto = setInterval(checkDisplayPhoto, 500);
+	var interGrenade = setInterval(checkDisplayGrenade, 500);
+	var interEducation = setInterval(checkDisplayEducation, 500);
+	var interChomage = setInterval(checkDisplayChomage, 500);
+	var interrsa = setInterval(checkDisplayrsa, 500);
+	var interbfntv = setInterval(checkDisplaybfntv, 500);
+	var interPanem = setInterval(checkDisplayPanem, 500);
+	var interArticle = setInterval(checkDisplayArticle, 500);
+	var interVentesArme = setInterval(checkDisplayVentesArme, 500);
+	var interAvocat = setInterval(checkDisplayAvocat, 500);
+	var interCabinetAvocat = setInterval(checkDisplayCabinetAvocat, 500);
+	var interJustice = setInterval(checkDisplayJustice, 500);
 }
-
-setInterval(checkCardDisplay, 500);
-
+checkDisplay();
 ///////////////////////////FinSylvain///////////////////////////////////////
 
 // Sinus qui s'attenue :  ((6+cos(x-3)-0.5(x-3))/6)^2
