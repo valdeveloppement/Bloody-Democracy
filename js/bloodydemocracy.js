@@ -904,7 +904,7 @@ function checkDisplay(){
 			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
 			clearInterval(interPhoto);
 		}
-
+	}
 	function checkDisplayGrenade(){
 		if ($compteurArgent >= coutArgentGrenade && $compteurVote >= coutVoteGrenade){
 			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
