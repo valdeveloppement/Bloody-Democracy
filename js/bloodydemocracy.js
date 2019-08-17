@@ -242,9 +242,15 @@ setInterval (storageRegulier, 4000)
 
 // Cette fonction met à jour les positions quand on change la taille d'ecran.
 function placeClicker() {
+
   $calendar=document.getElementById("calendar");
   $coeffs=document.getElementById("coeffs");
   $virgules=document.getElementById("virgules");
+  $imgCrs=document.getElementById("imgCrs");
+  $descriptionCrs=document.getElementById("descriptionCrs");
+
+  // $largeurDescriptionCrs=document.getElementById("descriptionCrs").offsetWidth;
+  // $hauteurDescriptionCrs=document.getElementById("descriptionCrs").offsetHeight;
 
   $hauteurCompteurs=document.getElementById("compteurs").offsetHeight;
   $calendarYPos=$hauteurCompteurs+40+20;
@@ -256,6 +262,15 @@ function placeClicker() {
   $calendarXPos=($largeurCompteurs*1.3333-$largeurCalendar)/2;
   $calendar.style.left = $calendarXPos+'px';
 
+
+  // if (($largeurDescriptionCrs/2)<$hauteurDescriptionCrs){
+  //  $imgCrs.style.width = ($largeurDescriptionCrs/2)+'px';
+  // } 
+  // else{
+  //   $imgCrs.style.width =$hauteurDescriptionCrs
+  //   $imgCrs.style.height =$hauteurDescriptionCrs
+
+  // }
 
   $hauteurTable=document.getElementById("table").offsetHeight;
   $yPos= 0.75*$hauteurTable;
@@ -470,6 +485,84 @@ function playBloup(){
 }
 
 ///////////////////////////Sylvain//////////////////////////////////////////
+
+
+///////////////////////////VAL///////////////////////////////////////////
+
+//...........................EVENTs.....................................
+
+
+//......CRS......
+
+$crs=document.getElementById("crs");
+$texteCrs=document.getElementById("texteCrs");
+$timeCrs=10000
+if (localStorage.getItem('$stopCrs') === null) {
+  localStorage.setItem('$stopCrs', "0");
+}
+
+function cacheCrs(){
+  $crs.classList.toggle("eventDisplay",true);
+
+}
+cacheCrs();
+
+function afficheCrs(){
+  $crs.classList.toggle("eventDisplay",false);
+  localStorage.setItem('$stopCrs', "1");
+
+}
+
+if (parseInt(localStorage.getItem('$stopCrs')) != 1){
+  setTimeout(afficheCrs,$timeCrs);
+}
+
+
+
+
+
+function achatBob(){
+  $compteurVote=$compteurVote+10000;
+  $texteCrs.innerHTML ="Bien joué, tout le monde est satisfait.<br>Vous gagnez 10000 votes";
+
+  
+  setTimeout(cacheCrs,6500);
+
+  
+}
+
+
+function achatSylvie(){
+  $compteurVote= $compteurVote-(0.1*$compteurVote);
+  $texteCrs.innerHTML ="Mmmm...Vous auriez pu trouver un peu mieux.<br> Ça sera vite oublié mais vous perdez 10% de vos votes.";
+
+  
+  setTimeout(cacheCrs,6500);
+}
+
+
+
+//.......Migrants.....
+
+
+
+
+//...........................FIN EVENTs.....................................
+
+///////////////////////////FINVAL///////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //SliderGeneral
 
@@ -1254,8 +1347,8 @@ function checkAchat($iD){
 
 
 
-//.........................  BFN tv  ................................
-else if($iDBouton== "boutonAchatbfntv"){                                                                                        // changeHere
+  //.........................  BFN tv  ................................
+  else if($iDBouton== "boutonAchatbfntv"){                                                                                        // changeHere
   $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
   $coutArgent=250000;                                                                                                                    // changeHere
   $coutVote=0;                                                                                                                        // changeHere
@@ -1265,8 +1358,8 @@ else if($iDBouton== "boutonAchatbfntv"){                                        
   $attenuationPertes=0;//le coefficient d'attenuation s'exprime en %, si on veut attenuer de 10% $attenuationPertes=10;               // changeHere
 
  
-}
-//.........................  FIN bfn tv  ................................
+  }
+  //.........................  FIN bfn tv  ................................
 
 
  
@@ -1297,7 +1390,9 @@ else if($iDBouton== "boutonAchatbfntv"){                                        
 
    
   }
-  //.........................  ppanem................................
+  //.........................  fin educ...............................
+
+
 
 
 
@@ -1356,6 +1451,7 @@ else if($iDBouton== "boutonAchatbfntv"){                                        
 
   $attenuationPertes=(100-$attenuationPertes)/100;  // Ne pas toucher: Transforme la réduction% en coefficient
 
+
 }
 
 
@@ -1385,7 +1481,7 @@ function achat(){
       
     }
 
-
+   
 
   }
 }
