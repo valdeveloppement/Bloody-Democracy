@@ -105,6 +105,204 @@ setInterval(refreshCalendar,1000);
 
 // ................................................FIN CALENDRIER....................................................................
 
+//...............................MAJ CARTES ACTIVES ...............................................
+
+$buffBelleGueule = document.getElementById("buffBelleGueule");
+$buffArticle = document.getElementById("buffArticle");
+$buffBelleMeuf = document.getElementById("buffBelleMeuf");
+$buffPhoto = document.getElementById("buffPhoto");
+$buffGrenade = document.getElementById("buffGrenade");
+$buffAvocat = document.getElementById("buffAvocat");
+$buffChomage = document.getElementById("buffChomage");
+$buffRsa = document.getElementById("buffRsa");
+$buffEducation = document.getElementById("buffEducation");
+$buffCabinet = document.getElementById("buffCabinet");
+$buffVenteArme = document.getElementById("buffVenteArme");
+$buffJustice = document.getElementById("buffJustice");
+$buffBfn = document.getElementById("buffBfn");
+$buffPanem = document.getElementById("buffPanem");
+
+$infoBelleGueule = document.getElementById("infoBelleGueule");
+$infoArticle = document.getElementById("infoArticle");
+$infoBelleMeuf = document.getElementById("infoBelleMeuf");
+$infoPhoto = document.getElementById("infoPhoto");
+$infoGrenade = document.getElementById("infoGrenade");
+$infoAvocat = document.getElementById("infoAvocat");
+$infoChomage = document.getElementById("infoChomage");
+$infoRsa = document.getElementById("infoRsa");
+$infoEducation = document.getElementById("infoEducation");
+$infoCabinet = document.getElementById("infoCabinet");
+$infoVenteArme = document.getElementById("infoVenteArme");
+$infoJustice = document.getElementById("infoJustice");
+$infoBfn = document.getElementById("infoBfn");
+$infoPanem = document.getElementById("infoPanem");
+
+
+
+
+$dureeBelleGueule =30;
+$dureeArticle =21;
+$dureeBelleMeuf =30;
+$dureePhoto =7;
+$dureeGrenade =60;
+$dureeAvocat =10000000000;
+$dureeChomage =120;
+$dureeRsa =365;
+$dureeEducation =180;
+$dureeCabinet =100000000;
+$dureeVenteArme =1000000000;
+$dureeJustice =10000000000;
+$dureeBfn =180;
+$dureePanem =10000000000;
+
+
+
+
+function majCartesActives(){
+
+  if (localStorage.getItem('boutonAchatBelleGueule') === null || parseInt(localStorage.getItem('$boutonAchatBelleGueule')) == 0) {
+    $buffBelleGueule.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffBelleGueule.classList.toggle("cacheCartesBuff",false);
+    $infoBelleGueule.innerHTML =$dureeBelleGueule-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatBelleGueule').substr(1));
+
+  }
+
+
+  if (localStorage.getItem('boutonAchatBelleMeuf') === null || parseInt(localStorage.getItem('$boutonAchatBelleMeuf')) == 0) {
+    $buffBelleMeuf.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffBelleMeuf.classList.toggle("cacheCartesBuff",false);
+    $infoBelleMeuf.innerHTML =$dureeBelleMeuf-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatBelleMeuf').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatphotoDeFamille') === null || parseInt(localStorage.getItem('$boutonAchatphotoDeFamille')) == 0) {
+    $buffPhoto.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffPhoto.classList.toggle("cacheCartesBuff",false);
+    $infoPhoto.innerHTML =$dureePhoto-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatphotoDeFamille').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatGrenade') === null || parseInt(localStorage.getItem('$boutonAchatGrenade')) == 0) {
+    $buffGrenade.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffGrenade.classList.toggle("cacheCartesBuff",false);
+    $infoGrenade.innerHTML =$dureeGrenade-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatGrenade').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatEducation') === null || parseInt(localStorage.getItem('$boutonAchatEducation')) == 0) {
+    $buffEducation.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffEducation.classList.toggle("cacheCartesBuff",false);
+    $infoEducation.innerHTML =$dureeEducation-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatEducation').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatbfntv') === null || parseInt(localStorage.getItem('$boutonAchatbfntv')) == 0) {
+    $buffBfn.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffBfn.classList.toggle("cacheCartesBuff",false);
+    $infoBfn.innerHTML =$dureeBfn-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatbfntv').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatPanem') === null || parseInt(localStorage.getItem('$boutonAchatPanem')) == 0) {
+    $buffPanem.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffPanem.classList.toggle("cacheCartesBuff",false);
+    $infoPanem.innerHTML ="Infini";
+
+  }
+
+  if (localStorage.getItem('boutonAchatChomage') === null || parseInt(localStorage.getItem('$boutonAchatChomage')) == 0) {
+    $buffChomage.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffChomage.classList.toggle("cacheCartesBuff",false);
+    $infoChomage.innerHTML =$dureeChomage-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatChomage').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatrsa') === null || parseInt(localStorage.getItem('$boutonAchatrsa')) == 0) {
+    $buffRsa.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffRsa.classList.toggle("cacheCartesBuff",false);
+    $infoRsa.innerHTML =$dureeRsa-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatrsa').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatarticleJournal') === null || parseInt(localStorage.getItem('$boutonAchatarticleJournal')) == 0) {
+    $buffArticle.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffArticle.classList.toggle("cacheCartesBuff",false);
+    $infoArticle.innerHTML =$dureeArticle-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatarticleJournal').substr(1));
+
+  }
+
+  if (localStorage.getItem('boutonAchatVenteArme') === null || parseInt(localStorage.getItem('$boutonAchatVenteArme')) == 0) {
+    $buffVenteArme.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffVenteArme.classList.toggle("cacheCartesBuff",false);
+    $infoVenteArme.innerHTML ="Infini";
+
+  }
+
+
+  if (localStorage.getItem('boutonAchatAvocat') === null || parseInt(localStorage.getItem('$boutonAchatAvocat')) == 0) {
+    $buffAvocat.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffAvocat.classList.toggle("cacheCartesBuff",false);
+    $infoAvocat.innerHTML ="Infini";
+
+  }
+
+
+  if (localStorage.getItem('boutonAchatCabinetAvocat') === null || parseInt(localStorage.getItem('$boutonAchatCabinetAvocat')) == 0) {
+    $buffCabinet.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffCabinet.classList.toggle("cacheCartesBuff",false);
+    $infoCabinet.innerHTML ="Infini";
+
+  }
+
+
+  if (localStorage.getItem('boutonAchatJustice') === null || parseInt(localStorage.getItem('$boutonAchatJustice')) == 0) {
+    $buffJustice.classList.toggle("cacheCartesBuff",true);
+  }
+  else{
+    $buffJustice.classList.toggle("cacheCartesBuff",false);
+    $infoJustice.innerHTML ="Infini";
+
+  }
+
+
+}
+setInterval(majCartesActives,1000);
+
+
+
+
+
+//...............................Fin MAJ CARTES ACTIVES ...............................................
+
+
+
+
 
 ///////////////////////////////////////////////// VALENTIN ///////////////////////////////////////////////////////////////////
 
@@ -116,7 +314,7 @@ $close = document.getElementById("close");
 $close.onclick = closeWelcome;
 
 
-if (localStorage.getItem("$nouveauUtilisateur") === null || parseInt(localStorage.getItem("$nouveauUtilisateur") == 0)) {
+if (localStorage.getItem("$nouveauUtilisateur") === null || parseInt(localStorage.getItem("$nouveauUtilisateur")) == 0) {
 
   $welcome.style.display= "flex";
   $gauche.classList.add("blur");
@@ -496,7 +694,7 @@ function playBloup(){
 
 $crs=document.getElementById("crs");
 $texteCrs=document.getElementById("texteCrs");
-$timeCrs=10000
+$timeCrs=180000;
 if (localStorage.getItem('$stopCrs') === null) {
   localStorage.setItem('$stopCrs', "0");
 }
@@ -533,7 +731,7 @@ function achatBob(){
 
 
 function achatSylvie(){
-  $compteurVote= $compteurVote-(0.1*$compteurVote);
+  $compteurVote= $compteurVote-Math.ceil(0.1*$compteurVote);
   $texteCrs.innerHTML ="Mmmm...Vous auriez pu trouver un peu mieux.<br> Ça sera vite oublié mais vous perdez 10% de vos votes.";
 
   
