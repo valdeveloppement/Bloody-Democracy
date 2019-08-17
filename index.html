@@ -42,8 +42,8 @@
 			<div id="close">
 				<i class="fas fa-times"></i>
 			</div>
-				<!-- <img id="logoWelcome" src="images/logoTitre.png">	 -->
-				<div id="welcomePresentation">
+			<!-- <img id="logoWelcome" src="images/logoTitre.png">	 -->
+			<div id="welcomePresentation">
 				<p>Bienvenue sur Bloody Democracy!
 				</p>
 
@@ -57,18 +57,97 @@
 
 		</div>
 
+		
+		<div id="crs" class="event">
+			<!-- <div id="closeCrs" class="croix">
+			<i class="fas fa-times"></i>
+			</div> -->
+
+			<div id="descriptionCrs" class="descriptionEvent">
+				<div class="imageEvent">
+						<img id= "imgCrs" class="imgEvent" src="images/miniatures/crs.jpg">
+				</div>
+
+				<div id="texteCrs" class="texteEvent">
+					<p>
+
+						Vos toutous ne sont pas connus pour la finesse de leur raisonnement.<br> Certains ont prit un peu trop au pied de la lettre l'ordre "d'arracher la tête à tous ces crève la faim".<br>  Bob, n°12586 , s'est fait plaqué par sa copine la veille et s'est un peu emporté. La malheureuse sylvie venue manifester la tête haute est repartie deçue.<br>Les média vous demandent des comptes.
+					</p>
+
+				</div>
+
+
+
+			</div>
+
+			<div class="bottomEvents">
+						
+				<div class="zoneBoutonEvent">
+
+					<div id="boutonAchatBob" class="boutonAchatEvent" onclick="achatBob()">
+						<p>Bob aura 3j de prison avec sursis!</p>
+					</div>
+				</div>
+
+				<div class="zoneBoutonEvent">
+
+					<div id="boutonAchatSylvie" class="boutonAchatEvent" onclick="achatSylvie()">
+						<p>Sylvie s'est cognée contre une porte!</p>
+					</div>
+
+				</div>
+			</div>
+				
+		
+		</div>
+
+		
+		
+
 
         <div id="gauche">
 			<div id="donnees">
 				<div id="compteurs">
 					<div id="vote" class="odometer">
 					</div>
+					
 
 					<div id="argent" class="odometer">
 					</div>
-				
 
 				</div>
+
+				<div id="coeffs">
+
+					<div id="coeffsVote">
+					
+					</div>
+
+					<div id="coeffsArgent">
+					
+					</div>
+		
+				</div>
+
+				<div id="virgules">
+
+					<div id="virgulesVote">
+						<div id="virguleVote1" class="virgule">,</div>
+						<div id="virguleVote2" class="virgule">,</div>
+						<div id="virguleVote3" class="virgule">,</div>
+
+					</div>
+
+
+					<div id="virgulesArgent">
+						<div id="virguleArgent1" class="virgule">,</div>
+						<div id="virguleArgent2" class="virgule">,</div>
+						<div id="virguleArgent3" class="virgule">,</div>
+					</div>
+
+					
+				</div>
+
 
 				<div id="compteurs00">
 
@@ -196,15 +275,16 @@
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
 						
-					<!--<input type="radio" name="menuSwitchGen" id="selectRanking"/>
+					<input type="radio" name="menuSwitchGen" id="selectRanking"/>
 					<label for="selectRanking" onclick="showRanking()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
 					</label>
-						
+					 <!--
 					<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
 					<label for="selectAchievement" onclick="showAchievement()" class="iconMenu">
 						<img src="images/miniatures/belleGeule3.jpg"/>
-					</label>-->
+					</label>
+					  -->
 						
 				</div>
 					
@@ -229,18 +309,16 @@
 						<p id="timeFromStartAllPlay"></p>
 						<p id="voteParClic"></p>
 						<p id="argentParClic"></p>
+						<button id="reset" onclick="reset();">Reset</button>
 					</div>
 					
-					<!--<div id="ranking" class="menuGen notSelect">
-						<p>Petine: 100000000000000</p>
-						<p>Kimi: 200000000000</p>
-						<p>Mao: 8888888888</p>
-						<p>Tutu: 2</p>
-						<p>Toto: 0+0</p>
+					<div id="ranking" class="menuGen notSelect">
+						
 					</div>
-					
+					<!--
 					<div id="achievement" class="menuGen notSelect">
-					</div>-->
+					</div>
+					  -->
 					
 				</div>
 			</div>
@@ -344,7 +422,7 @@
 								
 								<div class ="achat"> 
 									<div class="zoneEffet">
-										<p class="effets">Séance photo: <b>20000€</b>. <br>Vous êtes tellements choupi que vous remportez <b>30000 votes</b> d'un coup.<br>Pendant <b>1 semaines</b> bénéficiez de <b>70000 votes</b> par jours supplémentaires. <br>Ne raporte pas d'argent.
+										<p class="effets">Séance photo: <b>20000€</b>. <br>Vous êtes tellements choupi que vous remportez <b>25000 votes</b> d'un coup.<br>Pendant <b>1 semaines</b> bénéficiez de <b>1200 votes</b> par jours supplémentaires. <br>Ne raporte pas d'argent.
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -404,7 +482,7 @@
 								
 								<div class ="achat"> 
 									<div class="zoneEffet">
-										<p class="effets">Cout de la reforme :. <b>50000€</b>. Récupérez <b>60000€</b> par mois. <br>Vous perdrez l'appui de 50% de professeurs : pertes, <b>5000 votes</b>.
+										<p class="effets">Cout de la reforme :. <b>50000€</b>. Récupérez <b>60000€</b> par mois. <br>Vous perdrez l'appui de 50% de professeurs : pertes, <b>5000 votes. Durée:6 mois</b>. 
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -468,6 +546,7 @@
 								<div class ="achat"> 
 									<div class="zoneEffet">
 										<p class="effets">Cout : <b>130000€</b>.Vous économiserez <b>40000€</b> par mois pendant <b>1 an</b>.<br>Vous perdrez l'appui des gueux :<b>2000</b>votes en moins par mois <b>pendant 1 an.</b>
+
 										</p>
 									</div>
 									<div class="zoneBouton">
