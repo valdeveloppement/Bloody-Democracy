@@ -44,7 +44,9 @@ var $compteurArgentCaisseNoire;
 
 
 //....................................CALENDRIER INTERSIDERAL....................................................
+
 // localStorage.clear();
+
 
 // 1jour dure 2 min
 $ratioSecondesParJour=30;
@@ -431,6 +433,7 @@ function storageRegulier(){
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
   localStorage.setItem('$attenuationPertesGlobal', $attenuationPertesGlobal);
+  localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
 
 }
 setInterval (storageRegulier, 4000)

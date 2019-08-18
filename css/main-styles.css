@@ -390,7 +390,7 @@ padding: 3% 3% 3% 3%
 
 .buffCartes{
 width:7.14%;
-top:210px;
+top:130px;
 height:5.3vw;
 
 
@@ -498,16 +498,36 @@ margin-bottom:3%;
 	position:relative;
 	width:30%;
 	padding:0;
-	margin-top:1%;
+	margin-top:2%;
 	align-self: center;
+	margin-bottom:2%;
 
 
 }
+
+#statistique{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+	font-size:1.1vw;
+}
+
+#statistiqueGauche{
+	width:50%;
+	margin: 3% 3% 3% 3%;
+
+}
+#statistiqueDroite{
+	width:50%;
+	margin: 3% 3% 3% 3%;
+
+}
+
 #sliderGeneral {
 	position: relative;
 	display: flex;
-	min-height: 210px;
-	max-height: 210px;
+	min-height: 130px;
+	max-height: 130px;
 	width: 90%;
 }
 #sliderGeneral .menuGen {
@@ -516,6 +536,7 @@ margin-bottom:3%;
 #menuGeneral {
 	display: flex;
 	flex-direction: column;
+	height:130px;
 }
 #menuGeneral input, #menuStore input {
 	display: none;
@@ -525,20 +546,20 @@ margin-bottom:3%;
 	cursor: pointer;
 	transition: all 0.5s;
 	opacity: 0.6;
+	height:33.33%;
 }
 #menuGeneral input[name='menuSwitchGen']:checked+label, #menuStore input[name='menuSwitchStore']:checked+label {
 	border-color: #666;
 	opacity: 1;
 }
 .menuGen {
-	background-color:rgba(255, 255, 255, 0.3);
-	height: 210px;
-	min-height: 210px;
+	background-color:rgba(255, 255, 255, 0.5);
+	height: 130px;
+	min-height: 130px;
 	width:100%;
 	min-width:200px;
 }
 #menuGeneral .iconMenu {
-	height: 25%;
 	width: 37px;
 	background-color:blue;
 	cursor: pointer;
@@ -566,8 +587,8 @@ margin-bottom:3%;
 #sliderStore {
 	position: relative;
 	display: flex;
-	min-height: 210px;
-	max-height: 210px;
+	min-height: 130px;
+	max-height: 130px;
 	width: 90%;
 }
 #menuStore {
@@ -582,7 +603,7 @@ margin-bottom:3%;
 }
 .thumbnails {
 	position: absolute;
-	top: 85%;
+	top: 87vh;
 	display: flex;
 	width: 50%;
 	justify-content: center;
@@ -616,6 +637,7 @@ margin-bottom:3%;
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	height:270px;
 }
 #slideVote {
 	width: 100%;
@@ -630,13 +652,37 @@ margin-bottom:3%;
 .carte{
 	display:flex;
 	flex-direction: row;
-	background-color:rgba(255, 255, 255, 0.3);
-	font-size: 0.8vw;
+	background-color:rgba(255, 255, 255, 0.5);
+	font-size: 0.9vw;
 	min-width: 330px;
 	width:100%;
-	height: 210px;
+	height: 270px;
 	position: absolute;
 }
+
+@media only screen and (max-width:1800px) {
+	.carte {
+		font-size: 1vw;
+
+	}
+   }
+
+
+   @media only screen and (max-width:1260px) {
+	.carte {
+		font-size: 1.1vw;
+
+	}
+   }
+
+
+
+   @media only screen and (max-width:954px) {
+	.carte {
+		font-size: 1.22vw;
+
+	}
+   }
 
 .contenu{
 	display:flex;
@@ -648,8 +694,8 @@ margin-bottom:3%;
 }
 
 .illustration{
-	max-width: 210px;
-	min-width: 210px;
+	max-width: 270px;
+	min-width: 270px;
 }
 .description{
 	height:65%;
