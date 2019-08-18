@@ -708,7 +708,14 @@ function showGestion(){
 
 
 //Carte affiche
-
+function showBelleGueule(){
+	var carteListe = document.getElementsByClassName("carte");
+	for (let entry of carteListe){
+		entry.classList.add("notSelect");
+		entry.classList.remove("select");
+	}
+	document.getElementById("belleGueule").classList.replace("notSelect", "select");
+}
 
 function showBelleMeuf(){
 	var carteListe = document.getElementsByClassName("carte");
@@ -718,14 +725,7 @@ function showBelleMeuf(){
 	}
 	document.getElementById("belleMeuf").classList.replace("notSelect", "select");
 }
-function showbelleGueule(){
-	var carteListe = document.getElementsByClassName("carte");
-	for (let entry of carteListe){
-		entry.classList.add("notSelect");
-		entry.classList.remove("select");
-	}
-	document.getElementById("belleGueule").classList.replace("notSelect", "select");
-}
+
 function showbfntv(){
 	var carteListe = document.getElementsByClassName("carte");
 	for (let entry of carteListe){
@@ -889,20 +889,20 @@ var coutVoteEducation = 5000;
 
 
 //Display carte disponible
-function checkDisplay(){
+//function checkDisplay(){
 		function checkDisplayBelleMeuf(){
 		if ($compteurArgent >= coutArgentBelleMeuf && $compteurVote >= coutVoteBelleMeuf){
 			document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
 			clearInterval(interBelleMeuf);
-			console.log("interval bellemeuf clear");
+			localStorage.setItem("belleMeufDisplayed", "1");
 		}
 	}
 	function checkDisplayPhoto() {
 		if ($compteurArgent >= coutArgentPhoto && $compteurVote >= coutVotePhoto) {
-			document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
 			clearInterval(interPhoto);
+			localStorage.setItem("photoDisplayed", "1");
 		}
 	}
 	function checkDisplayGrenade(){
@@ -910,6 +910,7 @@ function checkDisplay(){
 			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
 			clearInterval(interGrenade);
+			localStorage.setItem("grenadeDisplayed", "1");
 		}
 	}
 	function checkDisplayEducation(){
@@ -917,6 +918,7 @@ function checkDisplay(){
 			document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
 			clearInterval(interEducation);
+			localStorage.setItem("educationDisplayed", "1");
 		}
 	}
 	function checkDisplayChomage(){
@@ -925,6 +927,7 @@ function checkDisplay(){
 			document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
 			clearInterval(interChomage);
+			localStorage.setItem("chomageDisplayed", "1");
 		}
 	}
 	function checkDisplayrsa(){
@@ -932,6 +935,7 @@ function checkDisplay(){
 			document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
 			clearInterval(interrsa);
+			localStorage.setItem("rsaDisplayed", "1");
 		}
 	}
 	function checkDisplaybfntv(){
@@ -939,6 +943,7 @@ function checkDisplay(){
 			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
 			clearInterval(interbfntv);
+			localStorage.setItem("bfntvDisplayed", "1");
 		}
 	}
 	function checkDisplayPanem(){
@@ -946,6 +951,7 @@ function checkDisplay(){
 			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
 			clearInterval(interPanem);
+			localStorage.setItem("panemDisplayed", "1");
 		}
 	}
 	function checkDisplayArticle(){
@@ -954,6 +960,7 @@ function checkDisplay(){
 			document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
 			clearInterval(interArticle);
+			localStorage.setItem("articleDisplayed", "1");
 		}
 	}
 	function checkDisplayVentesArme(){
@@ -961,6 +968,7 @@ function checkDisplay(){
 			document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
 			clearInterval(interVentesArme);
+			localStorage.setItem("ventesArmeDisplayed", "1");
 		}
 	}
 	function checkDisplayAvocat(){
@@ -968,6 +976,7 @@ function checkDisplay(){
 			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
 			clearInterval(interAvocat);
+			localStorage.setItem("avovatDisplayed", "1");
 		}
 	}
 	function checkDisplayCabinetAvocat(){
@@ -975,6 +984,7 @@ function checkDisplay(){
 			document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
 			clearInterval(interCabinetAvocat);
+			localStorage.setItem("cabinetAvocatDisplayed", "1");
 		}
 	}
 	function checkDisplayJustice(){
@@ -982,23 +992,113 @@ function checkDisplay(){
 			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
 			clearInterval(interJustice);
+			localStorage.setItem("justiceDisplayed", "1");
 		}
 	}
-	var interBelleMeuf = setInterval(checkDisplayBelleMeuf, 500);
-	var interPhoto = setInterval(checkDisplayPhoto, 500);
-	var interGrenade = setInterval(checkDisplayGrenade, 500);
-	var interEducation = setInterval(checkDisplayEducation, 500);
-	var interChomage = setInterval(checkDisplayChomage, 500);
-	var interrsa = setInterval(checkDisplayrsa, 500);
-	var interbfntv = setInterval(checkDisplaybfntv, 500);
-	var interPanem = setInterval(checkDisplayPanem, 500);
-	var interArticle = setInterval(checkDisplayArticle, 500);
-	var interVentesArme = setInterval(checkDisplayVentesArme, 500);
-	var interAvocat = setInterval(checkDisplayAvocat, 500);
-	var interCabinetAvocat = setInterval(checkDisplayCabinetAvocat, 500);
-	var interJustice = setInterval(checkDisplayJustice, 500);
+	
+	if (!localStorage.getItem("belleMeufDisplayed")){
+		var interBelleMeuf = setInterval(checkDisplayBelleMeuf, 500);
+	}
+	else {
+		document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("photoDisplayed")) {
+		var interPhoto = setInterval(checkDisplayPhoto, 500);
+	}
+	else {
+		document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("grenadeDisplayed")){
+		var interGrenade = setInterval(checkDisplayGrenade, 500);
+	}
+	else{
+		document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("educationDisplayed")){
+		var interEducation = setInterval(checkDisplayEducation, 500);
+	}
+	else {
+		document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("chomageDisplayed")){
+		var interChomage = setInterval(checkDisplayChomage, 500);
+	}
+	else{
+		document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
+		document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("rsaDisplayed")){
+		var interrsa = setInterval(checkDisplayrsa, 500);
+	}
+	else {
+		document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("bfntvDisplayed")){
+		var interbfntv = setInterval(checkDisplaybfntv, 500);
+	}
+	
+	else {
+		document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("panemDisplayed")){
+		var interPanem = setInterval(checkDisplayPanem, 500);
+	}
+	else{
+		document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("articleDisplayed")){
+		var interArticle = setInterval(checkDisplayArticle, 500);
+	}
+	else{
+		document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
+		document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("ventesArmeDisplayed")){
+		var interVentesArme = setInterval(checkDisplayVentesArme, 500);
+	}
+	else{
+		document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("avovatDisplayed")){
+		var interAvocat = setInterval(checkDisplayAvocat, 500);
+	}
+	else{
+		document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("cabinetAvocatDisplayed")){
+		var interCabinetAvocat = setInterval(checkDisplayCabinetAvocat, 500);
+	}
+	else{
+		document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
+	}
+	
+	if (!localStorage.getItem("justiceDisplayed")){
+		var interJustice = setInterval(checkDisplayJustice, 500);
+	}
+	else{
+		document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
+	}
+	
+
+/*if (localStorage.getItem("allDisplayed")){
+	checkDisplay();
+	console.log("checkingDisplay")
 }
-checkDisplay();
+else {
+
+}*/
+
 ///////////////////////////FinSylvain///////////////////////////////////////
 
 // Sinus qui s'attenue :  ((6+cos(x-3)-0.5(x-3))/6)^2
