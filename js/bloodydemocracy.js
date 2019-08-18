@@ -3680,12 +3680,11 @@ education ();
 
 
 
-
 ///////////////////////////////////////////////////////// PARTIE JULIEN //////////////////////////////////////////////////////////////////
-/*if($compteurVote >= 300){ //Valeur à changer pour les tests
-  reset();
-}*/
 
+var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
+var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
+var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
 ////////////////////////////////// RESET ////////////////////////////////////
 
 function reset(){
@@ -3693,9 +3692,7 @@ function reset(){
   /*var video = document.getElementById('video');
   video.play();*/
 
-  var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
-  var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
-  var voteAddTotal = parseInt(localStorage.getItem('voteTotalAllPlay'));
+ 
   localStorage.setItem('timeFromStartAllPlay', timeAdd);
   localStorage.setItem('argentTotalAllPlay', argentAddTotal);
   localStorage.setItem('voteTotalAllPlay', voteAddTotal);
@@ -3718,7 +3715,7 @@ function reset(){
   localStorage.setItem('boutonAchatAvocat', '000');
   localStorage.setItem('boutonAchatrsa', '000');
   localStorage.setItem('boutonAchatChomage', '000');
-  localStorage.setItem('boutonAchatEductaion', '000');
+  localStorage.setItem('boutonAchatEducation', '000');
   localStorage.setItem('boutonAchatGrenade', '000');
   localStorage.setItem('boutonAchatGunsRoses', '000');
   localStorage.setItem('boutonAchatarticleJournal', '000');
@@ -3727,6 +3724,8 @@ function reset(){
   $tempsDeJeuSeconde = 0;
   $compteurVotesTotal = 0;
   $compteurArgentTotal = 0;
+  localStorage.removeItem('$stopCrs');
+  localStorage.removeItem('$stopMigrants');
   
 }
 //////////////////////////////// FIN RESET ////////////////////////////////
