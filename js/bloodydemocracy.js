@@ -19,6 +19,8 @@ $nbClicks2=0;
 $volumeMaster=1;
 $MultiClickGlobal=1;    
 
+
+
 function majMulti(){
   $MultiClickGlobal=1*$multiBelleGueule*$multiArticleJournal*$multiGrenade;    
 
@@ -160,62 +162,62 @@ $dureePanem =10000000000;
 
 function majCartesActives(){
 
-  if (localStorage.getItem('boutonAchatBelleGueule') === null || parseInt(localStorage.getItem('$boutonAchatBelleGueule')) == 0) {
+  if (localStorage.getItem("boutonAchatBelleGueule") === null || parseInt(localStorage.getItem("boutonAchatBelleGueule")) == 0) {
     $buffBelleGueule.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffBelleGueule.classList.toggle("cacheCartesBuff",false);
-    $infoBelleGueule.innerHTML =$dureeBelleGueule-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatBelleGueule').substr(1));
+    $infoBelleGueule.innerHTML =$dureeBelleGueule-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatBelleGueule").substr(1));
 
   }
 
 
-  if (localStorage.getItem('boutonAchatBelleMeuf') === null || parseInt(localStorage.getItem('$boutonAchatBelleMeuf')) == 0) {
+  if (localStorage.getItem("boutonAchatBelleMeuf") === null || parseInt(localStorage.getItem("boutonAchatBelleMeuf")) == 0) {
     $buffBelleMeuf.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffBelleMeuf.classList.toggle("cacheCartesBuff",false);
-    $infoBelleMeuf.innerHTML =$dureeBelleMeuf-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatBelleMeuf').substr(1));
+    $infoBelleMeuf.innerHTML =$dureeBelleMeuf-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatBelleMeuf").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatphotoDeFamille') === null || parseInt(localStorage.getItem('$boutonAchatphotoDeFamille')) == 0) {
+  if (localStorage.getItem("boutonAchatphotoDeFamille") === null || parseInt(localStorage.getItem("boutonAchatphotoDeFamille")) == 0) {
     $buffPhoto.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffPhoto.classList.toggle("cacheCartesBuff",false);
-    $infoPhoto.innerHTML =$dureePhoto-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatphotoDeFamille').substr(1));
+    $infoPhoto.innerHTML =$dureePhoto-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatphotoDeFamille").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatGrenade') === null || parseInt(localStorage.getItem('$boutonAchatGrenade')) == 0) {
+  if (localStorage.getItem("boutonAchatGrenade") === null || parseInt(localStorage.getItem("boutonAchatGrenade")) == 0) {
     $buffGrenade.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffGrenade.classList.toggle("cacheCartesBuff",false);
-    $infoGrenade.innerHTML =$dureeGrenade-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatGrenade').substr(1));
+    $infoGrenade.innerHTML =$dureeGrenade-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatGrenade").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatEducation') === null || parseInt(localStorage.getItem('$boutonAchatEducation')) == 0) {
+  if (localStorage.getItem("boutonAchatEducation") === null || parseInt(localStorage.getItem("boutonAchatEducation")) == 0) {
     $buffEducation.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffEducation.classList.toggle("cacheCartesBuff",false);
-    $infoEducation.innerHTML =$dureeEducation-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatEducation').substr(1));
+    $infoEducation.innerHTML =$dureeEducation-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatEducation").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatbfntv') === null || parseInt(localStorage.getItem('$boutonAchatbfntv')) == 0) {
+  if (localStorage.getItem("boutonAchatbfntv") === null || parseInt(localStorage.getItem("boutonAchatbfntv")) == 0) {
     $buffBfn.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffBfn.classList.toggle("cacheCartesBuff",false);
-    $infoBfn.innerHTML =$dureeBfn-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatbfntv').substr(1));
+    $infoBfn.innerHTML =$dureeBfn-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatbfntv").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatPanem') === null || parseInt(localStorage.getItem('$boutonAchatPanem')) == 0) {
+  if (localStorage.getItem("boutonAchatPanem") === null || parseInt(localStorage.getItem("boutonAchatPanem")) == 0) {
     $buffPanem.classList.toggle("cacheCartesBuff",true);
   }
   else{
@@ -224,34 +226,34 @@ function majCartesActives(){
 
   }
 
-  if (localStorage.getItem('boutonAchatChomage') === null || parseInt(localStorage.getItem('$boutonAchatChomage')) == 0) {
+  if (localStorage.getItem("boutonAchatChomage") === null || parseInt(localStorage.getItem("boutonAchatChomage")) == 0) {
     $buffChomage.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffChomage.classList.toggle("cacheCartesBuff",false);
-    $infoChomage.innerHTML =$dureeChomage-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatChomage').substr(1));
+    $infoChomage.innerHTML =$dureeChomage-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatChomage").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatrsa') === null || parseInt(localStorage.getItem('$boutonAchatrsa')) == 0) {
+  if (localStorage.getItem("boutonAchatrsa") === null || parseInt(localStorage.getItem("boutonAchatrsa")) == 0) {
     $buffRsa.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffRsa.classList.toggle("cacheCartesBuff",false);
-    $infoRsa.innerHTML =$dureeRsa-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatrsa').substr(1));
+    $infoRsa.innerHTML =$dureeRsa-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatrsa").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatarticleJournal') === null || parseInt(localStorage.getItem('$boutonAchatarticleJournal')) == 0) {
+  if (localStorage.getItem("boutonAchatarticleJournal") === null || parseInt(localStorage.getItem("boutonAchatarticleJournal")) == 0) {
     $buffArticle.classList.toggle("cacheCartesBuff",true);
   }
   else{
     $buffArticle.classList.toggle("cacheCartesBuff",false);
-    $infoArticle.innerHTML =$dureeArticle-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem('boutonAchatarticleJournal').substr(1));
+    $infoArticle.innerHTML =$dureeArticle-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatarticleJournal").substr(1));
 
   }
 
-  if (localStorage.getItem('boutonAchatVenteArme') === null || parseInt(localStorage.getItem('$boutonAchatVenteArme')) == 0) {
+  if (localStorage.getItem("boutonAchatVenteArme") === null || parseInt(localStorage.getItem("boutonAchatVenteArme")) == 0) {
     $buffVenteArme.classList.toggle("cacheCartesBuff",true);
   }
   else{
@@ -261,7 +263,7 @@ function majCartesActives(){
   }
 
 
-  if (localStorage.getItem('boutonAchatAvocat') === null || parseInt(localStorage.getItem('$boutonAchatAvocat')) == 0) {
+  if (localStorage.getItem("boutonAchatAvocat") === null || parseInt(localStorage.getItem("boutonAchatAvocat")) == 0) {
     $buffAvocat.classList.toggle("cacheCartesBuff",true);
   }
   else{
@@ -271,7 +273,7 @@ function majCartesActives(){
   }
 
 
-  if (localStorage.getItem('boutonAchatCabinetAvocat') === null || parseInt(localStorage.getItem('$boutonAchatCabinetAvocat')) == 0) {
+  if (localStorage.getItem("boutonAchatCabinetAvocat") === null || parseInt(localStorage.getItem("boutonAchatCabinetAvocat")) == 0) {
     $buffCabinet.classList.toggle("cacheCartesBuff",true);
   }
   else{
@@ -281,7 +283,7 @@ function majCartesActives(){
   }
 
 
-  if (localStorage.getItem('boutonAchatJustice') === null || parseInt(localStorage.getItem('$boutonAchatJustice')) == 0) {
+  if (localStorage.getItem("boutonAchatJustice") === null || parseInt(localStorage.getItem("boutonAchatJustice")) == 0) {
     $buffJustice.classList.toggle("cacheCartesBuff",true);
   }
   else{
@@ -694,7 +696,7 @@ function playBloup(){
 
 $crs=document.getElementById("crs");
 $texteCrs=document.getElementById("texteCrs");
-$timeCrs=180000;
+$timeCrs=120000;
 if (localStorage.getItem('$stopCrs') === null) {
   localStorage.setItem('$stopCrs', "0");
 }
@@ -741,6 +743,59 @@ function achatSylvie(){
 
 
 //.......Migrants.....
+
+
+
+$migrants=document.getElementById("migrants");
+$texteMigrants=document.getElementById("texteMigrants");
+// $boutonAchatAide=document.getElementById("boutonAchatAide");
+// $boutonAchatSourd=document.getElementById("boutonAchatSourd");
+
+
+$timeMigrants=300000;
+if (localStorage.getItem('$stopMigrants') === null) {
+  localStorage.setItem('$stopMigrants', "0");
+}
+
+function cacheMigrants(){
+  $migrants.classList.toggle("eventDisplay",true);
+
+}
+cacheMigrants();
+
+function afficheMigrants(){
+  $migrants.classList.toggle("eventDisplay",false);
+  localStorage.setItem('$stopMigrants', "1");
+
+}
+
+if (parseInt(localStorage.getItem('$stopMigrants')) != 1){
+  setTimeout(afficheMigrants,$timeMigrants);
+}
+
+
+
+
+
+function achatAide(){
+  $compteurVote=$compteurVote+15000;
+  $texteMigrants.innerHTML ="Bien joué, tout le monde est satisfait.<br>La tempête est arrivée à 23h06 et le bateau a chaviré à la première vague. Il n'y a pas de survivant.<br> Il suffira de feindre ne pas avoir été informé de la tempête et les ONG ne pourront rien vous reprocher.<br> Aucune arrivée de migrant ne viendra importuner ce matin les 56% de français qui ont une vision négative de l'immigration<br><br> Vous gagnez 15000 votes!";
+  // $boutonAchatAide.classList.toggle("eventDisplay",true);
+  // $boutonAchatSourd.classList.toggle("eventDisplay",true);
+
+  setTimeout(cacheMigrants,23000);
+
+  
+}
+
+
+function achatSourd(){
+  $texteMigrants.innerHTML ="C'est pas grave, vos concitoyens non plus.<br><br>Votre décision n'aura aucune répercussion sur votre mandat.";
+
+  // $boutonAchatAide.classList.toggle("eventDisplay",true);
+  // $boutonAchatSourd.classList.toggle("eventDisplay",true);
+  setTimeout(cacheMigrants,6500);
+}
 
 
 
@@ -1248,12 +1303,6 @@ setInterval(actualiseCompteursAffichage, 50)
 
 
 
-function verifformat(){
-  console.log("format ="+$formatArgent)
-}
-setInterval(verifformat,1000)
-// console.log("format ="+$formatArgent)
-
 
 //////////////////////////////// JULIEN ////////////////////////
 //Création du compteur vote
@@ -1618,8 +1667,7 @@ function checkAchat($iD){
   // console.log(localStorage.getItem($iDBouton).substr(1,2))
    
   console.log(localStorage.getItem($iDBouton));
-  console.log($coutArgent)
-  console.log($compteurArgent)
+
 
   if (localStorage.getItem($iDBouton)=== null){localStorage.setItem($iDBouton,"00")}
     
