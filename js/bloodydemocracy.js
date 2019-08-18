@@ -45,7 +45,7 @@ var $compteurArgentCaisseNoire;
 
 //....................................CALENDRIER INTERSIDERAL....................................................
 
-// localStorage.clear();
+localStorage.clear();
 
 // 1jour dure 2 min
 $ratioSecondesParJour=2*60;
@@ -432,6 +432,7 @@ function storageRegulier(){
   localStorage.setItem('compteurArgentTotal', $compteurArgentTotal);
   localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
   localStorage.setItem('$attenuationPertesGlobal', $attenuationPertesGlobal);
+  localStorage.setItem('$compteurArgentCaisseNoire', $compteurArgentCaisseNoire);
 
 }
 setInterval (storageRegulier, 4000)
@@ -1097,8 +1098,8 @@ function stat(){
 	document.getElementById("timeFromStartThisPlay").innerHTML = "Temps de jeu cette Partie: " + $tempsDeJeuSeconde + " secondes";
 	if (isNaN(localStorage.getItem('timeFromStartAllPlay'))) {}
 	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total :" + localStorage.getItem('timeFromStartAllPlay') + " secondes";}
-	document.getElementById("voteParClic").innerHTML = "Gain de Vote au Clic " + $MultiClickGlobal;
-	document.getElementById("argentParClic").innerHTML = "Gain d'Argent au clic " + ($MultiClickGlobal*5);
+	document.getElementById("voteParClic").innerHTML = "Gain de Vote au Clic: " + $MultiClickGlobal;
+	document.getElementById("argentParClic").innerHTML = "Gain d'Argent au clic: " + ($MultiClickGlobal*5);
 }
 
 setInterval(stat, 1000);

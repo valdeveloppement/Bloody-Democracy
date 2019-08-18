@@ -48,7 +48,7 @@
 				</p>
 
 				<p>
-					Ce jeu clicker vous permettra de vivre la vie trépidente d'un président Français. Cynisme, suffisance et inhumanité seront vos meilleurs atouts pour parvenir à vos fins: Pouvoir et argent!<br><br> Vous êtes le président en place et les prochaines élections ont déjà commencé, votre but: gagner un max de thune et tenter de rester en place! Bien évidemment, ici on peut voter pour soi, alors faites chauffer votre souris dans cet ego-trip sanglant!<br><br> Les règles sont simples! Votez! Chaque clique vous fera gagner simultanément des votes et de l'argent. Débloquez des bonus qui vous permettront de décupler vos gains, et faites faces aux évennements qui viendront pimenter votre mandat!
+					Ce jeu clicker vous permettra de vivre la vie trépidente d'un président Français. Cynisme, suffisance et inhumanité seront vos meilleurs atouts pour parvenir à vos fins: Pouvoir et argent!<br><br> Vous êtes le président en place et les prochaines élections ont déjà commencé, votre but: gagner un max de thune et tenter de rester en place! Bien évidemment, ici on peut voter pour soi, alors faites chauffer votre souris dans cet ego-trip sanglant!<br><br> Les règles sont simples! Votez! Chaque clique vous fera gagner simultanément des votes et de l'argent. Débloquez des bonus qui vous permettront de décupler vos gains, et faites faces aux évennements qui viendront pimenter votre mandat! Attention, ici le temps passe vite, 1 jours dure 2 min!
 
 				</p>
 
@@ -320,17 +320,17 @@
 					
 					<input type="radio" name="menuSwitchGen" id="selectBuffTemporaire" checked/>
 					<label for="selectBuffTemporaire" onclick="showBonusTemp()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 
 					<input type="radio" name="menuSwitchGen" id="selectStatistique"/>
 					<label for="selectStatistique" onclick="showStatistique()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 						
 					<input type="radio" name="menuSwitchGen" id="selectRanking"/>
 					<label for="selectRanking" onclick="showRanking()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 					 <!--
 					<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
@@ -464,15 +464,22 @@
 					
 					
 					<div id="statistique" class="menuGen notSelect">
-						<p id="caisseNoire"></p>
-						<p id="argentTotalThisPlay"></p>
-						<p id="voteTotalThisPlay"></p>
-						<p id="argentTotalAllPlay"></p>
-						<p id="voteTotalAllPlay"></p>
-						<p id="timeFromStartThisPlay"></p>
-						<p id="timeFromStartAllPlay"></p>
-						<p id="voteParClic"></p>
-						<p id="argentParClic"></p>
+						<div id="statistiqueGauche">
+							<p id="caisseNoire"></p>
+							<p id="argentTotalThisPlay"></p>
+							<p id="voteTotalThisPlay"></p>
+							<p id="argentTotalAllPlay"></p>
+							<p id="voteTotalAllPlay"></p>
+						</div>
+
+						<div id="statistiqueDroite">
+
+							<p id="timeFromStartThisPlay"></p>
+							<p id="timeFromStartAllPlay"></p>
+							<p id="voteParClic"></p>
+							<p id="argentParClic"></p>
+						</div>
+
 					</div>
 					
 					<div id="ranking" class="menuGen notSelect">
@@ -490,17 +497,17 @@
 					
 					<input type="radio" name="menuSwitchStore" id="selectVote" checked/>
 					<label for="selectVote" onclick="showVote()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 
 					<input type="radio" name="menuSwitchStore" id="selectArgent"/>
 					<label for="selectArgent" onclick="showArgent()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 						
 					<input type="radio" name="menuSwitchStore" id="selectGestion"/>
 					<label for="selectGestion" onclick="showGestion()" class="iconMenu">
-						<img src="images/miniatures/belleGeule3.jpg"/>
+						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
 			
 				</div>
