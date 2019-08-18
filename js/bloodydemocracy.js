@@ -49,7 +49,7 @@ var $compteurArgentCaisseNoire;
 
 
 // 1jour dure 2 min
-$ratioSecondesParJour=30;
+$ratioSecondesParJour=120;
 
 var $tempsDeJeuSeconde;
 var $tempsDeJeuJoursVirtuels;
@@ -879,6 +879,14 @@ function showPossession(){
 
 //Bouton selection slider Store
 
+
+////////////VAL//////////
+$colorOnglet= "#941b12";
+$colorOngletPop="#19749f";
+
+//////////////////////
+
+
 	document.getElementById("slideVote").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
 	var carteListeVote = document.getElementsByClassName("carteVote");
@@ -907,7 +915,7 @@ function showVote(){
 	}
 	document.getElementById("slideVote").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuVote").style.backgroundColor= "blue";
+	document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOnglet;
 	var carteListeVote = document.getElementsByClassName("carteVote");
 	carteListeVote[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Vote").checked = "true"
@@ -931,7 +939,7 @@ function showArgent(){
 	}
 	document.getElementById("slideArgent").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsArgent").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuArgent").style.backgroundColor= "blue";
+	document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOnglet;
 	var carteListeArgent = document.getElementsByClassName("carteArgent");
 	carteListeArgent[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Argent").checked = "true"
@@ -956,7 +964,7 @@ function showGestion(){
 	}
 	document.getElementById("slideGestion").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsGestion").classList.replace("notSelect", "select");
-	document.getElementById("miniatureMenuGestion").style.backgroundColor= "blue";
+	document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOnglet;
 	var carteListeGestion = document.getElementsByClassName("carteGestion");
 	carteListeGestion[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Gestion").checked = "true"
@@ -1153,14 +1161,15 @@ var coutVoteEducation = 5000;
 		function checkDisplayBelleMeuf(){
 		if ($compteurArgent >= coutArgentBelleMeuf && $compteurVote >= coutVoteBelleMeuf){
 			document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
 			clearInterval(interBelleMeuf);
 			localStorage.setItem("belleMeufDisplayed", "1");
 		}
 	}
 	function checkDisplayPhoto() {
 		if ($compteurArgent >= coutArgentPhoto && $compteurVote >= coutVotePhoto) {
-			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+      document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
+      document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
 			clearInterval(interPhoto);
 			localStorage.setItem("photoDisplayed", "1");
 		}
@@ -1168,7 +1177,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayGrenade(){
 		if ($compteurArgent >= coutArgentGrenade && $compteurVote >= coutVoteGrenade){
 			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
 			clearInterval(interGrenade);
 			localStorage.setItem("grenadeDisplayed", "1");
 		}
@@ -1176,7 +1185,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayEducation(){
 		if ($compteurArgent >= coutArgentEducation && $compteurVote >= coutVoteEducation){
 			document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
 			clearInterval(interEducation);
 			localStorage.setItem("educationDisplayed", "1");
 		}
@@ -1185,7 +1194,7 @@ var coutVoteEducation = 5000;
 		if ($compteurArgent >= coutArgentChomage && $compteurVote >= coutVoteChomage){
 			document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
 			clearInterval(interChomage);
 			localStorage.setItem("chomageDisplayed", "1");
 		}
@@ -1193,7 +1202,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayrsa(){
 		if ($compteurArgent >= coutArgentrsa && $compteurVote >= coutVotersa){
 			document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
 			clearInterval(interrsa);
 			localStorage.setItem("rsaDisplayed", "1");
 		}
@@ -1201,7 +1210,7 @@ var coutVoteEducation = 5000;
 	function checkDisplaybfntv(){
 		if ($compteurArgent >= coutArgentbfntv && $compteurVote >= coutVotebfntv){
 			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
 			clearInterval(interbfntv);
 			localStorage.setItem("bfntvDisplayed", "1");
 		}
@@ -1209,7 +1218,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayPanem(){
 		if ($compteurArgent >= coutArgentPanem && $compteurVote >= coutVotePanem){
 			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
 			clearInterval(interPanem);
 			localStorage.setItem("panemDisplayed", "1");
 		}
@@ -1218,7 +1227,7 @@ var coutVoteEducation = 5000;
 		if ($compteurArgent >= coutArgentArticle && $compteurVote >= coutVoteArticle){
 			document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interArticle);
 			localStorage.setItem("articleDisplayed", "1");
 		}
@@ -1226,7 +1235,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayVentesArme(){
 		if ($compteurArgent >= coutArgentVentesArme && $compteurVote >= coutVoteVentesArme){
 			document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interVentesArme);
 			localStorage.setItem("ventesArmeDisplayed", "1");
 		}
@@ -1234,7 +1243,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayAvocat(){
 		if ($compteurArgent >= coutArgentAvocat && $compteurVote >= coutVoteAvocat){
 			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interAvocat);
 			localStorage.setItem("avovatDisplayed", "1");
 		}
@@ -1242,7 +1251,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayCabinetAvocat(){
 		if ($compteurArgent >= coutArgentCabinetAvocat && $compteurVote >= coutVoteCabinetAvocat){
 			document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interCabinetAvocat);
 			localStorage.setItem("cabinetAvocatDisplayed", "1");
 		}
@@ -1250,7 +1259,7 @@ var coutVoteEducation = 5000;
 	function checkDisplayJustice(){
 		if ($compteurArgent >= coutArgentJustice && $compteurVote >= coutVoteJustice){
 			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= "red";
+			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interJustice);
 			localStorage.setItem("justiceDisplayed", "1");
 		}
@@ -1748,7 +1757,7 @@ function checkAchat($iD){
     else if($iDBouton== "boutonAchatGrenade"){                                                                                        // changeHere
       $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
       $coutArgent=50000;                                                                                                                    // changeHere
-      $coutVote=15000*$attenuationPertesGlobal;                                                                                                                        // changeHere
+      $coutVote=(15000*$attenuationPertesGlobal);                                                                                                                        // changeHere
       $mouvementArgentOneShot=0;                                                                                                          // changeHere
       $mouvementVoteOneShot=0;                                                                                                            // changeHere
       $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
@@ -1837,7 +1846,7 @@ function checkAchat($iD){
   else if($iDBouton== "boutonAchatJustice"){                                                                                        // changeHere
     $persistance=1;         // TRES IMPORTANT: 0 si usage instantanné, 1 si a une durée ou doit persister à la fermeture de cession     // changeHere   
     $coutArgent=500000;                                                                                                                    // changeHere
-    $coutVote=20000*$attenuationPertesGlobal;                                                                                                                        // changeHere
+    $coutVote=(20000*$attenuationPertesGlobal);                                                                                                                        // changeHere
     $mouvementArgentOneShot=0;                                                                                                          // changeHere
     $mouvementVoteOneShot=0;                                                                                                            // changeHere
     $mouvementArgentCaisseNoire=0;                                                                                                      // changeHere
@@ -2115,7 +2124,7 @@ function belleGueule(){                                                         
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2152,7 +2161,7 @@ belleGueule ();
 
 function belleMeuf(){                                                                                      // changeHere
 
-  let $intervalAutoClick=120/600;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalAutoClick=0.2;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
   let $intervalMouvementArgent=0;
   let $intervalMouvementVote=0;
   let $mouvementArgentRecurrent=0;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
@@ -2271,7 +2280,7 @@ function belleMeuf(){                                                           
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2427,7 +2436,7 @@ function article(){                                                             
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2579,7 +2588,7 @@ function PhotoDeFamille(){                                                      
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2729,7 +2738,7 @@ function Grenade(){                                                             
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2768,7 +2777,7 @@ Grenade ();
 function avocat(){                                                                                      // changeHere
 
   let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  let $intervalMouvementArgent=120*28;
+  let $intervalMouvementArgent=3360;
   let $intervalMouvementVote=0;
   let $mouvementArgentRecurrent=-10000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
   let $mouvementVoteRecurrent=0;                                                                                // changeHere
@@ -2887,7 +2896,7 @@ function avocat(){                                                              
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -2925,10 +2934,10 @@ avocat ();
 function chomage(){                                                                                      // changeHere
 
   let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  let $intervalMouvementArgent=120*28;
-  let $intervalMouvementVote=120/500;
+  let $intervalMouvementArgent=3360;
+  let $intervalMouvementVote=8;
   let $mouvementArgentRecurrent=70000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
-  let $mouvementVoteRecurrent=-1000*$attenuationPertesGlobal;                                                                                // changeHere
+  let $mouvementVoteRecurrent=(-1000*$attenuationPertesGlobal);                                                                                // changeHere
   let $multi=0;                                                                                                 // changeHere
   let $duree=4*30;                     //$duree s'exprime en JOURS                                                // changeHere
 
@@ -3044,7 +3053,7 @@ function chomage(){                                                             
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -3075,10 +3084,10 @@ chomage ();
 function rsa(){                                                                                      // changeHere
 
   let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  let $intervalMouvementArgent=120*28;
-  let $intervalMouvementVote=120*28;
+  let $intervalMouvementArgent=3360;
+  let $intervalMouvementVote=3360;
   let $mouvementArgentRecurrent=40000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
-  let $mouvementVoteRecurrent=-2000*$attenuationPertesGlobal;                                                                                // changeHere
+  let $mouvementVoteRecurrent=(-2000*$attenuationPertesGlobal);                                                                                // changeHere
   let $multi=0;                                                                                                 // changeHere
   let $duree=365;                     //$duree s'exprime en JOURS                                                // changeHere
 
@@ -3194,7 +3203,7 @@ function rsa(){                                                                 
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -3228,12 +3237,12 @@ rsa ();
 function cabinet(){                                                                                      // changeHere
 
   let $intervalAutoClick=0;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  let $intervalMouvementArgent=120*28;
+  let $intervalMouvementArgent=3360;
   let $intervalMouvementVote=0;
   let $mouvementArgentRecurrent=-20000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
   let $mouvementVoteRecurrent=0;                                                                                // changeHere
   let $multi=0;                                                                                                 // changeHere
-  let $duree=30000000;                     //$duree s'exprime en JOURS                                                // changeHere
+  let $duree=3000000;                     //$duree s'exprime en JOURS                                                // changeHere
 
   // ADAPTATION MATHEMATIQUE DES VARIABLES
    $intervalAutoClick=$intervalAutoClick*1000;       // Transforme les temps en ms
@@ -3347,7 +3356,7 @@ function cabinet(){                                                             
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -3374,8 +3383,8 @@ cabinet ();
 
 function bfntv(){                                                                                      // changeHere
 
-  let $intervalAutoClick=120/1000;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
-  let $intervalMouvementArgent=120*28;
+  let $intervalAutoClick=0.12;          //$intervalAutoClick est le temps en seconde entre deux auto clicks         // changeHere
+  let $intervalMouvementArgent=3360;
   let $intervalMouvementVote=0;
   let $mouvementArgentRecurrent=50000;   //les $mouvements peuvent etre positifs (gain) ou negatifs (perte)          // changeHere
   let $mouvementVoteRecurrent=0;                                                                                // changeHere
@@ -3494,7 +3503,7 @@ function bfntv(){                                                               
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }
@@ -3648,7 +3657,7 @@ function education(){                                                           
         
 
         $compteurVote=$compteurVote+$mouvementVoteRecurrent;
-        $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
+        // $compteurVotesTotal=$compteurVotesTotal+$mouvementVoteRecurrent;
         
 
       }

@@ -319,18 +319,22 @@
 				<div id="menuGeneral">
 					
 					<input type="radio" name="menuSwitchGen" id="selectBuffTemporaire" checked/>
-					<label for="selectBuffTemporaire" onclick="showBonusTemp()" class="iconMenu">
+					<label id="ongletBuff" for="selectBuffTemporaire" onclick="showBonusTemp()" class="iconMenu">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+						<p><i class="fas fa-star"></i></p>
 					</label>
 
 					<input type="radio" name="menuSwitchGen" id="selectStatistique"/>
-					<label for="selectStatistique" onclick="showStatistique()" class="iconMenu">
+					<label id ="ongletStat" for="selectStatistique" onclick="showStatistique()" class="iconMenu">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+						<p><i class="fas fa-chart-line"></i></p>
 					</label>
 						
 					<input type="radio" name="menuSwitchGen" id="selectRanking"/>
-					<label for="selectRanking" onclick="showRanking()" class="iconMenu">
+					<label id="ongletRank" for="selectRanking" onclick="showRanking()" class="iconMenu">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+						
+						<p><i class="fas fa-trophy"></i></p>
 					</label>
 					 <!--
 					<input type="radio" name="menuSwitchGen" id="selectAchievement"/>
@@ -469,8 +473,10 @@
 							<p id="argentParClic"></p>
               				<p id="attenuationPertesGlobal"></p>
 						</div>
+						<div id="zoneReset">
+							<button id="reset" onclick="reset();">Reset</button>
+						</div>
 
-						<button id="reset" onclick="reset();">Reset</button>
 					</div>
 					
 					<div id="ranking" class="menuGen notSelect">
@@ -490,16 +496,21 @@
 
 					<label for="selectVote" onclick="showVote()" id="miniatureMenuVote" class="iconMenu available">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+
+						<p><i class="fas fa-vote-yea"></i></p>
+						
 					</label>
 
 					<input type="radio" name="menuSwitchStore" id="selectArgent"/>
 					<label for="selectArgent" onclick="showArgent()" id="miniatureMenuArgent" class="iconMenu notAvailable">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+						<p><i class="fas fa-dollar-sign"></i></p>
 					</label>
 						
 					<input type="radio" name="menuSwitchStore" id="selectGestion"/>
 					<label for="selectGestion" onclick="showGestion()" id="miniatureMenuGestion" class="iconMenu notAvailable">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+						<p><i class="fas fa-home"></i></p>
 
 					</label>
 			
