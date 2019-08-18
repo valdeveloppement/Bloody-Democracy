@@ -57,6 +57,8 @@
 
 		</div>
 
+
+
 		
 		<div id="crs" class="event">
 			<!-- <div id="closeCrs" class="croix">
@@ -100,6 +102,57 @@
 				
 		
 		</div>
+
+
+
+		<div id="migrants" class="event">
+				<!-- <div id="closeCrs" class="croix">
+				<i class="fas fa-times"></i>
+				</div> -->
+	
+				<div id="descriptionMigrants" class="descriptionEvent">
+					<div class="imageEvent">
+							<img id= "imgMigrants" class="imgEvent" src="images/miniatures/migrants.jpg">
+					</div>
+	
+					<div id="texteMigrants" class="texteEvent">
+						<p>
+							Un bateau transportant 92 migrants dont 15 enfatnts est en difficulté à 200 km de la côte. Le bateau surchargé menace de chavirer.<br> Un Orage et une mer agitée sont attendus dans la soirée.<br><br> Vous devez prendre une décision.
+							
+						</p>
+	
+					</div>
+	
+	
+	
+				</div>
+	
+				<div class="bottomEvents">
+							
+					<div class="zoneBoutonEvent">
+	
+						<div id="boutonAchatAide" class="boutonAchatEvent" onclick="achatSourd()">
+							<p>Pardon, j'écouatais pas</p>
+						</div>
+					</div>
+	
+					<div class="zoneBoutonEvent">
+	
+						<div id="boutonAchatSourd" class="boutonAchatEvent" onclick="achatAide()">
+							<p>Envoyer un bateau demain</p>
+						</div>
+	
+					</div>
+				</div>
+					
+			
+			</div>
+
+
+
+
+
+
 
 		
 		
@@ -292,11 +345,122 @@
 					
 
 					<div id="buffTemporaire" class="menuGen select">
-						<img src="images/miniatures/belleGeule3.jpg"/>
-						<img src="images/miniatures/belleGeule3.jpg"/>
-						<!--<img src="images/miniatures/belleGeule3.jpg"/>
-						<img src="images/miniatures/belleGeule3.jpg"/>-->
+
+						<div id="buffBelleGueule" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/belleGeule3.jpg">
+							<div id="infoBelleGueule" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+						
+						<div id="buffArticle" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/articleJournal.jpg">
+							<div id="infoArticle" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+
+
+						<div id="buffBelleMeuf" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/belleMeuf.jpg">
+							<div id="infoBelleMeuf" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffPhoto" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/PhotoDeFamille.jpg">
+							<div id="infoPhoto" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffGrenade" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/grenade.jpg">
+							<div id="infoGrenade" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffAvocat" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/avocat.jpg">
+							<div id="infoAvocat" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffChomage" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/chomage.jpg">
+							<div id="infoChomage" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffRsa" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/rsa.jpg">
+							<div id="infoRsa" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffEducation" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/education.jpg">
+							<div id="infoEducation" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffCabinet" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/cabinetAvocat.jpg">
+							<div id="infoCabinet" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffVenteArme" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/venteArme.jpg">
+							<div id="infoVenteArme" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffJustice" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/justice.jpg">
+							<div id="infoJustice" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffBfn" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/bfntv.jpg">
+							<div id="infoBfn" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+
+						<div id="buffPanem" class="buffCartes">
+							<img class="imgBuff" src="images/miniatures/panem.jpg">
+							<div id="infoPanem" class="infoBuff">	
+								42<br>jours
+							</div>
+						</div>
+						
+
+
+
+
+
+
+
+
+
+
+
+
 					</div>
+
+					
 					
 					
 					<div id="statistique" class="menuGen notSelect">
@@ -878,6 +1042,23 @@
 		<div id= "volumeMute" class="volume " onclick="changeMute()">
 			<i class="fas fa-volume-mute"></i>
 		</div>
+
+
+
+
+		<div id="generique" class="generiqueDisplay">
+			<video id ="videoGenerique" width="100%" controls="controls" >
+				<source src="video/generique.mp4" type="video/mp4" />
+				<!-- <source src="video.webm" type="video/webm" />
+				<source src="video.ogv" type="video/ogg" /> -->
+				Générique indisponible
+			</video>
+
+		</div>
+
+		<!-- document.getElementById("mp4_src").src = "movie.mp4";
+		document.getElementById("ogg_src").src = "movie.ogg";
+		document.getElementById("myVideo").load();  -->
 
 
         <!---------------------------------------scripts JavaScript--------------------------------------------------->

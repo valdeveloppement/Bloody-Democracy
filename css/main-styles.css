@@ -77,6 +77,7 @@ body{
 	opacity: 0.4;
 	width:2vw;
 	height:2vw;
+	z-index: 99999999999;
 
 }
 .volume:hover{
@@ -89,8 +90,17 @@ body{
 }
 /* ................ FIN VOLUME ...................... */
 
+#generique{
+	position:absolute;
+	width:100vw;
+	top:0px;
+	left:0px;
+	z-index: 999999999;
+}
 
-
+.generiqueDisplay{
+	display: none;
+}
 
 
 
@@ -367,6 +377,57 @@ padding: 3% 3% 3% 3%
 /* ...............................................Fin Events.............................................. */
 
 
+/* ........................buff.......................... */
+
+
+#buffTemporaire {
+	display: flex;
+	flex-direction:row;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.buffCartes{
+width:7.14%;
+top:210px;
+height:5.3vw;
+
+
+
+}
+
+.imgBuff{
+position: absolute;
+width:7.14%;
+margin:0;
+padding:0;
+}
+
+
+.infoBuff{
+position:absolute;
+z-index: 45;
+font-weight: 700;
+font-size:1.5vw;
+background-color: rgba(255, 255, 255, 0.6);
+width: 7.14%;
+height:4.9vw;
+display:flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+color:rgb(0, 0, 0);
+box-shadow: 0px 0px 0px 2px #fbc959 inset; 
+
+}
+
+
+.cacheCartesBuff{
+	display:none;
+}
+
+/* ........................buff.......................... */
 
 
 
@@ -494,28 +555,14 @@ margin-bottom:3%;
 	transition: all 0.5s;
 	opacity: 0.6;
 }
-#buffTemporaire {
-	display: flex;
-	align-items: center;
-	justify-content: space-evenly;
-}
+
 .notSelect {
 	visibility: hidden;
 }
 .select {
 	visibility: visible;
 }
-.notAvailable {
-	display: none;
-}
-.available {
-	display: flex;
-}
-#buffTemporaire img {
-	width: 80px;
-	height: 80px;
-	margin: 20px;
-}
+
 #sliderStore {
 	position: relative;
 	display: flex;
