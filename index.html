@@ -464,6 +464,7 @@
 					
 					
 					<div id="statistique" class="menuGen notSelect">
+            
 						<div id="statistiqueGauche">
 							<p id="caisseNoire"></p>
 							<p id="argentTotalThisPlay"></p>
@@ -478,8 +479,10 @@
 							<p id="timeFromStartAllPlay"></p>
 							<p id="voteParClic"></p>
 							<p id="argentParClic"></p>
+              <p id="attenuationPertesGlobal"></p>
 						</div>
 
+						<button id="reset" onclick="reset();">Reset</button>
 					</div>
 					
 					<div id="ranking" class="menuGen notSelect">
@@ -496,6 +499,7 @@
 				<div id="menuStore">
 					
 					<input type="radio" name="menuSwitchStore" id="selectVote" checked/>
+
 					<label for="selectVote" onclick="showVote()" class="iconMenu">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
 					</label>
@@ -508,6 +512,7 @@
 					<input type="radio" name="menuSwitchStore" id="selectGestion"/>
 					<label for="selectGestion" onclick="showGestion()" class="iconMenu">
 						<!-- <img src="images/miniatures/belleGeule3.jpg"/> -->
+
 					</label>
 			
 				</div>
@@ -668,65 +673,7 @@
 					</div>
 					
 					<div id="slideArgent" class="storeChoice notSelect">
-						
-						<div id="bfntv" class="carte carteArgent">
-							<div class="illustration">
-								<img src="images/miniatures/bfntv.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>Bloody For Nothing TV</h3>
-									<p>Vous aviez ciblé quelques vieux avec votre article dans le journal. Il est temps de voir les choses en grand et de toucher un max de beaufs en achetant la chaîne BFN TV. Imaginez une équipe entière déterminée à détruire l'esprit critique, rien que pour vous.
-									</p>
-			
-								</div>
 
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">On joue dans la cour des grands, coût: <b>250000€</b>. <br>Grâce à BFN TV faites exploser votre temps de parole et bénéficiez de <b>1000 clics par jours!</b> <br>La chaîne vous rapporte également un gain mensuel supplémentaire de <b>50 000€.</b> <b>Durée: 6 mois.</b>
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatbfntv" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
-						<div id="panemCircenses" class="carte carteArgent">
-							<div class="illustration">
-								<img src="images/miniatures/panem.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>« Panem et Circenses »</h3>
-									<p>Du « Pain et des Jeux ». Les citoyens c'est comme les chiens, filez leur une baballe et vous pourrez les martyriser à votre guise sans que cela n'atteigne leur fidélité. Pour peu qu'ils gagnent et vous verrez tous ces crétinos en survet low-cost se prendre par la main ou faire la queue leu leu en braillant leur victoire imaginaire. Ils en oublierons qu'ils perdent tous les jours. Vous 1, le peuple 0. 
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Coût : <b>400000€</b>. Remportez <b>100000 votes</b> d'un coup. <br>Profitez pour faire vos magouilles toutes pénalités financières et politiques seront <b>annulées jusqu'à la fin du mandat.</b> 
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatPanem" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
-						
 						<div id="fmi" class="carte carteArgent">
 
 							<div class="illustration">
@@ -743,7 +690,7 @@
 								
 								<div class ="achat"> 
 									<div class="zoneEffet">
-										<p class="effets">Pour faire passer la pillule, il va falloir une sacrée com.<br>Cout : <b>100000€</b>. Récupérez <b>70000€</b> par mois. <br>Vous perdrez <b>500</b> votes par jours <b>pendant 4 mois.</b>
+										<p class="effets">Pour faire passer la pillule, il va falloir une sacrée com.<br>Cout : <b>100000€</b>. Récupérez <b>70000€</b> par mois. <br>Vous perdrez <b>1000</b> votes par jours <b>pendant 4 mois.</b>
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -774,6 +721,7 @@
 								<div class ="achat"> 
 									<div class="zoneEffet">
 										<p class="effets">Cout : <b>130000€</b>.Vous économiserez <b>40000€</b> par mois pendant <b>1 an</b>.<br>Vous perdrez l'appui des gueux :<b>2000</b>votes en moins par mois <b>pendant 1 an.</b>
+
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -784,6 +732,64 @@
 								
 								</div>
 
+							</div>
+						</div>
+						
+						<div id="bfntv" class="carte carteArgent">
+							<div class="illustration">
+								<img src="images/miniatures/bfntv.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>Bloody For Nothing TV</h3>
+									<p>Vous aviez ciblé quelques vieux avec votre article dans le journal. Il est temps de voir les choses en grand et de toucher un max de beaufs en achetant la chaîne BFN TV. Imaginez une équipe entière déterminée à détruire l'esprit critique, rien que pour vous.
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">On joue dans la cour des grands, coût: <b>250000€</b>. <br>Grâce à BFN TV faites exploser votre temps de parole et bénéficiez de <b>1000 clics par jours!</b> <br>La chaîne vous rapporte également un gain mensuel supplémentaire de <b>50 000€.</b>
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatbfntv" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
+							</div>
+						</div>
+						
+						<div id="panemCircenses" class="carte carteArgent">
+							<div class="illustration">
+								<img src="images/miniatures/panem.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>« Panem et Circenses »</h3>
+									<p>Du « Pain et des Jeux ». Les citoyens c'est comme les chiens, filez leur une baballe et vous pourrez les martyriser à votre guise sans que cela n'atteigne leur fidélité. Pour peu qu'ils gagnent et vous verrez tous ces crétinos en survet low-cost se prendre par la main ou faire la queue leu leu en braillant leur victoire imaginaire. Ils en oublierons qu'ils perdent tous les jours. Vous 1, le peuple 0. 
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">Coût : <b>400000€</b>. Remportez <b>100000 votes</b> d'un coup. <br>Profitez pour faire vos magouilles toutes pénalités financières et politiques seront <b>annulées pendant 3 mois.</b> 
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatPanem" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
 							</div>
 						</div>
 						
@@ -819,36 +825,6 @@
                 
 							</div>
 						</div>
-					
-					
-						<div id="gnr" class="carte carteGestion">
-							<div class="illustration">
-								<img src="images/miniatures/venteArme.jpg">
-							</div>
-		
-							<div class="contenu">
-								<div class="description">
-									<h3>Guns N' Roses</h3>
-									<p>Avec un budget militaire en constante hausse, et 5 milliards d'euros annuels consacrés à la recherche et au développement, la France peut être fière de son savoir faire en matière de destruction de vie humaine. Valoriser ce savoir faire et faites en profiter quelques dictateurs impatients d’essayer vos nouveaux bijoux !Organisez une belle vente : L’Arabie saoudite attends impatiemment ses 50 canons Caesar  et ses 30 pods. Les chars Leclerc ont quant à eux taper dans l' œil des Émirats arabes unis ! Soyez discrets et livrez ce soir vos amis.
-									</p>
-			
-								</div>
-
-								<div class ="achat"> 
-									<div class="zoneEffet">
-										<p class="effets">Entre la logistique et les pots-de-vins ça va douiller, Cout: <b>200000€</b>.<br> Cette belle opération vous rapporte <b>400000€</b> en cash dont <b>50000€</b> ira directement dans votre caisse noire !</b> L'UE vous mets une ammende de <b>100000€</b>.
-										</p>
-									</div>
-									<div class="zoneBouton">
-										<div id="boutonAchatVenteArme" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
-											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
-										</div>
-									</div>
-								
-								</div>
-			
-							</div>
-						</div>
 						
 						<div id="avocat" class="carte carteGestion">
 
@@ -866,7 +842,7 @@
 								
 								<div class ="achat"> 
 									<div class="zoneEffet">
-										<p class="effets">Cout : <b>60000€</b>. Honoraires mensuels : <b>10000€</b>. <br>diminue de <b>30%</b> vos pertes financières et politiques. 
+										<p class="effets">Cout : <b>60000€</b>. Honoraires mensuels : <b>10000€</b>. <br>diminue de <b>30%</b> vos pertes financières et politiques. <br>Durée: <b>3 ans</b>
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -896,7 +872,7 @@
 								
 								<div class ="achat"> 
 									<div class="zoneEffet">
-										<p class="effets">Cout : <b>150000€</b>. Honoraires mensuels : <b>20000€</b>. <br>diminue de <b>50%</b> supplémentaires vos pertes financières et politiques.<br> 
+										<p class="effets">Cout : <b>150000€</b>. Honoraires mensuels : <b>20000€</b>. <br>diminue de <b>50%</b> supplémentaires vos pertes financières et politiques.<br> Durée: <b>3ans.</b>
 										</p>
 									</div>
 									<div class="zoneBouton">
@@ -907,6 +883,35 @@
 								
 								</div>
 
+							</div>
+						</div>
+						
+						<div id="gnr" class="carte carteGestion">
+							<div class="illustration">
+								<img src="images/miniatures/venteArme.jpg">
+							</div>
+		
+							<div class="contenu">
+								<div class="description">
+									<h3>Guns N' Roses</h3>
+									<p>Avec un budget militaire en constante hausse, et 5 milliards d'euros annuels consacrés à la recherche et au développement, la France peut être fière de son savoir faire en matière de destruction de vie humaine. Valoriser ce savoir faire et faites en profiter quelques dictateurs impatients d’essayer vos nouveaux bijoux !Organisez une belle vente : L’Arabie saoudite attends impatiemment ses 50 canons Caesar  et ses 30 pods. Les chars Leclerc ont quant à eux taper dans l' œil des Émirats arabes unis ! Soyez discrets et livrez ce soir vos amis.
+									</p>
+			
+								</div>
+
+								<div class ="achat"> 
+									<div class="zoneEffet">
+										<p class="effets">Entre la logistique et les pots-de-vins ça va douiller, Cout: <b>200000€</b>.<br> Cette belle opération vous rapporte <b>400000€</b> en cash dont <b>50000€</b> ira directement dans votre caisse noire !</b> L'UE vous mets une ammende de <b>100000€</b>.
+										</p>
+									</div>
+									<div class="zoneBouton">
+										<div id="boutonAchatVenteArme" class="boutonAchat" onclick="achat()" onmouseover="checkAchat(this);">
+											<p><i class="fas fa-shopping-cart"></i>&nbsp Buy </p>
+										</div>
+									</div>
+								
+								</div>
+			
 							</div>
 						</div>
 						
@@ -947,26 +952,26 @@
 					<div class="thumbDumb">
 						<input type="radio" name="cardSwitchVote" id="id1Vote" class="radioVote"/>
 						<label for="id1Vote" onclick="showBelleGueule()">
-							<img src="images/miniatures/belleGeule3.jpg"/>
+							<img src="images/miniatures/belleGeule3.jpg" class="available"/>
 						</label>
 								
 						<input type="radio" name="cardSwitchVote" id="id2Vote" class="radioVote"/>
-						<label for="id2Vote" onclick="showBelleMeuf()">
+						<label for="id2Vote" onclick="showBelleMeuf()" id="miniatureBelleMeuf" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/belleMeuf.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id3Vote" class="radioVote"/>
-						<label for="id3Vote" onclick="showPhotoDeFamille()">
+						<label for="id3Vote" onclick="showPhotoDeFamille()" id="miniaturePhotoDeFamille" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/PhotoDeFamille.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id4Vote" class="radioVote"/>
-						<label for="id4Vote" onclick="showGrenade()">
+						<label for="id4Vote" onclick="showGrenade()" id="miniatureGrenade" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/grenade.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id5Vote" class="radioVote"/>
-						<label for="id5Vote" onclick="showTeachers()">
+						<label for="id5Vote" onclick="showTeachers()" id="miniatureEducation" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/education.jpg"/>
 						</label>
 						
@@ -977,23 +982,23 @@
 					<div class="thumbDumb">
 						
 						<input type="radio" name="cardSwitchArgent" id="id1Argent" class="radioArgent"/>
-						<label for="id1Argent" onclick="showbfntv()">
-							<img src="images/miniatures/bfntv.jpg">
-						</label>
-						
-						<input type="radio" name="cardSwitchArgent" id="id2Argent" class="radioArgent"/>
-						<label for="id2Argent" onclick="showpanemCircenses()">
-							<img src="images/miniatures/panem.jpg">
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id3Argent" class="radioArgent"/>
-						<label for="id3Argent" onclick="showfmi()">
+						<label for="id1Argent" onclick="showfmi()" id="miniatureChomage" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/chomage.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id4Argent" class="radioArgent"/>
-						<label for="id4Argent" onclick="showrmi()">
+						<input type="radio" name="cardSwitchArgent" id="id2Argent" class="radioArgent"/>
+						<label for="id2Argent" onclick="showrmi()" id="miniaturersa" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/rsa.jpg"/>
+						</label>
+						
+						<input type="radio" name="cardSwitchArgent" id="id3Argent" class="radioArgent"/>
+						<label for="id3Argent" onclick="showbfntv()" id="miniaturebfntv" class="miniatureDisplay notAvailable">
+							<img src="images/miniatures/bfntv.jpg">
+						</label>
+						
+						<input type="radio" name="cardSwitchArgent" id="id4Argent" class="radioArgent"/>
+						<label for="id4Argent" onclick="showpanemCircenses()" id="miniaturePanem" class="miniatureDisplay notAvailable">
+							<img src="images/miniatures/panem.jpg">
 						</label>
 						
 					</div>
@@ -1004,27 +1009,27 @@
 						
 								
 						<input type="radio" name="cardSwitchGestion" id="id1Gestion" class="radioGestion"/>
-						<label for="id1Gestion" onclick="showArticleJournal()">
+						<label for="id1Gestion" onclick="showArticleJournal()" id="miniatureArticleJournal" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/articleJournal.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchGestion" id="id2Gestion" class="radioGestion"/>
-						<label for="id2Gestion" onclick="showgnr()">
-							<img src="images/miniatures/venteArme.jpg"/>
-						</label>
-						
-						<input type="radio" name="cardSwitchGestion" id="id3Gestion" class="radioGestion"/>
-						<label for="id3Gestion" onclick="showAvocat()">
+						<label for="id2Gestion" onclick="showAvocat()" id="miniatureAvocat" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/avocat.jpg"/>
 						</label>
 						
-						<input type="radio" name="cardSwitchGestion" id="id4Gestion" class="radioGestion"/>
-						<label for="id4Gestion" onclick="showCabinetAvocat()">
+						<input type="radio" name="cardSwitchGestion" id="id3Gestion" class="radioGestion"/>
+						<label for="id3Gestion" onclick="showCabinetAvocat()" id="miniatureCabinetAvocat" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/cabinetAvocat.jpg"/>
 						</label>
 						
+						<input type="radio" name="cardSwitchGestion" id="id4Gestion" class="radioGestion"/>
+						<label for="id4Gestion" onclick="showgnr()" id="miniatureVenteArme" class="miniatureDisplay notAvailable">
+							<img src="images/miniatures/venteArme.jpg"/>
+						</label>
+						
 						<input type="radio" name="cardSwitchGestion" id="id5Gestion" class="radioGestion"/>
-						<label for="id5Gestion" onclick="showJustice()">
+						<label for="id5Gestion" onclick="showJustice()" id="miniatureJustice" class="miniatureDisplay notAvailable">
 							<img src="images/miniatures/justice.jpg"/>
 						</label>
 						
