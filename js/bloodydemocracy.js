@@ -1090,11 +1090,15 @@ function stat(){
 	else {document.getElementById("argentTotalAllPlay").innerHTML = "Gain d'Argent Total :" + localStorage.getItem('argentTotalAllPlay');}
 	if (isNaN(localStorage.getItem('voteTotalAllPlay'))) {}
 	else { document.getElementById("voteTotalAllPlay").innerHTML = "Gain de vote Total: " + localStorage.getItem('voteTotalAllPlay');}
-	document.getElementById("timeFromStartThisPlay").innerHTML = "Temps de jeu cette Partie: " + $tempsDeJeuSeconde + " secondes";
+	document.getElementById("timeFromStartThisPlay").innerHTML = "Temps de jeu cette Partie: " + Math.floor($tempsDeJeuSeconde/60) + "m";
 	if (isNaN(localStorage.getItem('timeFromStartAllPlay'))) {}
-	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total :" + localStorage.getItem('timeFromStartAllPlay') + " secondes";}
+	else {document.getElementById("timeFromStartAllPlay").innerHTML = "Temps de jeu Total: " + Math.floor(localStorage.getItem('timeFromStartAllPlay')/60) + "m";}
 	document.getElementById("voteParClic").innerHTML = "Gain de Vote au Clic " + $MultiClickGlobal;
 	document.getElementById("argentParClic").innerHTML = "Gain d'Argent au clic " + ($MultiClickGlobal*5);
+	if (isNaN(localStorage.getItem("attenuationPertesGlobal"))){}
+	else {
+		document.getElementById("attenuationPertesGlobal").innerHTML = "Réduction des Pertes: " + ((1-$attenuationPertesGlobal)*10);
+	}
 }
 
 setInterval(stat, 1000);
