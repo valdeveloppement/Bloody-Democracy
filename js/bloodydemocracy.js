@@ -665,9 +665,6 @@ function bloupReverse(){
   }
   
 }
-
-
-
   
  $nbMouseEnter=0;
 function playBloup(){
@@ -1096,8 +1093,8 @@ function stat(){
 	localStorage.setItem('voteTotalAllPlay', $compteurVotesTotal);
 	if (isNaN($compteurArgentCaisseNoire)){}
 	else { document.getElementById("caisseNoire").innerHTML = "Votre caisse noire: " + $compteurArgentCaisseNoire; }
-	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVotesTotal;
-	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgentTotal;
+	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVote;
+	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgent;
 	if (isNaN(localStorage.getItem('argentTotalAllPlay'))) {}
 	else {document.getElementById("argentTotalAllPlay").innerHTML = "Gain d'Argent Total :" + localStorage.getItem('argentTotalAllPlay');}
 	if (isNaN(localStorage.getItem('voteTotalAllPlay'))) {}
@@ -3765,8 +3762,6 @@ function reset(){
   localStorage.setItem('boutonAchatPanem', '000');
   localStorage.setItem('boutonAchatbfntv', '000');
   $tempsDeJeuSeconde = 0;
-  $compteurVotesTotal = 0;
-  $compteurArgentTotal = 0;
   
 }
 //////////////////////////////// FIN RESET ////////////////////////////////
