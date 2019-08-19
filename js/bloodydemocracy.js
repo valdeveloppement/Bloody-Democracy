@@ -99,7 +99,7 @@ function refreshCalendar(){
   $jourDuMois=$jourDuMois+1;
   console.log("Jour:"+$jourDuMois+"  Mois:"+$moisDeLannee+ "   anne:"+$tempsDeJeuAnneVirtuelle);
   $calendarTxt = document.getElementById("calendarTxt");
-  $calendarTxt.innerHTML="jour: "+$jourDuMois+" mois: "+$moisDeLannee+ " <br> année: "+$tempsDeJeuAnneVirtuelle;
+  $calendarTxt.innerHTML="jour: "+$jourDuMois+" mois: "+$moisDeLannee+ "  année: "+$tempsDeJeuAnneVirtuelle;
 }
 setInterval(refreshCalendar,1000);
 
@@ -462,7 +462,7 @@ function placeClicker() {
   $largeurCompteurs=document.getElementById("compteurs").offsetWidth;
   $largeurCalendar=$calendar.offsetWidth;
   $calendarXPos=($largeurCompteurs*1.3333-$largeurCalendar)/2;
-  $calendar.style.left = $calendarXPos+'px';
+  $calendar.style.left = $calendarXPos-10+'px';
 
 
   // if (($largeurDescriptionCrs/2)<$hauteurDescriptionCrs){
@@ -698,6 +698,7 @@ function playBloup(){
 
 $crs=document.getElementById("crs");
 $texteCrs=document.getElementById("texteCrs");
+
 $timeCrs=120000;
 if (localStorage.getItem('$stopCrs') === null) {
   localStorage.setItem('$stopCrs', "0");
@@ -3697,10 +3698,40 @@ education ();
 
 ////////////////////////////////// RESET ////////////////////////////////////
 
+
+
+$generique = document.getElementById('generique');
+$closeVideo=document.getElementById('closeVideo');
+var video = document.getElementById('videoGenerique');
+function stopTheVideo(){
+  video.pause()
+  $generique.classList.add("generiqueDisplay");
+
+}
+
+// document.getElementById('videogenerique').addEventListener('ended',myHandler,true);
+// function myHandler(e) {
+//   $generique.classList.add("generiqueDisplay");
+
+// }
+
+
 function reset(){
 
-  /*var video = document.getElementById('video');
-  video.play();*/
+
+
+  $generique.classList.remove("generiqueDisplay");
+
+  video.play();
+  function afficherClose(){
+    $closeVideo.style.display= "flex";
+  }
+
+  setTimeout(afficherClose, 21000);
+  setTimeout(stopTheVideo,130000);
+
+
+
 
   var timeAdd = parseInt(localStorage.getItem('timeFromStartAllPlay'));
   var argentAddTotal = parseInt(localStorage.getItem('argentTotalAllPlay'));
@@ -3744,12 +3775,12 @@ function reset(){
 function rankingSort(){
 
     var $rankingTable = [
-            {name: 'Petine', val: 100000000000000},
-            {name: 'Kimi', val: 200000000000},
-            {name: 'Mao', val: 8888888888},
-            {name: 'Tutu', val: 2},
-            {name: 'Toto', val: 0},
-            {name:'Player', val: parseInt(localStorage.getItem("compteurVote"))}
+            {name: 'Petine', val: 956555222415515155},
+            {name: 'Kimi', val: 200698777777000},
+            {name: 'Mao', val: 120365554632},
+            {name: 'Joe', val: 830000},
+            {name: 'Janine', val: 12365},
+            {name:'Vous', val: parseInt(localStorage.getItem("compteurVote"))}
         ];
 
     $rankingTable.sort(function(a,b) {
@@ -3764,7 +3795,7 @@ function rankingSort(){
         }
 
         document.getElementById('ranking').innerHTML = $elements;
-        document.getElementById('rank-Player').style.color="red";
+        document.getElementById('rank-Vous').style.color="red";
 }
 
 setInterval(rankingSort, 1000);
