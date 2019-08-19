@@ -640,7 +640,6 @@ $zoom=$zoom+1;
 if (($zoom<10/$entropie) & $entropie<=2){
 $boiteDessus.style.transform="scale(1.0"+$zoom+")";
 $boiteDessous.style.transform="scale(1.0"+$zoom+")";
-console.log("test")
 }
 else{
   clearInterval($bloup)
@@ -655,7 +654,6 @@ function bloupReverse(){
   if ($zoom>=0){
   $boiteDessus.style.transform="scale(1.0"+$zoom+")";
   $boiteDessous.style.transform="scale(1.0"+$zoom+")";
-  console.log("test")
   }
   else{
     clearInterval($bloupReverse);
@@ -1246,7 +1244,7 @@ var coutVoteEducation = 5000;
 			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
 			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
 			clearInterval(interAvocat);
-			localStorage.setItem("avovatDisplayed", "1");
+			localStorage.setItem("avocatDisplayed", "1");
 		}
 	}
 	function checkDisplayCabinetAvocat(){
@@ -1268,6 +1266,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("belleMeufDisplayed")){
 		var interBelleMeuf = setInterval(checkDisplayBelleMeuf, 500);
+		localStorage.setItem("belleMeufDisplayed", "0");
 	}
 	else {
 		document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
@@ -1275,6 +1274,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("photoDisplayed")) {
 		var interPhoto = setInterval(checkDisplayPhoto, 500);
+		localStorage.setItem("photoDisplayed", "0");
 	}
 	else {
 		document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
@@ -1282,6 +1282,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("grenadeDisplayed")){
 		var interGrenade = setInterval(checkDisplayGrenade, 500);
+		localStorage.setItem("grenadeDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
@@ -1289,6 +1290,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("educationDisplayed")){
 		var interEducation = setInterval(checkDisplayEducation, 500);
+		localStorage.setItem("educationDisplayed", "0");
 	}
 	else {
 		document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
@@ -1296,6 +1298,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("chomageDisplayed")){
 		var interChomage = setInterval(checkDisplayChomage, 500);
+		localStorage.setItem("chomageDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
@@ -1304,6 +1307,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("rsaDisplayed")){
 		var interrsa = setInterval(checkDisplayrsa, 500);
+		localStorage.setItem("rsaDisplayed", "0");
 	}
 	else {
 		document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
@@ -1311,6 +1315,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("bfntvDisplayed")){
 		var interbfntv = setInterval(checkDisplaybfntv, 500);
+		localStorage.setItem("bfntvDisplayed", "0");
 	}
 	
 	else {
@@ -1319,6 +1324,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("panemDisplayed")){
 		var interPanem = setInterval(checkDisplayPanem, 500);
+		localStorage.setItem("panemDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
@@ -1326,6 +1332,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("articleDisplayed")){
 		var interArticle = setInterval(checkDisplayArticle, 500);
+		localStorage.setItem("articleDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
@@ -1334,13 +1341,15 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("ventesArmeDisplayed")){
 		var interVentesArme = setInterval(checkDisplayVentesArme, 500);
+		localStorage.setItem("ventesArmeDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
 	}
 	
-	if (!localStorage.getItem("avovatDisplayed")){
+	if (!localStorage.getItem("avocatDisplayed")){
 		var interAvocat = setInterval(checkDisplayAvocat, 500);
+		localStorage.setItem("avocatDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
@@ -1348,6 +1357,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("cabinetAvocatDisplayed")){
 		var interCabinetAvocat = setInterval(checkDisplayCabinetAvocat, 500);
+		localStorage.setItem("cabinetAvocatDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
@@ -1355,6 +1365,7 @@ var coutVoteEducation = 5000;
 	
 	if (!localStorage.getItem("justiceDisplayed")){
 		var interJustice = setInterval(checkDisplayJustice, 500);
+		localStorage.setItem("justiceDisplayed", "0");
 	}
 	else{
 		document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
