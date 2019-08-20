@@ -41,6 +41,68 @@ var $compteurVotesTotal;
 var $compteurArgentTotal;
 var $compteurArgentCaisseNoire;
 
+if (!localStorage.getItem('boutonAchatBelleGueule')){
+  localStorage.setItem('boutonAchatBelleGueule',"00")
+}
+
+if (!localStorage.getItem('boutonAchatBelleMeuf')){
+  localStorage.setItem('boutonAchatBelleMeuf',"00")
+}
+
+if (!localStorage.getItem('boutonAchatarticleJournal')){
+  localStorage.setItem('boutonAchatarticleJournal',"00")
+}
+
+if (!localStorage.getItem('boutonAchatphotoDeFamille')){
+  localStorage.setItem('boutonAchatphotoDeFamille',"00")
+}
+
+if (!localStorage.getItem('boutonAchatGrenade')){
+  localStorage.setItem('boutonAchatGrenade',"00")
+}
+
+if (!localStorage.getItem('boutonAchatAvocat')){
+  localStorage.setItem('boutonAchatAvocat',"00")
+}
+
+if (!localStorage.getItem('boutonAchatChomage')){
+  localStorage.setItem('boutonAchatChomage',"00")
+}
+
+if (!localStorage.getItem('boutonAchatrsa')){
+  localStorage.setItem('boutonAchatrsa',"00")
+}
+
+if (!localStorage.getItem('boutonAchatCabinetAvocat')){
+  localStorage.setItem('boutonAchatCabinetAvocat',"00")
+}
+
+if (!localStorage.getItem('boutonAchatVenteArme')){
+  localStorage.setItem('boutonAchatVenteArme',"00")
+}
+
+if (!localStorage.getItem('boutonAchatJustice')){
+  localStorage.setItem('boutonAchatJustice',"00")
+}
+
+if (!localStorage.getItem('boutonAchatbfntv')){
+  localStorage.setItem('boutonAchatbfntv',"00")
+}
+
+if (!localStorage.getItem('boutonAchatPanem')){
+  localStorage.setItem('boutonAchatPanem',"00")
+}
+
+if (!localStorage.getItem('boutonAchatEducation')){
+  localStorage.setItem('boutonAchatEducation',"00")
+}
+
+
+
+
+
+
+
 
 
 //....................................CALENDRIER INTERSIDERAL....................................................
@@ -663,9 +725,6 @@ function bloupReverse(){
   }
   
 }
-
-
-
   
  $nbMouseEnter=0;
 function playBloup(){
@@ -1094,8 +1153,8 @@ function stat(){
 	localStorage.setItem('voteTotalAllPlay', $compteurVotesTotal);
 	if (isNaN($compteurArgentCaisseNoire)){}
 	else { document.getElementById("caisseNoire").innerHTML = "Votre caisse noire: " + $compteurArgentCaisseNoire; }
-	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVotesTotal;
-	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgentTotal;
+	document.getElementById("voteTotalThisPlay").innerHTML = "Gain de vote cette partie: " + $compteurVote;
+	document.getElementById("argentTotalThisPlay").innerHTML = "Gain d'argent cette partie: " + $compteurArgent;
 	if (isNaN(localStorage.getItem('argentTotalAllPlay'))) {}
 	else {document.getElementById("argentTotalAllPlay").innerHTML = "Gain d'Argent Total :" + localStorage.getItem('argentTotalAllPlay');}
 	if (isNaN(localStorage.getItem('voteTotalAllPlay'))) {}
@@ -1698,7 +1757,6 @@ var $attenuationPertes;                                 //
 // fonction de mise à jour des variables et du check de disponibilité
 function checkAchat($iD){
   $iDBouton=$iD.id;
-  console.log($iDBouton)
 
   if(0+0=="la tete à toto"){alert("LOL")}   // franchement, cherchez pas à comprendre, mais ne touchez pas XD
 
@@ -1942,7 +2000,7 @@ function checkAchat($iD){
   // console.log(localStorage.getItem($iDBouton).substr(0, 1))
   // console.log(localStorage.getItem($iDBouton).substr(1,2))
    
-  console.log(localStorage.getItem($iDBouton));
+
 
 
   if (localStorage.getItem($iDBouton)=== null){localStorage.setItem($iDBouton,"00")}
@@ -1983,7 +2041,7 @@ function achat(){
   if ($disponible==1 ){
     localStorage.setItem($iDBouton,10);
 
-    console.log(localStorage.getItem($iDBouton));
+
 
     $compteurArgent=$compteurArgent-$coutArgent;
     $compteurVote=$compteurVote-$coutVote;
@@ -1999,7 +2057,7 @@ function achat(){
     if ($persistance==1){
       
       localStorage.setItem($iDBouton,"1"+$tempsDeJeuJoursVirtuels);
-      console.log(localStorage.getItem($iDBouton));
+
       
     }
 
@@ -3773,10 +3831,9 @@ function reset(){
   localStorage.setItem('boutonAchatPanem', '000');
   localStorage.setItem('boutonAchatbfntv', '000');
   $tempsDeJeuSeconde = 0;
-  $compteurVotesTotal = 0;
-  $compteurArgentTotal = 0;
   localStorage.removeItem('$stopCrs');
   localStorage.removeItem('$stopMigrants');
+
   
 }
 //////////////////////////////// FIN RESET ////////////////////////////////
