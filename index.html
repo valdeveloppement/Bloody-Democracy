@@ -1037,28 +1037,34 @@
 				<div id="thumbnailsVote" class="thumbnails select">
 					<div class="thumbDumb">
 						<input type="radio" name="cardSwitchVote" id="id1Vote" class="radioVote"/>
-						<label for="id1Vote" onclick="showBelleGueule()" id="miniatureBelleGueule">
-							<img src="images/miniatures/belleGeule3.jpg" class="available"/>
+						
+						<label id="hideBelleGueule" for="id1Vote" onclick="showBelleGueule()">
+							<p id="prixBelleGueule"></p>
+							<img  id="miniatureBelleGueule" src="images/miniatures/belleGeule3.jpg"/>
 						</label>
 								
 						<input type="radio" name="cardSwitchVote" id="id2Vote" class="radioVote"/>
-						<label for="id2Vote" onclick="showBelleMeuf()" id="miniatureBelleMeuf" class="miniatureDisplay">
-							<img src="images/miniatures/belleMeuf.jpg"/>
+						<label id="hideBelleMeuf" for="id2Vote" onclick="showBelleMeuf()" class="miniatureDisplay">
+							<p id="prixBelleMeuf"></p>
+							<img id="miniatureBelleMeuf" src="images/miniatures/belleMeuf.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id3Vote" class="radioVote"/>
-						<label for="id3Vote" onclick="showPhotoDeFamille()" id="miniaturePhotoDeFamille" class="miniatureDisplay">
-							<img src="images/miniatures/PhotoDeFamille.jpg"/>
+						<label id="hidePhoto" for="id3Vote" onclick="showPhotoDeFamille()" class="miniatureDisplay">
+							<p id="prixPhoto"></p>
+							<img id="miniaturePhotoDeFamille" src="images/miniatures/PhotoDeFamille.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id4Vote" class="radioVote"/>
-						<label for="id4Vote" onclick="showGrenade()" id="miniatureGrenade" class="miniatureDisplay">
-							<img src="images/miniatures/grenade.jpg"/>
+						<label id="hideGrenade" for="id4Vote" onclick="showGrenade()" class="miniatureDisplay">
+							<p id="prixGrenade"></p>
+							<img id="miniatureGrenade" src="images/miniatures/grenade.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchVote" id="id5Vote" class="radioVote"/>
-						<label for="id5Vote" onclick="showTeachers()" id="miniatureEducation" class="miniatureDisplay">
-							<img src="images/miniatures/education.jpg"/>
+						<label id="hideEducation" for="id5Vote" onclick="showTeachers()" class="miniatureDisplay">
+							<p id="prixEducation"></p>
+							<img id="miniatureEducation" src="images/miniatures/education.jpg"/>
 						</label>
 						
 					</div>
@@ -1068,23 +1074,27 @@
 					<div class="thumbDumb">
 						
 						<input type="radio" name="cardSwitchArgent" id="id1Argent" class="radioArgent"/>
-						<label for="id1Argent" onclick="showfmi()" id="miniatureChomage" class="miniatureDisplay">
-							<img src="images/miniatures/chomage.jpg"/>
+						<label id="hideChomage" for="id1Argent" onclick="showfmi()" class="miniatureDisplay">
+							<p id="prixChomage"></p>
+							<img id="miniatureChomage" src="images/miniatures/chomage.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchArgent" id="id2Argent" class="radioArgent"/>
-						<label for="id2Argent" onclick="showrmi()" id="miniaturersa" class="miniatureDisplay">
-							<img src="images/miniatures/rsa.jpg"/>
+						<label id="hidersa" for="id2Argent" onclick="showrmi()" class="miniatureDisplay">
+							<p id="prixrsa"></p>
+							<img id="miniaturersa" src="images/miniatures/rsa.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchArgent" id="id3Argent" class="radioArgent"/>
-						<label for="id3Argent" onclick="showbfntv()" id="miniaturebfntv" class="miniatureDisplay">
-							<img src="images/miniatures/bfntv.jpg">
+						<label id="hidebfntv" for="id3Argent" onclick="showbfntv()" class="miniatureDisplay">
+							<p id="prixbfntv"></p>
+							<img id="miniaturebfntv" src="images/miniatures/bfntv.jpg">
 						</label>
 						
 						<input type="radio" name="cardSwitchArgent" id="id4Argent" class="radioArgent"/>
-						<label for="id4Argent" onclick="showpanemCircenses()" id="miniaturePanem" class="miniatureDisplay">
-							<img src="images/miniatures/panem.jpg">
+						<label id="hidePanem" for="id4Argent" onclick="showpanemCircenses()" class="miniatureDisplay">
+							<p id="prixPanem"></p>
+							<img id="miniaturePanem" src="images/miniatures/panem.jpg">
 						</label>
 						
 					</div>
@@ -1095,28 +1105,33 @@
 						
 								
 						<input type="radio" name="cardSwitchGestion" id="id1Gestion" class="radioGestion"/>
-						<label for="id1Gestion" onclick="showArticleJournal()" id="miniatureArticleJournal" class="miniatureDisplay">
-							<img src="images/miniatures/articleJournal.jpg"/>
+						<label id="hideArticle" for="id1Gestion" onclick="showArticleJournal()"  class="miniatureDisplay">
+							<p id="prixArticle"></p>
+							<img id="miniatureArticleJournal" src="images/miniatures/articleJournal.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchGestion" id="id2Gestion" class="radioGestion"/>
-						<label for="id2Gestion" onclick="showAvocat()" id="miniatureAvocat" class="miniatureDisplay">
-							<img src="images/miniatures/avocat.jpg"/>
+						<label id="hideAvocat" for="id2Gestion" onclick="showAvocat()" class="miniatureDisplay">
+							<p id="prixAvocat"></p>
+							<img id="miniatureAvocat" src="images/miniatures/avocat.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchGestion" id="id3Gestion" class="radioGestion"/>
-						<label for="id3Gestion" onclick="showCabinetAvocat()" id="miniatureCabinetAvocat" class="miniatureDisplay">
-							<img src="images/miniatures/cabinetAvocat.jpg"/>
+						<label id="hideCabinetAvocat" for="id3Gestion" onclick="showCabinetAvocat()" class="miniatureDisplay">
+							<p id="prixCabinetAvocat"></p>
+							<img id="miniatureCabinetAvocat" src="images/miniatures/cabinetAvocat.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchGestion" id="id4Gestion" class="radioGestion"/>
-						<label for="id4Gestion" onclick="showgnr()" id="miniatureVenteArme" class="miniatureDisplay">
-							<img src="images/miniatures/venteArme.jpg"/>
+						<label id="hideVenteArme" for="id4Gestion" onclick="showgnr()" class="miniatureDisplay">
+							<p id="prixVenteArme"></p>
+							<img id="miniatureVenteArme" src="images/miniatures/venteArme.jpg"/>
 						</label>
 						
 						<input type="radio" name="cardSwitchGestion" id="id5Gestion" class="radioGestion"/>
-						<label for="id5Gestion" onclick="showJustice()" id="miniatureJustice" class="miniatureDisplay">
-							<img src="images/miniatures/justice.jpg"/>
+						<label id="hideJustice" for="id5Gestion" onclick="showJustice()" class="miniatureDisplay">
+							<p id="prixJustice"></p>
+							<img id="miniatureJustice" src="images/miniatures/justice.jpg"/>
 						</label>
 						
 					</div>

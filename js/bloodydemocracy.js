@@ -1189,10 +1189,12 @@ setInterval(stat, 1000);
 var coutArgentBelleGueule = 1000;
 var coutVoteBelleGueule = 0;
 
+document.getElementById("prixBelleGueule").innerHTML = coutArgentBelleGueule;
+
 function checkStatusBelleGueulle(){
 	if (localStorage.getItem("boutonAchatBelleGueule") === null || parseInt(localStorage.getItem("boutonAchatBelleGueule")) != 0) {
 		document.getElementById("belleGueule").classList.add("notAvailable");
-		document.getElementById("miniatureBelleGueule").classList.add("notAvailable");
+		document.getElementById("hideBelleGueule").classList.add("notAvailable");
 		document.getElementById("belleGueule").classList.remove("flou");
 		document.getElementById("miniatureBelleGueule").classList.remove("flou");
 	}
@@ -1200,11 +1202,12 @@ function checkStatusBelleGueulle(){
 		document.getElementById("belleGueule").classList.add("flou");
 		document.getElementById("miniatureBelleGueule").classList.add("flou");
 		document.getElementById("belleGueule").classList.remove("notAvailable");
-		document.getElementById("miniatureBelleGueule").classList.remove("notAvailable");
+		document.getElementById("hideBelleGueule").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentBelleGueule && $compteurVote > coutVoteBelleGueule){
 		document.getElementById("belleGueule").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureBelleGueule").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureBelleGueule").classList.remove("flou");
+		document.getElementById("hideBelleGueule").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusBelleGueulle, 500);
@@ -1212,10 +1215,12 @@ setInterval(checkStatusBelleGueulle, 500);
 var coutArgentBelleMeuf = 10000;
 var coutVoteBelleMeuf = 0;
 
+document.getElementById("prixBelleMeuf").innerHTML = coutArgentBelleMeuf;
+
 function checkStatusBelleMeuf(){
 	if (localStorage.getItem("boutonAchatBelleMeuf") === null || parseInt(localStorage.getItem("boutonAchatBelleMeuf")) != 0) {
 		document.getElementById("belleMeuf").classList.add("notAvailable");
-		document.getElementById("miniatureBelleMeuf").classList.add("notAvailable");
+		document.getElementById("hideBelleMeuf").classList.add("notAvailable");
 		document.getElementById("belleMeuf").classList.remove("flou");
 		document.getElementById("miniatureBelleMeuf").classList.remove("flou");
 	}
@@ -1223,11 +1228,12 @@ function checkStatusBelleMeuf(){
 		document.getElementById("belleMeuf").classList.add("flou");
 		document.getElementById("miniatureBelleMeuf").classList.add("flou");
 		document.getElementById("belleMeuf").classList.remove("notAvailable");
-		document.getElementById("miniatureBelleMeuf").classList.remove("notAvailable");
+		document.getElementById("hideBelleMeuf").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentBelleMeuf && $compteurVote > coutVoteBelleMeuf){
 		document.getElementById("belleMeuf").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureBelleMeuf").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureBelleMeuf").classList.remove("flou");
+		document.getElementById("hideBelleMeuf").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusBelleMeuf, 500);
@@ -1235,10 +1241,12 @@ setInterval(checkStatusBelleMeuf, 500);
 var coutArgentArticle = 5000;
 var coutVoteArticle = 0;
 
+document.getElementById("prixArticle").innerHTML = coutArgentArticle;
+
 function checkStatusArticle(){
 	if (localStorage.getItem("boutonAchatarticleJournal") === null || parseInt(localStorage.getItem("boutonAchatarticleJournal")) != 0) {
 		document.getElementById("articleJournal").classList.add("notAvailable");
-		document.getElementById("miniatureArticleJournal").classList.add("notAvailable");
+		document.getElementById("hideArticle").classList.add("notAvailable");
 		document.getElementById("articleJournal").classList.remove("flou");
 		document.getElementById("miniatureArticleJournal").classList.remove("flou");
 	}
@@ -1246,11 +1254,12 @@ function checkStatusArticle(){
 		document.getElementById("articleJournal").classList.add("flou");
 		document.getElementById("miniatureArticleJournal").classList.add("flou");
 		document.getElementById("articleJournal").classList.remove("notAvailable");
-		document.getElementById("miniatureArticleJournal").classList.remove("notAvailable");
+		document.getElementById("hideArticle").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentArticle && $compteurVote > coutVoteArticle){
 		document.getElementById("articleJournal").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureArticleJournal").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureArticleJournal").classList.remove("flou");
+		document.getElementById("hideArticle").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusArticle, 500);
@@ -1258,10 +1267,12 @@ setInterval(checkStatusArticle, 500);
 var coutArgentPhoto = 20000;
 var coutVotePhoto = 0;
 
+document.getElementById("prixPhoto").innerHTML = coutArgentPhoto;
+
 function checkStatusPhoto(){
 	if (localStorage.getItem("boutonAchatphotoDeFamille") === null || parseInt(localStorage.getItem("boutonAchatphotoDeFamille")) != 0) {
 		document.getElementById("photoDeFamille").classList.add("notAvailable");
-		document.getElementById("miniaturePhotoDeFamille").classList.add("notAvailable");
+		document.getElementById("hidePhoto").classList.add("notAvailable");
 		document.getElementById("photoDeFamille").classList.remove("flou");
 		document.getElementById("miniaturePhotoDeFamille").classList.remove("flou");
 		carteListeVote[0].classList.replace("notSelect", "select");
@@ -1270,11 +1281,12 @@ function checkStatusPhoto(){
 		document.getElementById("photoDeFamille").classList.add("flou");
 		document.getElementById("miniaturePhotoDeFamille").classList.add("flou");
 		document.getElementById("photoDeFamille").classList.remove("notAvailable");
-		document.getElementById("miniaturePhotoDeFamille").classList.remove("notAvailable");
+		document.getElementById("hidePhoto").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentPhoto && $compteurVote > coutVotePhoto){
 		document.getElementById("photoDeFamille").classList.remove("flou", "notAvailable");
-		document.getElementById("miniaturePhotoDeFamille").classList.remove("notAvailable", "flou");
+		document.getElementById("miniaturePhotoDeFamille").classList.remove("flou");
+		document.getElementById("hidePhoto").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusPhoto, 500);
@@ -1283,10 +1295,12 @@ setInterval(checkStatusPhoto, 500);
 var coutArgentGrenade = 50000;
 var coutVoteGrenade = 15000;
 
+document.getElementById("prixGrenade").innerHTML = coutVoteGrenade + "<br>"+ coutArgentGrenade;
+
 function checkStatusGrenade(){
 	if (localStorage.getItem("boutonAchatGrenade") === null || parseInt(localStorage.getItem("boutonAchatGrenade")) != 0) {
 		document.getElementById("grenade").classList.add("notAvailable");
-		document.getElementById("miniatureGrenade").classList.add("notAvailable");
+		document.getElementById("hideGrenade").classList.add("notAvailable");
 		document.getElementById("grenade").classList.remove("flou");
 		document.getElementById("miniatureGrenade").classList.remove("flou");
 		carteListeVote[0].classList.replace("notSelect", "select");
@@ -1295,11 +1309,12 @@ function checkStatusGrenade(){
 		document.getElementById("grenade").classList.add("flou");
 		document.getElementById("miniatureGrenade").classList.add("flou");
 		document.getElementById("grenade").classList.remove("notAvailable");
-		document.getElementById("miniatureGrenade").classList.remove("notAvailable");
+		document.getElementById("hideGrenade").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentGrenade && $compteurVote > coutVoteGrenade){
 		document.getElementById("grenade").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureGrenade").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureGrenade").classList.remove("flou");
+		document.getElementById("hideGrenade").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusGrenade, 500);
@@ -1307,10 +1322,12 @@ setInterval(checkStatusGrenade, 500);
 var coutArgentAvocat = 60000;
 var coutVoteAvocat = 0;
 
+document.getElementById("prixAvocat").innerHTML = coutArgentAvocat;
+
 function checkStatusAvocat(){
 	if (localStorage.getItem("boutonAchatAvocat") === null || parseInt(localStorage.getItem("boutonAchatAvocat")) != 0) {
 		document.getElementById("avocat").classList.add("notAvailable");
-		document.getElementById("miniatureAvocat").classList.add("notAvailable");
+		document.getElementById("hideAvocat").classList.add("notAvailable");
 		document.getElementById("avocat").classList.remove("flou");
 		document.getElementById("miniatureAvocat").classList.remove("flou");
 	}
@@ -1318,11 +1335,12 @@ function checkStatusAvocat(){
 		document.getElementById("avocat").classList.add("flou");
 		document.getElementById("miniatureAvocat").classList.add("flou");
 		document.getElementById("avocat").classList.remove("notAvailable");
-		document.getElementById("miniatureAvocat").classList.remove("notAvailable");
+		document.getElementById("hideAvocat").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentAvocat && $compteurVote > coutVoteAvocat){
 		document.getElementById("avocat").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureAvocat").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureAvocat").classList.remove("flou");
+		document.getElementById("hideAvocat").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusAvocat, 500);
@@ -1330,10 +1348,12 @@ setInterval(checkStatusAvocat, 500);
 var coutArgentChomage = 100000;
 var coutVoteChomage = 0;
 
+document.getElementById("prixChomage").innerHTML = coutArgentChomage;
+
 function checkStatusChomage(){
 	if (localStorage.getItem("boutonAchatChomage") === null || parseInt(localStorage.getItem("boutonAchatChomage")) != 0) {
 		document.getElementById("fmi").classList.add("notAvailable");
-		document.getElementById("miniatureChomage").classList.add("notAvailable");
+		document.getElementById("hideChomage").classList.add("notAvailable");
 		document.getElementById("fmi").classList.remove("flou");
 		document.getElementById("miniatureChomage").classList.remove("flou");
 	}
@@ -1341,11 +1361,12 @@ function checkStatusChomage(){
 		document.getElementById("fmi").classList.add("flou");
 		document.getElementById("miniatureChomage").classList.add("flou");
 		document.getElementById("fmi").classList.remove("notAvailable");
-		document.getElementById("miniatureChomage").classList.remove("notAvailable");
+		document.getElementById("hideChomage").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentChomage && $compteurVote > coutVoteArticle){
 		document.getElementById("fmi").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureChomage").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureChomage").classList.remove("flou");
+		document.getElementById("hideChomage").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusChomage, 500);
@@ -1353,10 +1374,12 @@ setInterval(checkStatusChomage, 500);
 var coutArgentrsa = 130000;
 var coutVotersa = 0;
 
+document.getElementById("prixrsa").innerHTML = coutArgentrsa;
+
 function checkStatusrsa(){
 	if (localStorage.getItem("boutonAchatrsa") === null || parseInt(localStorage.getItem("boutonAchatrsa")) != 0) {
 		document.getElementById("rmi").classList.add("notAvailable");
-		document.getElementById("miniaturersa").classList.add("notAvailable");
+		document.getElementById("hidersa").classList.add("notAvailable");
 		document.getElementById("rmi").classList.remove("flou");
 		document.getElementById("miniaturersa").classList.remove("flou");
 	}
@@ -1364,11 +1387,12 @@ function checkStatusrsa(){
 		document.getElementById("rmi").classList.add("flou");
 		document.getElementById("miniaturersa").classList.add("flou");
 		document.getElementById("rmi").classList.remove("notAvailable");
-		document.getElementById("miniaturersa").classList.remove("notAvailable");
+		document.getElementById("hidersa").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentrsa && $compteurVote > coutVotersa){
 		document.getElementById("rmi").classList.remove("flou", "notAvailable");
-		document.getElementById("miniaturersa").classList.remove("notAvailable", "flou");
+		document.getElementById("miniaturersa").classList.remove("flou");
+		document.getElementById("hidersa").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusrsa, 500);
@@ -1376,10 +1400,12 @@ setInterval(checkStatusrsa, 500);
 var coutArgentCabinetAvocat = 150000;
 var coutVoteCabinetAvocat = 0;
 
+document.getElementById("prixCabinetAvocat").innerHTML = coutArgentCabinetAvocat;
+
 function checkStatusCabinetAvocat(){
 	if (localStorage.getItem("boutonAchatCabinetAvocat") === null || parseInt(localStorage.getItem("boutonAchatCabinetAvocat")) != 0) {
 		document.getElementById("cabinetAvocat").classList.add("notAvailable");
-		document.getElementById("miniatureCabinetAvocat").classList.add("notAvailable");
+		document.getElementById("hideCabinetAvocat").classList.add("notAvailable");
 		document.getElementById("cabinetAvocat").classList.remove("flou");
 		document.getElementById("miniatureCabinetAvocat").classList.remove("flou");
 	}
@@ -1387,11 +1413,12 @@ function checkStatusCabinetAvocat(){
 		document.getElementById("cabinetAvocat").classList.add("flou");
 		document.getElementById("miniatureCabinetAvocat").classList.add("flou");
 		document.getElementById("cabinetAvocat").classList.remove("notAvailable");
-		document.getElementById("miniatureCabinetAvocat").classList.remove("notAvailable");
+		document.getElementById("hideCabinetAvocat").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentCabinetAvocat && $compteurVote > coutVoteCabinetAvocat){
 		document.getElementById("cabinetAvocat").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureCabinetAvocat").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureCabinetAvocat").classList.remove("flou");
+		document.getElementById("hideCabinetAvocat").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusCabinetAvocat, 500);
@@ -1399,10 +1426,12 @@ setInterval(checkStatusCabinetAvocat, 500);
 var coutArgentVentesArme = 200000;
 var coutVoteVentesArme = 0;
 
+document.getElementById("prixVenteArme").innerHTML = coutArgentVentesArme;
+
 function checkStatusVentesArme(){
 	if (localStorage.getItem("boutonAchatVenteArme") === null || parseInt(localStorage.getItem("boutonAchatVenteArme")) != 0) {
 		document.getElementById("gnr").classList.add("notAvailable");
-		document.getElementById("miniatureVenteArme").classList.add("notAvailable");
+		document.getElementById("hideVenteArme").classList.add("notAvailable");
 		document.getElementById("gnr").classList.remove("flou");
 		document.getElementById("miniatureVenteArme").classList.remove("flou");
 	}
@@ -1410,11 +1439,12 @@ function checkStatusVentesArme(){
 		document.getElementById("gnr").classList.add("flou");
 		document.getElementById("miniatureVenteArme").classList.add("flou");
 		document.getElementById("gnr").classList.remove("notAvailable");
-		document.getElementById("miniatureVenteArme").classList.remove("notAvailable");
+		document.getElementById("hideVenteArme").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentVentesArme && $compteurVote > coutVoteVentesArme){
 		document.getElementById("gnr").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureVenteArme").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureVenteArme").classList.remove("flou");
+		document.getElementById("hideVenteArme").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusVentesArme, 500);
@@ -1422,10 +1452,12 @@ setInterval(checkStatusVentesArme, 500);
 var coutArgentJustice = 500000;
 var coutVoteJustice = 20000;
 
+document.getElementById("prixJustice").innerHTML = coutVoteJustice + "<br>"+ coutArgentJustice;
+
 function checkStatusJustice(){
 	if (localStorage.getItem("boutonAchatJustice") === null || parseInt(localStorage.getItem("boutonAchatJustice")) != 0) {
 		document.getElementById("justice").classList.add("notAvailable");
-		document.getElementById("miniatureJustice").classList.add("notAvailable");
+		document.getElementById("hideJustice").classList.add("notAvailable");
 		document.getElementById("justice").classList.remove("flou");
 		document.getElementById("miniatureJustice").classList.remove("flou");
 	}
@@ -1433,11 +1465,12 @@ function checkStatusJustice(){
 		document.getElementById("justice").classList.add("flou");
 		document.getElementById("miniatureJustice").classList.add("flou");
 		document.getElementById("justice").classList.remove("notAvailable");
-		document.getElementById("miniatureJustice").classList.remove("notAvailable");
+		document.getElementById("hideJustice").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentJustice && $compteurVote > coutVoteJustice){
 		document.getElementById("justice").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureJustice").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureJustice").classList.remove("flou");
+		document.getElementById("hideJustice").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusJustice, 500);
@@ -1445,10 +1478,12 @@ setInterval(checkStatusJustice, 500);
 var coutArgentbfntv = 250000;
 var coutVotebfntv = 0;
 
+document.getElementById("prixbfntv").innerHTML = coutArgentbfntv;
+
 function checkStatusbfntv(){
 	if (localStorage.getItem("boutonAchatbfntv") === null || parseInt(localStorage.getItem("boutonAchatbfntv")) != 0) {
 		document.getElementById("bfntv").classList.add("notAvailable");
-		document.getElementById("miniaturebfntv").classList.add("notAvailable");
+		document.getElementById("hidebfntv").classList.add("notAvailable");
 		document.getElementById("bfntv").classList.remove("flou");
 		document.getElementById("miniaturebfntv").classList.remove("flou");
 	}
@@ -1456,11 +1491,12 @@ function checkStatusbfntv(){
 		document.getElementById("bfntv").classList.add("flou");
 		document.getElementById("miniaturebfntv").classList.add("flou");
 		document.getElementById("bfntv").classList.remove("notAvailable");
-		document.getElementById("miniaturebfntv").classList.remove("notAvailable");
+		document.getElementById("hidebfntv").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentbfntv && $compteurVote > coutVotebfntv){
 		document.getElementById("bfntv").classList.remove("flou", "notAvailable");
-		document.getElementById("miniaturebfntv").classList.remove("notAvailable", "flou");
+		document.getElementById("miniaturebfntv").classList.remove("flou");
+		document.getElementById("hidebfntv").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusbfntv, 500);
@@ -1468,10 +1504,12 @@ setInterval(checkStatusbfntv, 500);
 var coutArgentPanem = 400000;
 var coutVotePanem = 0;
 
+document.getElementById("prixPanem").innerHTML = coutArgentPanem;
+
 function checkStatusPanem(){
 	if (localStorage.getItem("boutonAchatPanem") === null || parseInt(localStorage.getItem("boutonAchatPanem")) != 0) {
 		document.getElementById("panemCircenses").classList.add("notAvailable");
-		document.getElementById("miniaturePanem").classList.add("notAvailable");
+		document.getElementById("hidePanem").classList.add("notAvailable");
 		document.getElementById("panemCircenses").classList.remove("flou");
 		document.getElementById("miniaturePanem").classList.remove("flou");
 	}
@@ -1479,11 +1517,12 @@ function checkStatusPanem(){
 		document.getElementById("panemCircenses").classList.add("flou");
 		document.getElementById("miniaturePanem").classList.add("flou");
 		document.getElementById("panemCircenses").classList.remove("notAvailable");
-		document.getElementById("miniaturePanem").classList.remove("notAvailable");
+		document.getElementById("hidePanem").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentPanem && $compteurVote > coutVotePanem){
 		document.getElementById("panemCircenses").classList.remove("flou", "notAvailable");
-		document.getElementById("miniaturePanem").classList.remove("notAvailable", "flou");
+		document.getElementById("miniaturePanem").classList.remove("flou");
+		document.getElementById("hidePanem").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusPanem, 500);
@@ -1491,10 +1530,12 @@ setInterval(checkStatusPanem, 500);
 var coutArgentEducation = 50000;
 var coutVoteEducation = 5000;
 
+document.getElementById("prixEducation").innerHTML = coutVoteEducation + "<br>"+ coutArgentEducation;
+
 function checkStatusEducation(){
 	if (localStorage.getItem("boutonAchatEducation") === null || parseInt(localStorage.getItem("boutonAchatEducation")) != 0) {
 		document.getElementById("teachers").classList.add("notAvailable");
-		document.getElementById("miniatureEducation").classList.add("notAvailable");
+		document.getElementById("hideEducation").classList.add("notAvailable");
 		document.getElementById("teachers").classList.remove("flou");
 		document.getElementById("miniatureEducation").classList.remove("flou");
 	}
@@ -1502,11 +1543,12 @@ function checkStatusEducation(){
 		document.getElementById("teachers").classList.add("flou");
 		document.getElementById("miniatureEducation").classList.add("flou");
 		document.getElementById("teachers").classList.remove("notAvailable");
-		document.getElementById("miniatureEducation").classList.remove("notAvailable");
+		document.getElementById("hideEducation").classList.remove("notAvailable");
 	}
 	else if ($compteurArgent > coutArgentEducation && $compteurVote > coutVoteEducation){
 		document.getElementById("teachers").classList.remove("flou", "notAvailable");
-		document.getElementById("miniatureEducation").classList.remove("notAvailable", "flou");
+		document.getElementById("miniatureEducation").classList.remove("flou");
+		document.getElementById("hideEducation").classList.remove("notAvailable");
 	}		
 }
 setInterval(checkStatusEducation, 500);
