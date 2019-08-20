@@ -568,13 +568,12 @@ $boiteDessus.onclick=click;
 var $vitesseUp;
 var $vitesseDownPaper;
 var $vitesseDown;
-var zoom=0;
 
 $angle=0;
 
 function downBras(){
 
-  $angle=$angle+5;
+  $angle=$angle+1;
 
   if ($angle<10){
     $brasDessus.style.transform = "rotate("+$angle+"deg)";
@@ -584,8 +583,8 @@ function downBras(){
 
   else{
     clearInterval($vitesseDown);
-    $vitesseDownPaper =setInterval( downPaper, 35);
-    $vitesseUp = setInterval( upBras, 30);
+    $vitesseDownPaper =setInterval( downPaper, 7);
+    $vitesseUp = setInterval( upBras, 6);
     
 
   }
@@ -598,7 +597,7 @@ function downPaper(){
 
   $brasDessusPosition = $brasDessus.offsetTop;
   $hauteurBoiteDessus=$boiteDessus.offsetHeight;
-  $chute=$chute+10;
+  $chute=$chute+2;
 
 
   if($chute < 0.3*$hauteurBoiteDessus){
@@ -622,7 +621,7 @@ function downPaper(){
 
 function upBras(){
 
-  $angle=$angle-5;
+  $angle=$angle-1;
 
   if ($angle>-12){
     $brasDessus.style.transform = "rotate("+$angle+"deg)";
@@ -679,7 +678,7 @@ function click() {
   
   playBloup();
 
-  $vitesseDown = setInterval( downBras, 30);
+  $vitesseDown = setInterval( downBras, 6);
 
  clickAlgoBack();
  /////JULIEN VAL//////
@@ -693,6 +692,8 @@ function click() {
 
 
 // Fonctions qui animent l'effet "bloop"
+var $zoom=0;
+
 var $bloupReverse;
 
 $entropie=1;
