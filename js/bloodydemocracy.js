@@ -959,6 +959,8 @@ $colorOngletPop="#19749f";
 	document.getElementById("slideVote").classList.replace("notSelect", "select");
 	document.getElementById("thumbnailsVote").classList.replace("notSelect", "select");
 	var carteListeVote = document.getElementsByClassName("carteVote");
+	var carteListeArgent = document.getElementsByClassName("carteArgent");
+	var carteListeGestion = document.getElementsByClassName("carteGestion");
 	carteListeVote[0].classList.replace("notSelect", "select");
 	document.getElementById("id1Vote").checked = "true"
 	document.getElementById("id1Gestion").checked = "true"
@@ -1184,258 +1186,333 @@ function stat(){
 setInterval(stat, 1000);
 
 // Déclarations Cout des Cartes
+var coutArgentBelleGueule = 1000;
+var coutVoteBelleGueule = 0;
+
+function checkStatusBelleGueulle(){
+	if (localStorage.getItem("boutonAchatBelleGueule") === null || parseInt(localStorage.getItem("boutonAchatBelleGueule")) != 0) {
+		document.getElementById("belleGueule").classList.add("notAvailable");
+		document.getElementById("miniatureBelleGueule").classList.add("notAvailable");
+		document.getElementById("belleGueule").classList.remove("flou");
+		document.getElementById("miniatureBelleGueule").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentBelleGueule || $compteurVote < coutVoteBelleGueule) {
+		document.getElementById("belleGueule").classList.add("flou");
+		document.getElementById("miniatureBelleGueule").classList.add("flou");
+		document.getElementById("belleGueule").classList.remove("notAvailable");
+		document.getElementById("miniatureBelleGueule").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentBelleGueule && $compteurVote > coutVoteBelleGueule){
+		document.getElementById("belleGueule").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureBelleGueule").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusBelleGueulle, 500);
 
 var coutArgentBelleMeuf = 10000;
 var coutVoteBelleMeuf = 0;
 
+function checkStatusBelleMeuf(){
+	if (localStorage.getItem("boutonAchatBelleMeuf") === null || parseInt(localStorage.getItem("boutonAchatBelleMeuf")) != 0) {
+		document.getElementById("belleMeuf").classList.add("notAvailable");
+		document.getElementById("miniatureBelleMeuf").classList.add("notAvailable");
+		document.getElementById("belleMeuf").classList.remove("flou");
+		document.getElementById("miniatureBelleMeuf").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentBelleMeuf || $compteurVote < coutVoteBelleMeuf) {
+		document.getElementById("belleMeuf").classList.add("flou");
+		document.getElementById("miniatureBelleMeuf").classList.add("flou");
+		document.getElementById("belleMeuf").classList.remove("notAvailable");
+		document.getElementById("miniatureBelleMeuf").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentBelleMeuf && $compteurVote > coutVoteBelleMeuf){
+		document.getElementById("belleMeuf").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureBelleMeuf").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusBelleMeuf, 500);
+
 var coutArgentArticle = 5000;
 var coutVoteArticle = 0;
+
+function checkStatusArticle(){
+	if (localStorage.getItem("boutonAchatarticleJournal") === null || parseInt(localStorage.getItem("boutonAchatarticleJournal")) != 0) {
+		document.getElementById("articleJournal").classList.add("notAvailable");
+		document.getElementById("miniatureArticleJournal").classList.add("notAvailable");
+		document.getElementById("articleJournal").classList.remove("flou");
+		document.getElementById("miniatureArticleJournal").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentArticle || $compteurVote < coutVoteArticle) {
+		document.getElementById("articleJournal").classList.add("flou");
+		document.getElementById("miniatureArticleJournal").classList.add("flou");
+		document.getElementById("articleJournal").classList.remove("notAvailable");
+		document.getElementById("miniatureArticleJournal").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentArticle && $compteurVote > coutVoteArticle){
+		document.getElementById("articleJournal").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureArticleJournal").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusArticle, 500);
 
 var coutArgentPhoto = 20000;
 var coutVotePhoto = 0;
 
+function checkStatusPhoto(){
+	if (localStorage.getItem("boutonAchatphotoDeFamille") === null || parseInt(localStorage.getItem("boutonAchatphotoDeFamille")) != 0) {
+		document.getElementById("photoDeFamille").classList.add("notAvailable");
+		document.getElementById("miniaturePhotoDeFamille").classList.add("notAvailable");
+		document.getElementById("photoDeFamille").classList.remove("flou");
+		document.getElementById("miniaturePhotoDeFamille").classList.remove("flou");
+		carteListeVote[0].classList.replace("notSelect", "select");
+	}
+	else if ($compteurArgent < coutArgentPhoto || $compteurVote < coutVotePhoto) {
+		document.getElementById("photoDeFamille").classList.add("flou");
+		document.getElementById("miniaturePhotoDeFamille").classList.add("flou");
+		document.getElementById("photoDeFamille").classList.remove("notAvailable");
+		document.getElementById("miniaturePhotoDeFamille").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentPhoto && $compteurVote > coutVotePhoto){
+		document.getElementById("photoDeFamille").classList.remove("flou", "notAvailable");
+		document.getElementById("miniaturePhotoDeFamille").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusPhoto, 500);
+
+
 var coutArgentGrenade = 50000;
 var coutVoteGrenade = 15000;
+
+function checkStatusGrenade(){
+	if (localStorage.getItem("boutonAchatGrenade") === null || parseInt(localStorage.getItem("boutonAchatGrenade")) != 0) {
+		document.getElementById("grenade").classList.add("notAvailable");
+		document.getElementById("miniatureGrenade").classList.add("notAvailable");
+		document.getElementById("grenade").classList.remove("flou");
+		document.getElementById("miniatureGrenade").classList.remove("flou");
+		carteListeVote[0].classList.replace("notSelect", "select");
+	}
+	else if ($compteurArgent < coutArgentGrenade || $compteurVote < coutVoteGrenade) {
+		document.getElementById("grenade").classList.add("flou");
+		document.getElementById("miniatureGrenade").classList.add("flou");
+		document.getElementById("grenade").classList.remove("notAvailable");
+		document.getElementById("miniatureGrenade").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentGrenade && $compteurVote > coutVoteGrenade){
+		document.getElementById("grenade").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureGrenade").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusGrenade, 500);
 
 var coutArgentAvocat = 60000;
 var coutVoteAvocat = 0;
 
+function checkStatusAvocat(){
+	if (localStorage.getItem("boutonAchatAvocat") === null || parseInt(localStorage.getItem("boutonAchatAvocat")) != 0) {
+		document.getElementById("avocat").classList.add("notAvailable");
+		document.getElementById("miniatureAvocat").classList.add("notAvailable");
+		document.getElementById("avocat").classList.remove("flou");
+		document.getElementById("miniatureAvocat").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentAvocat || $compteurVote < coutVoteAvocat) {
+		document.getElementById("avocat").classList.add("flou");
+		document.getElementById("miniatureAvocat").classList.add("flou");
+		document.getElementById("avocat").classList.remove("notAvailable");
+		document.getElementById("miniatureAvocat").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentAvocat && $compteurVote > coutVoteAvocat){
+		document.getElementById("avocat").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureAvocat").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusAvocat, 500);
+
 var coutArgentChomage = 100000;
 var coutVoteChomage = 0;
+
+function checkStatusChomage(){
+	if (localStorage.getItem("boutonAchatChomage") === null || parseInt(localStorage.getItem("boutonAchatChomage")) != 0) {
+		document.getElementById("fmi").classList.add("notAvailable");
+		document.getElementById("miniatureChomage").classList.add("notAvailable");
+		document.getElementById("fmi").classList.remove("flou");
+		document.getElementById("miniatureChomage").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentChomage || $compteurVote < coutVoteArticle) {
+		document.getElementById("fmi").classList.add("flou");
+		document.getElementById("miniatureChomage").classList.add("flou");
+		document.getElementById("fmi").classList.remove("notAvailable");
+		document.getElementById("miniatureChomage").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentChomage && $compteurVote > coutVoteArticle){
+		document.getElementById("fmi").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureChomage").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusChomage, 500);
 
 var coutArgentrsa = 130000;
 var coutVotersa = 0;
 
+function checkStatusrsa(){
+	if (localStorage.getItem("boutonAchatrsa") === null || parseInt(localStorage.getItem("boutonAchatrsa")) != 0) {
+		document.getElementById("rmi").classList.add("notAvailable");
+		document.getElementById("miniaturersa").classList.add("notAvailable");
+		document.getElementById("rmi").classList.remove("flou");
+		document.getElementById("miniaturersa").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentrsa || $compteurVote < coutVotersa) {
+		document.getElementById("rmi").classList.add("flou");
+		document.getElementById("miniaturersa").classList.add("flou");
+		document.getElementById("rmi").classList.remove("notAvailable");
+		document.getElementById("miniaturersa").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentrsa && $compteurVote > coutVotersa){
+		document.getElementById("rmi").classList.remove("flou", "notAvailable");
+		document.getElementById("miniaturersa").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusrsa, 500);
+
 var coutArgentCabinetAvocat = 150000;
 var coutVoteCabinetAvocat = 0;
+
+function checkStatusCabinetAvocat(){
+	if (localStorage.getItem("boutonAchatCabinetAvocat") === null || parseInt(localStorage.getItem("boutonAchatCabinetAvocat")) != 0) {
+		document.getElementById("cabinetAvocat").classList.add("notAvailable");
+		document.getElementById("miniatureCabinetAvocat").classList.add("notAvailable");
+		document.getElementById("cabinetAvocat").classList.remove("flou");
+		document.getElementById("miniatureCabinetAvocat").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentCabinetAvocat || $compteurVote < coutVoteCabinetAvocat) {
+		document.getElementById("cabinetAvocat").classList.add("flou");
+		document.getElementById("miniatureCabinetAvocat").classList.add("flou");
+		document.getElementById("cabinetAvocat").classList.remove("notAvailable");
+		document.getElementById("miniatureCabinetAvocat").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentCabinetAvocat && $compteurVote > coutVoteCabinetAvocat){
+		document.getElementById("cabinetAvocat").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureCabinetAvocat").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusCabinetAvocat, 500);
 
 var coutArgentVentesArme = 200000;
 var coutVoteVentesArme = 0;
 
+function checkStatusVentesArme(){
+	if (localStorage.getItem("boutonAchatVenteArme") === null || parseInt(localStorage.getItem("boutonAchatVenteArme")) != 0) {
+		document.getElementById("gnr").classList.add("notAvailable");
+		document.getElementById("miniatureVenteArme").classList.add("notAvailable");
+		document.getElementById("gnr").classList.remove("flou");
+		document.getElementById("miniatureVenteArme").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentVentesArme || $compteurVote < coutVoteVentesArme) {
+		document.getElementById("gnr").classList.add("flou");
+		document.getElementById("miniatureVenteArme").classList.add("flou");
+		document.getElementById("gnr").classList.remove("notAvailable");
+		document.getElementById("miniatureVenteArme").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentVentesArme && $compteurVote > coutVoteVentesArme){
+		document.getElementById("gnr").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureVenteArme").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusVentesArme, 500);
+
 var coutArgentJustice = 500000;
 var coutVoteJustice = 20000;
+
+function checkStatusJustice(){
+	if (localStorage.getItem("boutonAchatJustice") === null || parseInt(localStorage.getItem("boutonAchatJustice")) != 0) {
+		document.getElementById("justice").classList.add("notAvailable");
+		document.getElementById("miniatureJustice").classList.add("notAvailable");
+		document.getElementById("justice").classList.remove("flou");
+		document.getElementById("miniatureJustice").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentJustice || $compteurVote < coutVoteJustice) {
+		document.getElementById("justice").classList.add("flou");
+		document.getElementById("miniatureJustice").classList.add("flou");
+		document.getElementById("justice").classList.remove("notAvailable");
+		document.getElementById("miniatureJustice").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentJustice && $compteurVote > coutVoteJustice){
+		document.getElementById("justice").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureJustice").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusJustice, 500);
 
 var coutArgentbfntv = 250000;
 var coutVotebfntv = 0;
 
+function checkStatusbfntv(){
+	if (localStorage.getItem("boutonAchatbfntv") === null || parseInt(localStorage.getItem("boutonAchatbfntv")) != 0) {
+		document.getElementById("bfntv").classList.add("notAvailable");
+		document.getElementById("miniaturebfntv").classList.add("notAvailable");
+		document.getElementById("bfntv").classList.remove("flou");
+		document.getElementById("miniaturebfntv").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentbfntv || $compteurVote < coutVotebfntv) {
+		document.getElementById("bfntv").classList.add("flou");
+		document.getElementById("miniaturebfntv").classList.add("flou");
+		document.getElementById("bfntv").classList.remove("notAvailable");
+		document.getElementById("miniaturebfntv").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentbfntv && $compteurVote > coutVotebfntv){
+		document.getElementById("bfntv").classList.remove("flou", "notAvailable");
+		document.getElementById("miniaturebfntv").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusbfntv, 500);
+
 var coutArgentPanem = 400000;
 var coutVotePanem = 0;
+
+function checkStatusPanem(){
+	if (localStorage.getItem("boutonAchatPanem") === null || parseInt(localStorage.getItem("boutonAchatPanem")) != 0) {
+		document.getElementById("panemCircenses").classList.add("notAvailable");
+		document.getElementById("miniaturePanem").classList.add("notAvailable");
+		document.getElementById("panemCircenses").classList.remove("flou");
+		document.getElementById("miniaturePanem").classList.remove("flou");
+	}
+	else if ($compteurArgent < coutArgentPanem || $compteurVote < coutVotePanem) {
+		document.getElementById("panemCircenses").classList.add("flou");
+		document.getElementById("miniaturePanem").classList.add("flou");
+		document.getElementById("panemCircenses").classList.remove("notAvailable");
+		document.getElementById("miniaturePanem").classList.remove("notAvailable");
+	}
+	else if ($compteurArgent > coutArgentPanem && $compteurVote > coutVotePanem){
+		document.getElementById("panemCircenses").classList.remove("flou", "notAvailable");
+		document.getElementById("miniaturePanem").classList.remove("notAvailable", "flou");
+	}		
+}
+setInterval(checkStatusPanem, 500);
 
 var coutArgentEducation = 50000;
 var coutVoteEducation = 5000;
 
-
-//Display carte disponible
-//function checkDisplay(){
-		function checkDisplayBelleMeuf(){
-		if ($compteurArgent >= coutArgentBelleMeuf && $compteurVote >= coutVoteBelleMeuf){
-			document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
-			clearInterval(interBelleMeuf);
-			localStorage.setItem("belleMeufDisplayed", "1");
-		}
+function checkStatusEducation(){
+	if (localStorage.getItem("boutonAchatEducation") === null || parseInt(localStorage.getItem("boutonAchatEducation")) != 0) {
+		document.getElementById("teachers").classList.add("notAvailable");
+		document.getElementById("miniatureEducation").classList.add("notAvailable");
+		document.getElementById("teachers").classList.remove("flou");
+		document.getElementById("miniatureEducation").classList.remove("flou");
 	}
-	function checkDisplayPhoto() {
-		if ($compteurArgent >= coutArgentPhoto && $compteurVote >= coutVotePhoto) {
-      document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
-      document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
-			clearInterval(interPhoto);
-			localStorage.setItem("photoDisplayed", "1");
-		}
+	else if ($compteurArgent < coutArgentEducation || $compteurVote < coutVoteEducation) {
+		document.getElementById("teachers").classList.add("flou");
+		document.getElementById("miniatureEducation").classList.add("flou");
+		document.getElementById("teachers").classList.remove("notAvailable");
+		document.getElementById("miniatureEducation").classList.remove("notAvailable");
 	}
-	function checkDisplayGrenade(){
-		if ($compteurArgent >= coutArgentGrenade && $compteurVote >= coutVoteGrenade){
-			document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
-			clearInterval(interGrenade);
-			localStorage.setItem("grenadeDisplayed", "1");
-		}
-	}
-	function checkDisplayEducation(){
-		if ($compteurArgent >= coutArgentEducation && $compteurVote >= coutVoteEducation){
-			document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuVote").style.backgroundColor= $colorOngletPop;
-			clearInterval(interEducation);
-			localStorage.setItem("educationDisplayed", "1");
-		}
-	}
-	function checkDisplayChomage(){
-		if ($compteurArgent >= coutArgentChomage && $compteurVote >= coutVoteChomage){
-			document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
-			clearInterval(interChomage);
-			localStorage.setItem("chomageDisplayed", "1");
-		}
-	}
-	function checkDisplayrsa(){
-		if ($compteurArgent >= coutArgentrsa && $compteurVote >= coutVotersa){
-			document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
-			clearInterval(interrsa);
-			localStorage.setItem("rsaDisplayed", "1");
-		}
-	}
-	function checkDisplaybfntv(){
-		if ($compteurArgent >= coutArgentbfntv && $compteurVote >= coutVotebfntv){
-			document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
-			clearInterval(interbfntv);
-			localStorage.setItem("bfntvDisplayed", "1");
-		}
-	}
-	function checkDisplayPanem(){
-		if ($compteurArgent >= coutArgentPanem && $compteurVote >= coutVotePanem){
-			document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuArgent").style.backgroundColor= $colorOngletPop;
-			clearInterval(interPanem);
-			localStorage.setItem("panemDisplayed", "1");
-		}
-	}
-	function checkDisplayArticle(){
-		if ($compteurArgent >= coutArgentArticle && $compteurVote >= coutVoteArticle){
-			document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
-			clearInterval(interArticle);
-			localStorage.setItem("articleDisplayed", "1");
-		}
-	}
-	function checkDisplayVentesArme(){
-		if ($compteurArgent >= coutArgentVentesArme && $compteurVote >= coutVoteVentesArme){
-			document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
-			clearInterval(interVentesArme);
-			localStorage.setItem("ventesArmeDisplayed", "1");
-		}
-	}
-	function checkDisplayAvocat(){
-		if ($compteurArgent >= coutArgentAvocat && $compteurVote >= coutVoteAvocat){
-			document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
-			clearInterval(interAvocat);
-			localStorage.setItem("avovatDisplayed", "1");
-		}
-	}
-	function checkDisplayCabinetAvocat(){
-		if ($compteurArgent >= coutArgentCabinetAvocat && $compteurVote >= coutVoteCabinetAvocat){
-			document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
-			clearInterval(interCabinetAvocat);
-			localStorage.setItem("cabinetAvocatDisplayed", "1");
-		}
-	}
-	function checkDisplayJustice(){
-		if ($compteurArgent >= coutArgentJustice && $compteurVote >= coutVoteJustice){
-			document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
-			document.getElementById("miniatureMenuGestion").style.backgroundColor= $colorOngletPop;
-			clearInterval(interJustice);
-			localStorage.setItem("justiceDisplayed", "1");
-		}
-	}
-	
-	if (!localStorage.getItem("belleMeufDisplayed")){
-		var interBelleMeuf = setInterval(checkDisplayBelleMeuf, 500);
-	}
-	else {
-		document.getElementById("miniatureBelleMeuf").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("photoDisplayed")) {
-		var interPhoto = setInterval(checkDisplayPhoto, 500);
-	}
-	else {
-		document.getElementById("miniaturePhotoDeFamille").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("grenadeDisplayed")){
-		var interGrenade = setInterval(checkDisplayGrenade, 500);
-	}
-	else{
-		document.getElementById("miniatureGrenade").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("educationDisplayed")){
-		var interEducation = setInterval(checkDisplayEducation, 500);
-	}
-	else {
-		document.getElementById("miniatureEducation").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("chomageDisplayed")){
-		var interChomage = setInterval(checkDisplayChomage, 500);
-	}
-	else{
-		document.getElementById("miniatureChomage").classList.replace("notAvailable", "available");
-		document.getElementById("miniatureMenuArgent").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("rsaDisplayed")){
-		var interrsa = setInterval(checkDisplayrsa, 500);
-	}
-	else {
-		document.getElementById("miniaturersa").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("bfntvDisplayed")){
-		var interbfntv = setInterval(checkDisplaybfntv, 500);
-	}
-	
-	else {
-		document.getElementById("miniaturebfntv").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("panemDisplayed")){
-		var interPanem = setInterval(checkDisplayPanem, 500);
-	}
-	else{
-		document.getElementById("miniaturePanem").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("articleDisplayed")){
-		var interArticle = setInterval(checkDisplayArticle, 500);
-	}
-	else{
-		document.getElementById("miniatureArticleJournal").classList.replace("notAvailable", "available");
-		document.getElementById("miniatureMenuGestion").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("ventesArmeDisplayed")){
-		var interVentesArme = setInterval(checkDisplayVentesArme, 500);
-	}
-	else{
-		document.getElementById("miniatureVenteArme").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("avovatDisplayed")){
-		var interAvocat = setInterval(checkDisplayAvocat, 500);
-	}
-	else{
-		document.getElementById("miniatureAvocat").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("cabinetAvocatDisplayed")){
-		var interCabinetAvocat = setInterval(checkDisplayCabinetAvocat, 500);
-	}
-	else{
-		document.getElementById("miniatureCabinetAvocat").classList.replace("notAvailable", "available");
-	}
-	
-	if (!localStorage.getItem("justiceDisplayed")){
-		var interJustice = setInterval(checkDisplayJustice, 500);
-	}
-	else{
-		document.getElementById("miniatureJustice").classList.replace("notAvailable", "available");
-	}
-	
-
-/*if (localStorage.getItem("allDisplayed")){
-	checkDisplay();
-	console.log("checkingDisplay")
+	else if ($compteurArgent > coutArgentEducation && $compteurVote > coutVoteEducation){
+		document.getElementById("teachers").classList.remove("flou", "notAvailable");
+		document.getElementById("miniatureEducation").classList.remove("notAvailable", "flou");
+	}		
 }
-else {
+setInterval(checkStatusEducation, 500);
 
-}*/
+
+
 
 ///////////////////////////FinSylvain///////////////////////////////////////
 
