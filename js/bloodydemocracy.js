@@ -563,8 +563,7 @@ var $boiteDessus=document.getElementById("boiteDessus");
 var $boiteDessous=document.getElementById("boiteDessous");
 
 $boiteDessus.onclick=click;
-$boiteDessus.onmouseenter=playBloup;
-$boiteDessus.onmouseleave=playBloup;
+
 
 var $vitesseUp;
 var $vitesseDownPaper;
@@ -694,25 +693,31 @@ function click() {
 
 
 // Fonctions qui animent l'effet "bloop"
+var $bloupReverse;
 
-$zoom=0;
 $entropie=1;
 function bloup(){
-$zoom=$zoom+0.25;
+$zoom=$zoom+1;
 if (($zoom<10/$entropie) & $entropie<=2){
 $boiteDessus.style.transform="scale(1.0"+$zoom+")";
 $boiteDessous.style.transform="scale(1.0"+$zoom+")";
 }
 else{
   clearInterval($bloup)
-  $bloupReverse= setInterval( bloupReverse, 40);
+  $bloupReverse= setInterval( bloupReverse, 10);
 }
 
 }
+
+
+
+  
+
+
 
 
 function bloupReverse(){
-  $zoom=$zoom-0.25;
+  $zoom=$zoom-1;
   if ($zoom>=0){
   $boiteDessus.style.transform="scale(1.0"+$zoom+")";
   $boiteDessous.style.transform="scale(1.0"+$zoom+")";
@@ -721,12 +726,14 @@ function bloupReverse(){
     clearInterval($bloupReverse);
     $entropie=$entropie+1;
 
-    $bloup= setInterval( bloup, 40);
+    $bloup= setInterval( bloup, 10);
   }
   
 }
-  
- $nbMouseEnter=0;
+
+
+
+$nbMouseEnter=0;
 function playBloup(){
   $nbMouseEnter=$nbMouseEnter+1;
 
@@ -740,9 +747,13 @@ function playBloup(){
 
 
 
-  $bloup= setInterval( bloup, 40);
+  $bloup= setInterval( bloup, 10);
 }
 
+
+
+$boiteDessus.onmouseenter=playBloup;
+$boiteDessus.onmouseleave=playBloup;
 ///////////////////////////Sylvain//////////////////////////////////////////
 
 
