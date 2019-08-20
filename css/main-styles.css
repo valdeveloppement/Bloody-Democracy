@@ -1003,3 +1003,9 @@ h3{
 #voidVote, #voidArgent, #voidGestion {
 	z-index: 1;
 }
+.carteMenu {
+	display: flex;
+	font-size: 3vw;
+	justify-content: center;
+	align-items: center;
+}

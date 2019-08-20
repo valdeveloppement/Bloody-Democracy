@@ -795,8 +795,8 @@ if (parseInt(localStorage.getItem('$stopCrs')) != 1){
 function achatBob(){
   $compteurVote=$compteurVote+10000;
   $texteCrs.innerHTML ="Bien joué, tout le monde est satisfait.<br>Vous gagnez 10000 votes";
-
-  
+  document.getElementById("boutonAchatBob").style.display = "none";
+  document.getElementById("boutonAchatSylvie").style.display = "none";
   setTimeout(cacheCrs,6500);
 
   
@@ -806,8 +806,8 @@ function achatBob(){
 function achatSylvie(){
   $compteurVote= $compteurVote-Math.ceil(0.1*$compteurVote);
   $texteCrs.innerHTML ="Mmmm...Vous auriez pu trouver un peu mieux.<br> Ça sera vite oublié mais vous perdez 10% de vos votes.";
-
-  
+  document.getElementById("boutonAchatSylvie").style.display = "none";
+  document.getElementById("boutonAchatBob").style.display = "none";
   setTimeout(cacheCrs,6500);
 }
 
@@ -853,7 +853,8 @@ function achatAide(){
   $texteMigrants.innerHTML ="Bien joué, tout le monde est satisfait.<br>La tempête est arrivée à 23h06 et le bateau a chaviré à la première vague. Il n'y a pas de survivant.<br> Il suffira de feindre ne pas avoir été informé de la tempête et les ONG ne pourront rien vous reprocher.<br> Aucune arrivée de migrant ne viendra importuner ce matin les 56% de français qui ont une vision négative de l'immigration<br><br> Vous gagnez 15000 votes!";
   // $boutonAchatAide.classList.toggle("eventDisplay",true);
   // $boutonAchatSourd.classList.toggle("eventDisplay",true);
-
+  document.getElementById("boutonAchatAide").style.display = "none";
+  document.getElementById("boutonAchatSourd").style.display = "none";
   setTimeout(cacheMigrants,23000);
 
   
@@ -862,6 +863,8 @@ function achatAide(){
 
 function achatSourd(){
   $texteMigrants.innerHTML ="C'est pas grave, vos concitoyens non plus.<br><br>Votre décision n'aura aucune répercussion sur votre mandat.";
+  document.getElementById("boutonAchatAide").style.display = "none";
+  document.getElementById("boutonAchatSourd").style.display = "none";
 
   // $boutonAchatAide.classList.toggle("eventDisplay",true);
   // $boutonAchatSourd.classList.toggle("eventDisplay",true);
@@ -3924,11 +3927,11 @@ function reset(){
   localStorage.setItem('voteTotalAllPlay', voteAddTotal);
 
   
-  if (isNaN(timeAdd)) {}
-  else {$compteurVotesTotal += voteAddTotal;}
   if (isNaN(voteAddTotal)) {}
-  else { $compteurArgentTotal += argentAddTotal;}
+  else {$compteurVotesTotal += voteAddTotal;}
   if (isNaN(argentAddTotal)) {}
+  else { $compteurArgentTotal += argentAddTotal;}
+  if (isNaN(timeAdd)) {}
   else {$tempsDeJeuSeconde += timeAdd;}
   $compteurArgent = 0; // à remplacer par $compteurArgentCaisseNoire;
   $compteurVote = 0;
