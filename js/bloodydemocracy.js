@@ -568,7 +568,7 @@ $boiteDessus.onclick=click;
 var $vitesseUp;
 var $vitesseDownPaper;
 var $vitesseDown;
-
+var zoom=0;
 
 $angle=0;
 
