@@ -136,7 +136,29 @@ cursor:pointer;
 opacity: 1;
 }
 
+/* ..............pop................. */
+#pop{
+	position:absolute;
+	height:270px;
+	width:30px;
+	left:-33px;
+	z-index: 99999999999;
+	
 
+}
+#pop1, #pop2, #pop3{
+height:90px;
+}
+
+.fa-comment-alt{
+	font-size:150%;
+	scale:-1;
+
+}
+
+.popDisplay{
+	visibility:hidden;
+}
 
 /* ................ CALENDAR et COMPTEURS ...................... */
 #donnees{
@@ -709,6 +731,7 @@ opacity:0.7;
 	flex-direction: column;
 	/* justify-content: space-between; */
 	height:270px;
+	position:relative;
 }
 .storeChoice {
 	position: absolute;
@@ -733,12 +756,12 @@ opacity:0.7;
 .thumbnails input {
   display: none;
 }
-.thumbnails label {
+.thumbnails img {
 	border: 3px solid #999;
 	cursor: pointer;
 	opacity: 0.6;
 }
-.thumbnails input[name='cardSwitch']:checked+label, .thumbnails input[name='cardSwitchVote']:checked+label, .thumbnails input[name='cardSwitchArgent']:checked+label, .thumbnails input[name='cardSwitchGestion']:checked+label {
+.thumbnails input [name='cardSwitch']:checked+label, .thumbnails input[name='cardSwitchVote']:checked+label img, .thumbnails input[name='cardSwitchArgent']:checked+label img, .thumbnails input[name='cardSwitchGestion']:checked+label img {
 	border-color: #666;
 	opacity: 1;
 }
@@ -766,7 +789,7 @@ opacity:0.7;
 .thumbnails p{
 position:absolute;
 z-index: 45;
-font-size:1vw;
+font-size:1.2vw;
 }
 /* ...............................Cartes............................. */
 .carte{
@@ -992,9 +1015,12 @@ h3{
 /* ////////////////////////////////////////// FIN VALENTIN /////////////////////////////////////////////// *
 
 /*floutage*/
-.flou{
+.flou .illustration, .flou .contenu{
 	filter: blur(3px);
 	
+}
+.flouthumb {
+	filter: blur(3px);
 }
 .flou .zoneBouton, .flou .achat {
 	display: none;
@@ -1009,6 +1035,16 @@ h3{
 	align-items: center;
 }
 .cout {
-	background-color: rgba(255, 255, 255, 0.5);
-	height: auto;
+	display:flex;
+	background-color: rgba(255, 255, 255, 0.2);
+	height:76px;
+	width:76px;
+	font-weight:700;
+	text-align:center;
+	justify-content: center;
+	align-items: center;
+
+
+
 }
+
