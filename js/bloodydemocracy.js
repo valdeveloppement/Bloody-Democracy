@@ -1262,7 +1262,10 @@ $incrMilieuBis=0;
 $incrBasBis=0;
 
 $audioClink = new Audio('sons/clink.mp3');
-$audioClink.volume = 0.1*$volumeMaster;
+$audioClink.volume = 0.3*$volumeMaster;
+var $bipbip1=0
+var $bipbip2=0
+var $bipbip3=0
 
 
 function checkHaut(){
@@ -1274,12 +1277,14 @@ function checkHaut(){
   checkStatusEducation()
   if($incrHaut>$incrHautBis){
     $pop1.classList.toggle("popDisplay",false)
-    $audioClink.play();
+    $bipbip1=1
+
   }
+  else{$bipbip1=0}
   $incrHautBis=$incrHaut;
 
 }
-setInterval(checkHaut,1000);
+setInterval(checkHaut,300);
 
 function checkMilieu(){
   checkStatusPanem()
@@ -1288,13 +1293,13 @@ function checkMilieu(){
   checkStatusChomage()
   if($incrMilieu>$incrMilieuBis){
     $pop2.classList.toggle("popDisplay",false)
-    $audioClink.play();
-
+    $bipbip2=1;
   }
+  else{$bipbip2=0}
   $incrMilieuBis=$incrMilieu;
 
 }
-setInterval(checkMilieu,1000);
+setInterval(checkMilieu,300);
 
 function checkBas(){
   checkStatusArticle()
@@ -1304,13 +1309,31 @@ function checkBas(){
   checkStatusCabinetAvocat()
   if($incrBas>$incrBasBis){
     $pop3.classList.toggle("popDisplay",false)
-    $audioClink.play();
+    $bipbip3=1;
 
   }
+  else{$bipbip3=0}
   $incrBasBis=$incrBas;
   
 }
-setInterval(checkBas,1000);
+setInterval(checkBas,300);
+
+$thebipbip=$bipbip1+$bipbip2+$bipbip3;
+$thebipbip2=3;
+
+function sonbip(){
+  $thebipbip=$bipbip1+$bipbip2+$bipbip3;
+  if($thebipbip != $thebipbip2){
+
+    $audioClink.play();
+    $audioClink.volume = 0.9*$volumeMaster;
+    $thebipbip2 = $thebipbip
+  }
+
+ 
+}
+setInterval(sonbip,1200)
+
 
 
 
