@@ -142,7 +142,7 @@ opacity: 1;
 	height:270px;
 	width:30px;
 	left:-33px;
-	z-index: 99999999999;
+	z-index: 80000;
 	
 
 }
@@ -440,14 +440,15 @@ padding: 3% 3% 3% 3%
 	display: flex;
 	flex-direction:row;
 	justify-content: center;
-	align-items: center;
+	/* align-items: center; */
 
 }
 
 .buffCartes{
 width:7.14%;
-top:130px;
+top:140px;
 height:5.3vw;
+margin-top:5px;
 
 
 
@@ -477,6 +478,13 @@ color:rgb(0, 0, 0);
 box-shadow: 0px 0px 0px 2px #fbc959 inset; 
 }
 
+.infoBuffEffect{
+	position:absolute;
+	bottom:6px;
+	z-index:45;
+	font-size: 14px;
+	color: rgba(12, 93, 131, 1);
+}
 
 .cacheCartesBuff{
 	display:none;
@@ -555,7 +563,7 @@ margin-bottom:3%;
 	padding:0;
 	margin-top:2%;
 	align-self: center;
-	margin-bottom:2%;
+	margin-bottom:1.5%;
 
 
 }
@@ -609,8 +617,8 @@ margin-bottom:3%;
 #sliderGeneral {
 	position: relative;
 	display: flex;
-	min-height: 130px;
-	max-height: 130px;
+	min-height: 140px;
+	max-height: 140px;
 	width: 90%;
 }
 #sliderGeneral .menuGen {
@@ -619,7 +627,7 @@ margin-bottom:3%;
 #menuGeneral {
 	display: flex;
 	flex-direction: column;
-	height:130px;
+	height:140px;
 }
 #menuGeneral input, #menuStore input {
 	display: none;
@@ -689,8 +697,8 @@ opacity:0.7;
 
 .menuGen {
 	background-color:rgba(255, 255, 255, 0.5);
-	height: 130px;
-	min-height: 130px;
+	height: 140px;
+	min-height: 140px;
 	width:100%;
 	min-width:200px;
 }
@@ -722,9 +730,10 @@ opacity:0.7;
 #sliderStore {
 	position: relative;
 	display: flex;
-	min-height: 130px;
-	max-height: 130px;
+	min-height: 270px;
+	max-height: 270px;
 	width: 90%;
+	background-color: #fcd888;
 }
 #menuStore {
 	display: flex;
@@ -789,7 +798,7 @@ opacity:0.7;
 .thumbnails p{
 position:absolute;
 z-index: 45;
-font-size:1.2vw;
+font-size:1vw;
 }
 /* ...............................Cartes............................. */
 .carte{
@@ -1020,7 +1029,7 @@ h3{
 	
 }
 .flouthumb {
-	filter: blur(3px);
+	filter: blur(2px);
 }
 .flou .zoneBouton, .flou .achat {
 	display: none;
@@ -1030,9 +1039,10 @@ h3{
 }
 .carteMenu {
 	display: flex;
-	font-size: 3vw;
+	font-size: 1vw;
 	justify-content: center;
 	align-items: center;
+	color: rgba(12, 93, 131, 0.4);
 }
 .cout {
 	display:flex;

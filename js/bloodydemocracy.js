@@ -170,6 +170,12 @@ setInterval(refreshCalendar,1000);
 
 // ................................................FIN CALENDRIER....................................................................
 
+
+
+
+
+
+
 //...............................MAJ CARTES ACTIVES ...............................................
 
 $buffBelleGueule = document.getElementById("buffBelleGueule");
@@ -202,6 +208,20 @@ $infoJustice = document.getElementById("infoJustice");
 $infoBfn = document.getElementById("infoBfn");
 $infoPanem = document.getElementById("infoPanem");
 
+$infoBelleGueuleEffet = document.getElementById("infoBelleGueuleEffet");
+$infoArticleEffet = document.getElementById("infoArticleEffet");
+$infoBelleMeufEffet = document.getElementById("infoBelleMeufEffet");
+$infoPhotoEffet = document.getElementById("infoPhotoEffet");
+$infoGrenadeEffet = document.getElementById("infoGrenadeEffet");
+$infoAvocatEffet = document.getElementById("infoAvocatEffet");
+$infoChomageEffet = document.getElementById("infoChomageEffet");
+$infoRsaEffet = document.getElementById("infoRsaEffet");
+$infoEducationEffet = document.getElementById("infoEducationEffet");
+$infoCabinetEffet = document.getElementById("infoCabinetEffet");
+$infoVenteArmeEffet = document.getElementById("infoVenteArmeEffet");
+$infoJusticeEffet = document.getElementById("infoJusticeEffet");
+$infoBfnEffet = document.getElementById("infoBfnEffet");
+$infoPanemEffet = document.getElementById("infoPanemEffet");
 
 
 
@@ -220,7 +240,20 @@ $dureeJustice =10000000000;
 $dureeBfn =180;
 $dureePanem =10000000000;
 
-
+$effetBelleMeufVote = 600 / $ratioSecondesParJour;
+$effetBelleMeufArgent = 3000 / $ratioSecondesParJour;
+$effetPhotoVote = 1200 / $ratioSecondesParJour;
+$effetPhotoArgent = 6000 / $ratioSecondesParJour;
+$effetEducationArgent = Math.round((60000 / 28) / $ratioSecondesParJour) ;
+$effetChomageArgent = Math.round(2500 / $ratioSecondesParJour);
+$effetChomageVote = Math.round(1000 / $ratioSecondesParJour);
+$effetRsaArgent = Math.round(40000 / $ratioSecondesParJour);
+$effetRsaVote = Math.round(2000 / $ratioSecondesParJour);
+$effetBfnArgent = Math.round(50000 / $ratioSecondesParJour);
+$effetBfnVote = Math.round(1000 / $ratioSecondesParJour);
+$effetArmeCaisseNoire = 50000;
+$effetAvocatArgent = Math.round(10000 / $ratioSecondesParJour);
+$effetCabinetAvocatArgent = Math.round(20000 / $ratioSecondesParJour);
 
 
 function majCartesActives(){
@@ -231,7 +264,7 @@ function majCartesActives(){
   else{
     $buffBelleGueule.classList.toggle("cacheCartesBuff",false);
     $infoBelleGueule.innerHTML =$dureeBelleGueule-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatBelleGueule").substr(1));
-
+    $infoBelleGueuleEffet.innerHTML = 'multi x '+$multiBelleGueule;
   }
 
 
@@ -241,7 +274,7 @@ function majCartesActives(){
   else{
     $buffBelleMeuf.classList.toggle("cacheCartesBuff",false);
     $infoBelleMeuf.innerHTML =$dureeBelleMeuf-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatBelleMeuf").substr(1));
-
+    $infoBelleMeufEffet.innerHTML =  $effetBelleMeufVote + ' <i class="fas fa-vote-yea"></i> / sec '+'<br>'+$effetBelleMeufArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatphotoDeFamille") === null || parseInt(localStorage.getItem("boutonAchatphotoDeFamille")) == 0) {
@@ -250,7 +283,7 @@ function majCartesActives(){
   else{
     $buffPhoto.classList.toggle("cacheCartesBuff",false);
     $infoPhoto.innerHTML =$dureePhoto-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatphotoDeFamille").substr(1));
-
+    $infoPhotoEffet.innerHTML = $effetPhotoVote + ' <i class="fas fa-vote-yea"></i> / sec '+'<br>'+$effetPhotoArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatGrenade") === null || parseInt(localStorage.getItem("boutonAchatGrenade")) == 0) {
@@ -259,7 +292,7 @@ function majCartesActives(){
   else{
     $buffGrenade.classList.toggle("cacheCartesBuff",false);
     $infoGrenade.innerHTML =$dureeGrenade-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatGrenade").substr(1));
-
+    $infoGrenadeEffet.innerHTML = 'multi x '+$multiGrenade;
   }
 
   if (localStorage.getItem("boutonAchatEducation") === null || parseInt(localStorage.getItem("boutonAchatEducation")) == 0) {
@@ -268,7 +301,7 @@ function majCartesActives(){
   else{
     $buffEducation.classList.toggle("cacheCartesBuff",false);
     $infoEducation.innerHTML =$dureeEducation-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatEducation").substr(1));
-
+    $infoEducationEffet.innerHTML = $effetEducationArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatbfntv") === null || parseInt(localStorage.getItem("boutonAchatbfntv")) == 0) {
@@ -277,7 +310,7 @@ function majCartesActives(){
   else{
     $buffBfn.classList.toggle("cacheCartesBuff",false);
     $infoBfn.innerHTML =$dureeBfn-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatbfntv").substr(1));
-
+    $infoBfnEffet.innerHTML =  $effetBfnVote + ' <i class="fas fa-vote-yea"></i> / sec '+'<br>'+$effetBfnArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatPanem") === null || parseInt(localStorage.getItem("boutonAchatPanem")) == 0) {
@@ -295,7 +328,7 @@ function majCartesActives(){
   else{
     $buffChomage.classList.toggle("cacheCartesBuff",false);
     $infoChomage.innerHTML =$dureeChomage-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatChomage").substr(1));
-
+    $infoChomageEffet.innerHTML =  $effetChomageVote + ' <i class="fas fa-vote-yea"></i> / sec '+'<br>'+$effetChomageArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatrsa") === null || parseInt(localStorage.getItem("boutonAchatrsa")) == 0) {
@@ -304,7 +337,7 @@ function majCartesActives(){
   else{
     $buffRsa.classList.toggle("cacheCartesBuff",false);
     $infoRsa.innerHTML =$dureeRsa-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatrsa").substr(1));
-
+    $infoRsaEffet.innerHTML =  $effetRsaVote + ' <i class="fas fa-vote-yea"></i> / sec '+'<br>'+$effetRsaArgent+' <i class="fas fa-dollar-sign"></i> / sec';
   }
 
   if (localStorage.getItem("boutonAchatarticleJournal") === null || parseInt(localStorage.getItem("boutonAchatarticleJournal")) == 0) {
@@ -313,7 +346,7 @@ function majCartesActives(){
   else{
     $buffArticle.classList.toggle("cacheCartesBuff",false);
     $infoArticle.innerHTML =$dureeArticle-$tempsDeJeuJoursVirtuels+parseInt(localStorage.getItem("boutonAchatarticleJournal").substr(1));
-
+    $infoArticleEffet.innerHTML = 'multi x '+$multiArticleJournal;
   }
 
   if (localStorage.getItem("boutonAchatVenteArme") === null || parseInt(localStorage.getItem("boutonAchatVenteArme")) == 0) {
@@ -322,7 +355,7 @@ function majCartesActives(){
   else{
     $buffVenteArme.classList.toggle("cacheCartesBuff",false);
     $infoVenteArme.innerHTML ="Infini";
-
+    $infoVenteArmeEffet.innerHTML = '+ '+$effetArmeCaisseNoire+ ' <i class="fas fa-dollar-sign"></i><br> caisse noire';
   }
 
 
@@ -332,7 +365,7 @@ function majCartesActives(){
   else{
     $buffAvocat.classList.toggle("cacheCartesBuff",false);
     $infoAvocat.innerHTML ="Infini";
-
+    $infoAvocatEffet.innerHTML = '- '+ $effetAvocatArgent+' <i class="fas fa-dollar-sign"></i> / sec <br>Malus - 30%';
   }
 
 
@@ -342,7 +375,7 @@ function majCartesActives(){
   else{
     $buffCabinet.classList.toggle("cacheCartesBuff",false);
     $infoCabinet.innerHTML ="Infini";
-
+    $infoCabinetEffet.innerHTML = '- '+ $effetCabinetAvocatArgent+' <i class="fas fa-dollar-sign"></i> / sec <br>Malus - 50%';
   }
 
 
@@ -352,13 +385,12 @@ function majCartesActives(){
   else{
     $buffJustice.classList.toggle("cacheCartesBuff",false);
     $infoJustice.innerHTML ="Infini";
-
+    $infoJusticeEffet.innerHTML = '0 Malus';
   }
 
 
 }
 setInterval(majCartesActives,1000);
-
 
 
 
@@ -970,6 +1002,18 @@ $colorOngletPop="#19749f";
 	document.getElementById("id1Gestion").checked = "true"
 	document.getElementById("id1Argent").checked = "true"
 	document.getElementById("selectBuffTemporaire").checked = "true"
+
+  function stoppopvote(){
+    $pop1.classList.toggle("popDisplay",true)
+  }
+
+  function stoppopargent(){
+    $pop2.classList.toggle("popDisplay",true)
+  }
+
+  function stoppopgestion(){
+    $pop3.classList.toggle("popDisplay",true)
+  }
 
 
 function showVote(){
